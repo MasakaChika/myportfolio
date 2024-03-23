@@ -1,0 +1,136 @@
+@use './mixins' as *;
+
+/* ------- reset ------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------- 共通 ------- */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--color-background);
+}
+
+html {
+  font-size: 16px;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+video {
+  outline: none;
+  border: none;
+}
+
+/* ------- header ------- */
+.site-header {
+  width: 100%; //幅100%
+  height: 120px; //高さ120px
+  background: var(--header-gradation);
+  position: fixed; //固定
+  z-index: 5;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center; //containerを水平方向に中央揃え
+  align-items: center; //containerを垂直方向に中央揃え
+
+  &__container {
+    width: 100%; //コンテナの幅を親要素の幅に合わせて伸縮させる
+    max-width: 1080px; //最大幅1080px
+    display: flex; //.logoとnavを横に並べる
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0; //フレックスアイテムが縮小させない
+  }
+
+  &__logo a {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px; //列のgapのみ
+    align-items: center;
+    text-decoration: none;
+
+    img {
+      width: 24px;
+      height: 24px;
+      grid-row: span 2; //2行
+    }
+  }
+
+  &__position,
+  &__name {
+    display: block; //spanはデフォルトでinlineなので、必要に応じてblockに変更
+    @include enFont;
+    font-size: 10px;
+    line-height: 1rem;
+    letter-spacing: 0.1em;
+    justify-self: start; //CSS Gridのコンテキストで使用され、個別のグリッドアイテムの水平方向の配置
+  }
+
+  // ナビゲーションメニューのスタイリング
+  &__gnav {
+    display: flex; //navとsnsを横並びにする
+    gap: 4rem; //64px
+  }
+
+  &__nav ul {
+    list-style: none;
+    inset: 0;
+    display: flex;
+    align-items: flex-start; //display-flexの際、フレックスアイテムを親コンテナ内で制御
+    gap: 4rem; //64px
+
+    li {
+      a {
+        text-decoration: none;
+        font-size: 14px; // リンクのサイズ
+        letter-spacing: 0.15em;
+        @include enFont;
+        text-transform: uppercase;
+        @include hover-effect;
+      }
+    }
+  }
+
+  // SNSアイコンのスタイリング
+  &__sns {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    a {
+      img {
+        height: 20px; // アイコンのサイズ
+        width: auto;
+        margin-right: 10px; // アイコン間の余白
+      }
+    }
+  }
+}

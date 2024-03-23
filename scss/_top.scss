@@ -1,0 +1,48 @@
+@use './mixins' as *;
+
+.content-wrapper {
+  position: relative;
+  margin-top: 120px; // headerのheight分
+}
+
+.mv {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 56px;
+
+  &__inner {
+    display: grid;
+    place-items: center; //水平および垂直方向の中央揃え
+  }
+
+  &__video {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    max-width: 1280px; //moviesの作成サイズ1280px×720px
+  }
+}
+
+.vertical-title {
+  display: flex;
+  @include enFont;
+  font-size: 12px;
+  line-height: 1.75em; // 175%
+  letter-spacing: 0.16em;
+  transform: rotate(90deg); //縦にする
+  transform-origin: left top; //左上を起点にする
+  position: absolute; // 初期状態では絶対位置指定
+  left: 2rem; //左端32px
+  top: 100%; //mvセクションの下
+  white-space: nowrap; // タイトルが1行で表示されるように
+  transition: top 0.3s; // スムーズな移動のためのトランジション
+
+  // スクロールによって固定される状態
+  &.fixed {
+    position: fixed;
+    top: 120px;
+    transform: rotate(90deg);
+  }
+}

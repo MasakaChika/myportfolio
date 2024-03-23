@@ -1,0 +1,16 @@
+:root {
+  /* ------- Fonts ------- */
+  --font-praimary: 'Noto Sans JP', sans-serif;
+  --font-title-jp: 'Noto Serif JP', serif;
+  --font-title-en: 'Libre Baskerville', serif;
+  /* ------- Color ------- */
+  --color-background: #f5f5f5;
+  --header-gradation: linear-gradient(180deg, #f5f5f5 26.67%, rgba(245, 245, 245, 0.44) 71.11%, rgba(245, 245, 245, 0) 100%);
+  --color-white: #fffeff;
+  --color-text: #363636;
+  --color-text-soft: #666666;
+  --color-hover: #c36c74;
+  /* ------- Other ------- */
+  --easeing: cubic-bezier(0.69, 0.02, 0.18, 1);
+  --container-width: 1080px;
+}

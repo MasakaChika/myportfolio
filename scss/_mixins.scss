@@ -1,0 +1,35 @@
+@mixin mq {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin enFont {
+  font-family: var(--font-title-en);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-text);
+}
+
+@mixin jpFont {
+  font-family: var(--font-title-jp);
+  font-weight: 500;
+  font-style: normal;
+  color: var(--color-text);
+}
+
+@mixin textFont {
+  font-family: var(--font-praimary);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-text);
+}
+
+// hover時のmixin
+@mixin hover-effect {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--color-hover); // ホバー時の色をここに直接指定
+    }
+  }
+}
