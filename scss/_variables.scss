@@ -12,5 +12,8 @@
   --color-hover: #c36c74;
   /* ------- Other ------- */
   --easeing: cubic-bezier(0.69, 0.02, 0.18, 1);
+  --hover: 0.6s ease;
+  --hover-duration: 0.6s;
+  --hover-timing-function: ease;
   --container-width: 1080px;
 }

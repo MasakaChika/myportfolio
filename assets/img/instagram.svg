@@ -1,5 +1,16 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.0751 0.994141H6.92451C3.64922 0.994141 0.994629 3.6492 0.994629 6.92449V17.0741C0.994629 20.3494 3.64969 23.0045 6.92498 23.0045H17.0746C20.3499 23.0045 23.005 20.3494 23.005 17.0741V6.92449C23.005 3.6492 20.3504 0.994141 17.0751 0.994141Z" stroke="#363636" stroke-width="1.33333" stroke-miterlimit="10"/>
-<path d="M12 17.3134C14.9342 17.3134 17.3129 14.9347 17.3129 12.0004C17.3129 9.06619 14.9342 6.6875 12 6.6875C9.0657 6.6875 6.68701 9.06619 6.68701 12.0004C6.68701 14.9347 9.0657 17.3134 12 17.3134Z" stroke="#363636" stroke-width="1.33333" stroke-miterlimit="10"/>
-<path d="M18.4513 6.68686C19.08 6.68686 19.5897 6.1772 19.5897 5.54851C19.5897 4.91981 19.08 4.41016 18.4513 4.41016C17.8226 4.41016 17.313 4.91981 17.313 5.54851C17.313 6.1772 17.8226 6.68686 18.4513 6.68686Z" fill="#363636"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="icon-instagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#363636;stroke-width:0.5;stroke-miterlimit:10;}
+</style>
+<g id="openmoji:instagram">
+	<path id="Vector" class="st0" d="M17.4,0.3H6.6c-3.5,0-6.3,2.8-6.3,6.3v10.8c0,3.5,2.8,6.3,6.3,6.3h10.8c3.5,0,6.3-2.8,6.3-6.3V6.6
+		C23.8,3.1,20.9,0.3,17.4,0.3z"/>
+	<path id="Vector_2" class="st0" d="M12,17.7c3.1,0,5.7-2.5,5.7-5.7c0-3.1-2.5-5.7-5.7-5.7c-3.1,0-5.7,2.5-5.7,5.7
+		C6.3,15.1,8.9,17.7,12,17.7z"/>
+	<path id="Vector_3" class="st0" d="M18.9,6.3c0.7,0,1.2-0.5,1.2-1.2s-0.5-1.2-1.2-1.2c-0.7,0-1.2,0.5-1.2,1.2S18.2,6.3,18.9,6.3z"
+		/>
+</g>
 </svg>

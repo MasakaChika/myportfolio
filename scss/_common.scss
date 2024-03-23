@@ -48,6 +48,47 @@ video {
   border: none;
 }
 
+.section-header {
+  @include enFont;
+  font-size: 40px;
+  line-height: normal;
+  letter-spacing: 0.1em; //4px;
+  text-transform: uppercase;
+}
+
+.viewall {
+  @include enFont;
+  font-size: 14px;
+  line-height: 1.42;
+  letter-spacing: 0.07em;
+
+  &::before {
+    content: '';
+    height: 1px;
+    align-self: stretch;
+  }
+}
+
+#icon-instagram,
+#x-twitter {
+  width: 20px;
+  height: 20px;
+}
+
+.cls-1 {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-miterlimit: 10;
+  stroke-width: 1.2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke var(--hover-duration) var(--hover-timing-function);
+}
+
+.site-header__sns a:hover .cls-1 {
+  stroke: var(--color-hover);
+}
+
 /* ------- header ------- */
 .site-header {
   width: 100%; //幅100%
@@ -115,6 +156,7 @@ video {
         letter-spacing: 0.15em;
         @include enFont;
         text-transform: uppercase;
+        transition: var(--hover);
         @include hover-effect;
       }
     }
@@ -125,12 +167,9 @@ video {
     display: flex;
     align-items: center;
     gap: 4rem;
+
     a {
-      img {
-        height: 20px; // アイコンのサイズ
-        width: auto;
-        margin-right: 10px; // アイコン間の余白
-      }
+      display: inline-flex; //flexコンテナとして振る舞い、子要素を中央揃えに
     }
   }
 }

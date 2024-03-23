@@ -20,23 +20,3 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', updateVideoSource);
   updateVideoSource();
 });
-
-/* ------- mv vertical-text 追従 ------- */
-document.addEventListener('DOMContentLoaded', function () {
-  const worksSection = document.querySelector('.works');
-  const verticalTitle = document.querySelector('.vertical-title');
-  // worksセクションの上端位置を取得
-  const startOffset = worksSection.offsetTop;
-
-  function handleScroll() {
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollPosition >= startOffset) {
-      verticalTitle.classList.add('fixed');
-    } else {
-      verticalTitle.classList.remove('fixed');
-    }
-  }
-
-  window.addEventListener('scroll', handleScroll);
-});
