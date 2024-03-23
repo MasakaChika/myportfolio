@@ -7,13 +7,14 @@
   &__inner {
     display: grid;
     place-items: center; //水平および垂直方向の中央揃え
+    height: 80vh;
   }
 
   &__video {
     aspect-ratio: 16 / 9;
     width: 100%;
     height: auto;
-    max-width: 1280px; //moviesの作成サイズ1280px×720px
+    max-width: var(--container-width); //moviesの作成サイズ1280px×720px
   }
 }
 
@@ -21,17 +22,17 @@
   &__container {
     position: -webkit-sticky;
     position: sticky;
-    top: 120px; //スクロールの際ビューポートの上端から120pxの位置で固定
+    top: 50vh; //スクロールの際ビューポートの上端から120pxの位置で固定する
   }
 
   &__text {
-    display: flex;
+    display: inline-block; //幅を自動的に内包するコンテンツに合わせるため
     @include enFont;
     font-size: 12px;
     line-height: 1.75em; // 175%
     letter-spacing: 0.16em;
     transform: rotate(90deg); //縦にする
-    transform-origin: left top; //rotateは左上を起点にする
+    transform-origin: left top; //rotateは左上を起点にするため
     position: relative;
     left: 2rem; //左端32px開ける
     white-space: nowrap; // 1行で表示されるように
@@ -39,13 +40,20 @@
   }
 }
 
+.main-content {
+  display: flex;
+  flex-direction: column; //縦方向に並べる
+  gap: 20vh; //セクション間の間隔
+}
+
 .works {
-  max-width: 1080px;
+  max-width: var(--container-width);
   margin: 0 auto; //水平方向に中央揃え
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr 0.1fr;
+  grid-template-rows: 1fr 0.5fr 0.1fr;
   grid-gap: 1rem 1.5rem; // 行間隔16px、列間隔24px
+  @include responsive-margin(60px, 60px); //max-width1080px〜770pxのときのみに発動
 
   &__title {
     grid-column: 1 / 3;
@@ -55,8 +63,10 @@
   &__slider {
     grid-column: 3;
     grid-row: 1 / 3;
-    height: 400px;
-    width: 600px;
+    aspect-ratio: 3 / 2; //比率を維持
+    max-height: 400px;
+    max-width: 600px;
+    background-color: gray;
   }
 
   &__search {
@@ -65,7 +75,7 @@
 
     display: grid;
     grid-template-columns: repeat(3, 1fr); //同じ幅の3列
-    grid-template-rows: 1fr 0.5rem 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0 1fr 1fr 1fr 1fr;
     grid-gap: 0.5rem 1rem;
 
     > span {
@@ -88,6 +98,12 @@
       display: contents; // ulのデフォルトのブロック性を解除し、liがグリッドアイテムとして機能するように
     }
 
+    a {
+      align-self: center; //垂直方向に中央揃え
+      @include hover-effect;
+      transition: var(--hover);
+    }
+
     li {
       @include enFont;
       font-size: 12px;
@@ -103,7 +119,94 @@
   &__all {
     grid-column: 3;
     grid-row: 3;
+    justify-self: flex-end; //右端に寄せる(gridの時はjustify-self)
+  }
+}
+
+.about {
+  max-width: var(--container-width);
+  margin: 0 auto; //水平方向に中央揃え
+  display: grid;
+  grid-template-columns: auto 1fr 2fr;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 0.5rem 1.5rem; // 行間隔8px、列間隔24px
+  @include responsive-margin(60px, 60px); //max-width1080px〜770pxのときのみに発動
+
+  &__title {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  &__photo {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    img {
+      max-width: 347px;
+    }
+  }
+
+  &__name {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end; //下揃え
+
+    h2 {
+      @include jpFont;
+      font-size: 28px;
+      line-height: normal;
+      letter-spacing: 0.214em; //6px
+      text-wrap: nowrap;
+    }
+    p {
+      @include textFont;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.1em; //1px
+      text-wrap: nowrap;
+    }
+  }
+
+  &__desc {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    @include textFont;
+    font-size: 10px;
+    font-weight: 350;
+    line-height: 1.4; //14px
+    letter-spacing: 0.12em; //1.2px
+  }
+
+  &__text {
+    grid-column: 3;
+    grid-row: 2;
     display: flex;
-    justify-content: flex-end;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    flex: 1 0 0;
+    align-self: stretch;
+    h3 {
+      @include textFont;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.25; //20px
+      letter-spacing: 0.075em; //q.2px
+    }
+    p {
+      @include textFont;
+      font-size: 0.875rem;
+      font-weight: 350;
+      line-height: 1.71; //24px
+      letter-spacing: 0.0357em; //0.5px
+    }
+  }
+
+  &__all {
+    grid-column: 3;
+    grid-row: 3;
+    justify-self: flex-end; //右端に寄せる(gridの時はjustify-self)
   }
 }

@@ -61,11 +61,31 @@ video {
   font-size: 14px;
   line-height: 1.42;
   letter-spacing: 0.07em;
+  display: inline-block; //spanのサイズに合わせる
 
-  &::before {
-    content: '';
-    height: 1px;
-    align-self: stretch;
+  span {
+    position: relative; //arrow(擬似要素)を配置する基準点にするため
+
+    &::before {
+      content: '';
+      position: absolute; // fontに対して絶対配置
+      width: calc(100% + 14px); // spanの幅に長さを足す
+      height: 1px;
+      background-color: var(--color-text);
+      bottom: -5px; // spanの下に配置
+      left: 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute; // fontに対して絶対配置
+      bottom: -9px;
+      left: calc(100% + 13px); //微調整
+      width: 8px; // 矢の長さ
+      height: 8px; // 矢の幅
+      border-right: 1px solid var(--color-text); // 右の矢の線
+      transform: translateX(-100%) rotate(-54deg); // 位置を調整して45度に回転
+    }
   }
 }
 
@@ -105,7 +125,7 @@ video {
 
   &__container {
     width: 100%; //コンテナの幅を親要素の幅に合わせて伸縮させる
-    max-width: 1080px; //最大幅1080px
+    max-width: var(--container-width); //最大幅1080px
     display: flex; //.logoとnavを横に並べる
     justify-content: space-between;
     align-items: center;
@@ -171,5 +191,23 @@ video {
     a {
       display: inline-flex; //flexコンテナとして振る舞い、子要素を中央揃えに
     }
+  }
+}
+
+// site-footer
+.site-footer {
+  display: flex;
+  width: 100%;
+  padding: 24px 0px;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-text);
+  margin-top: 128px;
+
+  small {
+    @include enFont;
+    color: var(--color-white);
+    font-size: 0.875rem; //14px
+    line-height: normal;
   }
 }

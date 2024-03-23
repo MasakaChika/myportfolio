@@ -4,6 +4,13 @@
   }
 }
 
+@mixin responsive-margin($left-margin, $right-margin) {
+  @media (min-width: 768px) and (max-width: 1080px) {
+    margin-left: $left-margin;
+    margin-right: $right-margin;
+  }
+}
+
 @mixin enFont {
   font-family: var(--font-title-en);
   font-weight: 400;
