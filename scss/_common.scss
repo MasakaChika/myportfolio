@@ -54,6 +54,12 @@ video {
   line-height: normal;
   letter-spacing: 0.1em; //4px;
   text-transform: uppercase;
+
+  @include mq {
+    font-size: 24px;
+    line-height: 1; //24px
+    letter-spacing: 0.1em; //2.4px
+  }
 }
 
 .viewall {
@@ -317,11 +323,20 @@ video {
   }
 }
 
-@media screen and (max-width: 430px) {
+@include mq {
+  .site-header {
+    height: 80px;
+  }
   .site-nav {
     width: 50%;
     height: 100vh;
   }
+
+  .site-header__container {
+    padding: 1.5rem;
+  }
+}
+@media screen and (max-width: 430px) {
 }
 
 // site-footer

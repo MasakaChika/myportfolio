@@ -16,6 +16,18 @@
     height: auto;
     max-width: var(--container-width); //moviesの作成サイズ1280px×720px
   }
+
+  @include mq {
+    margin-top: 80px;
+
+    &__inner {
+      height: 100vh;
+    }
+
+    &__video {
+      aspect-ratio: 9 / 16;
+    }
+  }
 }
 
 .vertical-title {
@@ -121,6 +133,33 @@
     grid-row: 3;
     justify-self: flex-end; //右端に寄せる(gridの時はjustify-self)
   }
+
+  @include mq {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    width: 100%;
+    padding-left: 17.3%;
+    padding-right: 24px;
+    gap: 1.5rem;
+
+    &__title {
+      grid-column: 1;
+    }
+    &__slider {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    &__search {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    &__all {
+      grid-column: 1;
+      grid-row: 4;
+    }
+  }
 }
 
 .about {
@@ -185,7 +224,7 @@
 
     flex-direction: column;
     align-items: flex-start;
-    gap: 32px;
+    gap: 2rem;
     flex: 1 0 0;
     align-self: stretch;
     h3 {
@@ -193,7 +232,7 @@
       font-size: 1rem;
       font-weight: 500;
       line-height: 1.25; //20px
-      letter-spacing: 0.075em; //q.2px
+      letter-spacing: 0.075em; //0.2px
     }
     p {
       @include textFont;
@@ -208,5 +247,81 @@
     grid-column: 3;
     grid-row: 3;
     justify-self: flex-end; //右端に寄せる(gridの時はjustify-self)
+  }
+
+  @include mq {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    width: 100%;
+    padding-left: 17.3%;
+    padding-right: 24px;
+
+    &__title {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: start;
+    }
+
+    &__photo {
+      grid-column: 1;
+      grid-row: 2;
+      img {
+        max-width: 300px;
+      }
+    }
+
+    &__name {
+      grid-column: 1;
+      grid-row: 3;
+
+      h2 {
+        @include jpFont;
+        font-size: 20px;
+        line-height: normal;
+        letter-spacing: 0.15em; //3px
+      }
+      p {
+        text-wrap: wrap;
+      }
+    }
+
+    &__desc {
+      grid-column: 1;
+      grid-row: 4;
+    }
+
+    &__text {
+      grid-column: 1;
+      grid-row: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      flex: 1 0 0;
+      align-self: stretch;
+
+      h3 {
+        @include textFont;
+        font-size: 0.93rem; //15px
+        font-weight: 500;
+        line-height: 1.25; //20px
+        letter-spacing: 0.073em; //1.1px
+      }
+      p {
+        @include textFont;
+        font-size: 0.75rem; //12px
+        font-weight: 350;
+        line-height: 1.5; //18px
+        letter-spacing: 0.041em; //0.5px
+        color: var(----color-text, #363636);
+      }
+    }
+
+    &__all {
+      grid-column: 1;
+      grid-row: 6;
+      justify-self: flex-end; //右端に寄せる(gridの時はjustify-self)
+    }
   }
 }
