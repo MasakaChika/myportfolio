@@ -7,7 +7,7 @@
   &__inner {
     display: grid;
     place-items: center; //水平および垂直方向の中央揃え
-    height: 80vh;
+    height: 85vh;
   }
 
   &__video {
@@ -34,7 +34,7 @@
   &__container {
     position: -webkit-sticky;
     position: sticky;
-    top: 50vh; //スクロールの際ビューポートの上端から120pxの位置で固定する
+    top: 50svh; //スクロールの際ビューポートの上端から120pxの位置で固定する
   }
 
   &__text {
@@ -55,7 +55,7 @@
 .main-content {
   display: flex;
   flex-direction: column; //縦方向に並べる
-  gap: 20vh; //セクション間の間隔
+  gap: 30vh; //セクション間の間隔
 }
 
 .works {

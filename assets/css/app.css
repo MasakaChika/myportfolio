@@ -6,7 +6,7 @@
 .mv__inner {
   display: grid;
   place-items: center;
-  height: 80vh;
+  height: 85vh;
 }
 .mv__video {
   aspect-ratio: 16/9;
@@ -29,7 +29,7 @@
 .vertical-title__container {
   position: -webkit-sticky;
   position: sticky;
-  top: 50vh;
+  top: 50svh;
 }
 .vertical-title__text {
   display: inline-block;
@@ -51,7 +51,7 @@
 .main-content {
   display: flex;
   flex-direction: column;
-  gap: 20vh;
+  gap: 30vh;
 }
 
 .works {
@@ -433,9 +433,11 @@ video {
   line-height: 1.42;
   letter-spacing: 0.07em;
   display: inline-block;
+  animation: fuwafuwa 2s linear infinite;
 }
 .viewall span {
   position: relative;
+  left: -14px;
 }
 .viewall span::before {
   content: "";
@@ -457,6 +459,17 @@ video {
   transform: translateX(-100%) rotate(-54deg);
 }
 
+@keyframes fuwafuwa {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 #icon-instagram {
   width: 20px;
   height: 20px;
@@ -684,4 +697,4 @@ video {
   color: var(--color-white);
   font-size: 0.875rem;
   line-height: normal;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=app.css.map */

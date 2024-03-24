@@ -71,6 +71,7 @@ video {
 
   span {
     position: relative; //arrow(擬似要素)を配置する基準点にするため
+    left: -14px; //arrowとの関係で左に寄せる
 
     &::before {
       content: '';
@@ -92,6 +93,19 @@ video {
       border-right: 1px solid var(--color-text); // 右の矢の線
       transform: translateX(-100%) rotate(-54deg); // 位置を調整して45度に回転
     }
+  }
+  animation: fuwafuwa 2s linear infinite;
+}
+
+@keyframes fuwafuwa {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15%);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
@@ -335,8 +349,6 @@ video {
   .site-header__container {
     padding: 1.5rem;
   }
-}
-@media screen and (max-width: 430px) {
 }
 
 // site-footer
