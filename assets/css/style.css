@@ -336,8 +336,7 @@ video {
   transform: translateX(-100%) rotate(-54deg);
 }
 
-#icon-instagram,
-#x-twitter {
+#icon-instagram {
   width: 20px;
   height: 20px;
 }
@@ -372,9 +371,9 @@ video {
 .site-header__container {
   width: 100%;
   max-width: var(--container-width);
-  display: flex;
   justify-content: space-between;
   align-items: center;
+  display: flex;
   flex-shrink: 0;
 }
 .site-header__logo a {
@@ -401,17 +400,20 @@ video {
   justify-self: start;
 }
 .site-header__gnav {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
   gap: 4rem;
 }
-.site-header__nav ul {
+.site-header__gnav ul {
   list-style: none;
   inset: 0;
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
   gap: 4rem;
+  align-items: center;
+  justify-self: flex-end;
 }
-.site-header__nav ul li a {
+.site-header__gnav ul li a {
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 0.15em;
@@ -423,19 +425,121 @@ video {
   transition: var(--hover);
 }
 @media (hover: hover) and (pointer: fine) {
-  .site-header__nav ul li a:hover {
+  .site-header__gnav ul li a:hover {
     color: var(--color-hover);
   }
 }
 .site-header__sns {
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: 1fr;
   gap: 4rem;
+  justify-self: flex-end;
 }
 .site-header__sns a {
   display: inline-flex;
 }
 
+/* ハンバーガーメニューのスタイル */
+.site-nav-toggle {
+  display: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+}
+.site-nav-toggle::before, .site-nav-toggle::after,
+.site-nav-toggle span {
+  content: "";
+  height: 1px;
+  width: 30px;
+  background-color: var(--color-text);
+  position: absolute;
+  transition: 0.4s var(--easeing);
+}
+.site-nav-toggle span {
+  transform-origin: left center;
+}
+.site-nav-toggle::before {
+  top: calc(50% - 8px);
+}
+.site-nav-toggle::after {
+  top: calc(50% + 8px);
+}
+
+.site-nav-checkbox {
+  display: none;
+}
+
+/* 1080px以下の画面幅でのスタイル */
+@media (max-width: 1080px) {
+  .site-header__container {
+    padding: 3rem;
+    justify-content: space-between;
+  }
+  .site-nav-toggle {
+    display: flex;
+  }
+  .site-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+  }
+  .site-nav-checkbox:checked ~ .site-nav {
+    transform: translateX(0);
+  }
+  .site-header__nav-container {
+    display: flex;
+    align-items: center;
+    padding: 2.5rem;
+  }
+  .site-header__gnav {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+  .site-header__gnav ul {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    justify-self: flex-start;
+  }
+  .site-header__gnav ul li a {
+    color: var(--color-white);
+  }
+  .site-header__sns {
+    gap: 3.5rem;
+    justify-self: flex-start;
+  }
+  .site-nav-checkbox:checked ~ .site-nav-toggle span {
+    transform: scaleX(0);
+  }
+  .site-nav-checkbox:checked ~ .site-nav-toggle::before {
+    top: 50%;
+    transform: rotate(30deg);
+    background-color: var(--color-white);
+  }
+  .site-nav-checkbox:checked ~ .site-nav-toggle::after {
+    top: 50%;
+    transform: rotate(-30deg);
+    background-color: var(--color-white);
+  }
+  .cls-1 {
+    stroke: var(--color-white);
+  }
+}
+@media screen and (max-width: 430px) {
+  .site-nav {
+    width: 50%;
+    height: 100vh;
+  }
+}
 .site-footer {
   display: flex;
   width: 100%;

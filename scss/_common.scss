@@ -89,8 +89,7 @@ video {
   }
 }
 
-#icon-instagram,
-#x-twitter {
+#icon-instagram {
   width: 20px;
   height: 20px;
 }
@@ -126,9 +125,9 @@ video {
   &__container {
     width: 100%; //コンテナの幅を親要素の幅に合わせて伸縮させる
     max-width: var(--container-width); //最大幅1080px
-    display: flex; //.logoとnavを横に並べる
     justify-content: space-between;
     align-items: center;
+    display: flex; //.logoとnavを横に並べる
     flex-shrink: 0; //フレックスアイテムが縮小させない
   }
 
@@ -158,39 +157,170 @@ video {
 
   // ナビゲーションメニューのスタイリング
   &__gnav {
-    display: flex; //navとsnsを横並びにする
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     gap: 4rem; //64px
-  }
+    ul {
+      list-style: none;
+      inset: 0;
+      //display: flex;
+      // align-items: flex-start; //display-flexの際、フレックスアイテムを親コンテナ内で制御
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      gap: 4rem; //64px
+      align-items: center;
+      justify-self: flex-end;
 
-  &__nav ul {
-    list-style: none;
-    inset: 0;
-    display: flex;
-    align-items: flex-start; //display-flexの際、フレックスアイテムを親コンテナ内で制御
-    gap: 4rem; //64px
-
-    li {
-      a {
-        text-decoration: none;
-        font-size: 14px; // リンクのサイズ
-        letter-spacing: 0.15em;
-        @include enFont;
-        text-transform: uppercase;
-        transition: var(--hover);
-        @include hover-effect;
+      li {
+        a {
+          text-decoration: none;
+          font-size: 14px; // リンクのサイズ
+          letter-spacing: 0.15em;
+          @include enFont;
+          text-transform: uppercase;
+          transition: var(--hover);
+          @include hover-effect;
+        }
       }
     }
   }
 
   // SNSアイコンのスタイリング
   &__sns {
-    display: flex;
+    display: grid;
     align-items: center;
+    grid-template-columns: 1fr;
     gap: 4rem;
+    justify-self: flex-end;
 
     a {
       display: inline-flex; //flexコンテナとして振る舞い、子要素を中央揃えに
     }
+  }
+}
+
+/* ハンバーガーメニューのスタイル */
+.site-nav-toggle {
+  display: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+
+  &::before,
+  &::after,
+  span {
+    content: '';
+    height: 1px;
+    width: 30px;
+    background-color: var(--color-text);
+    position: absolute;
+    transition: 0.4s var(--easeing);
+  }
+
+  span {
+    transform-origin: left center;
+  }
+
+  &::before {
+    top: calc(50% - 8px);
+  }
+
+  &::after {
+    top: calc(50% + 8px);
+  }
+}
+
+.site-nav-checkbox {
+  display: none; // チェックボックスは画面上から隠します
+}
+
+/* 1080px以下の画面幅でのスタイル */
+@media (max-width: 1080px) {
+  .site-header__container {
+    padding: 3rem;
+    justify-content: space-between; // ロゴとハンバーガーメニューを両端に配置
+  }
+
+  .site-nav-toggle {
+    display: flex; // ハンバーガーメニューを表示します
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9); // 背景色と透明度を設定
+    transform: translateX(100%); // 右側からスライドインするために初期位置を設定
+    transition: transform 0.5s ease-in-out; // スムーズな表示切り替えのためのトランジション
+
+    .site-nav-checkbox:checked ~ & {
+      transform: translateX(0);
+    }
+  }
+
+  .site-header {
+    &__nav-container {
+      display: flex;
+      align-items: center;
+      padding: 2.5rem;
+    }
+
+    &__gnav {
+      grid-template-columns: 1fr; //gridを1columnに指定
+      gap: 3.5rem; //56px
+      align-items: center;
+
+      ul {
+        grid-template-columns: 1fr;
+        gap: 3.5rem; //56px
+        justify-self: flex-start;
+
+        li {
+          a {
+            color: var(--color-white);
+          }
+        }
+      }
+    }
+
+    // SNSアイコンのスタイリング
+    &__sns {
+      gap: 3.5rem;
+      justify-self: flex-start;
+    }
+  }
+
+  .site-nav-checkbox:checked ~ .site-nav-toggle {
+    span {
+      transform: scaleX(0); // チェックボックスがチェックされたときに表示
+    }
+
+    &::before {
+      top: 50%;
+      transform: rotate(30deg);
+      background-color: var(--color-white);
+    }
+
+    &::after {
+      top: 50%;
+      transform: rotate(-30deg);
+      background-color: var(--color-white);
+    }
+  }
+  .cls-1 {
+    stroke: var(--color-white);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .site-nav {
+    width: 50%;
+    height: 100vh;
   }
 }
 
