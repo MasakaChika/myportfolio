@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const video = document.querySelector('.mv__video');
 
   function updateVideoSource() {
-    if (window.matchMedia('(max-width: 767px)').matches) {
+    if (window.matchMedia('(max-width: 480px)').matches) {
       video.src = '/assets/video/spmv.mp4';
     } else {
       video.src = '/assets/video/pcmv.mp4';

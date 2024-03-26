@@ -48,6 +48,23 @@ video {
   border: none;
 }
 
+/* ------- layout ------- */
+main {
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(auto, 1280px) minmax(2rem, 1fr);
+
+  @include for-desktop {
+    grid-template-columns: minmax(2rem, 1fr) minmax(auto, 1080px) minmax(2rem, 1fr);
+  }
+
+  @include for-tablet {
+    grid-template-columns: minmax(2rem, 1fr) minmax(auto, 680px) minmax(2rem, 1fr);
+  }
+  @include for-mobile {
+    grid-template-columns: 1.5rem 20px auto 1.5rem;
+  }
+}
+
 .section-header {
   @include enFont;
   font-size: 40px;
@@ -55,10 +72,10 @@ video {
   letter-spacing: 0.1em; //4px;
   text-transform: uppercase;
 
-  @include mq {
+  @include for-mobile {
     font-size: 24px;
-    line-height: 1; //24px
-    letter-spacing: 0.1em; //2.4px
+    line-height: 1; // 24px
+    letter-spacing: 0.1em; // 2.4px
   }
 }
 
@@ -67,11 +84,11 @@ video {
   font-size: 14px;
   line-height: 1.42;
   letter-spacing: 0.07em;
-  display: inline-block; //spanのサイズに合わせる
+  display: inline flow-root; // spanのサイズに合わせる
 
   span {
-    position: relative; //arrow(擬似要素)を配置する基準点にするため
-    left: -14px; //arrowとの関係で左に寄せる
+    position: relative; // arrow(擬似要素)を配置する基準点にするため
+    left: -14px; // arrowとの関係で左に寄せる
 
     &::before {
       content: '';
@@ -87,7 +104,7 @@ video {
       content: '';
       position: absolute; // fontに対して絶対配置
       bottom: -9px;
-      left: calc(100% + 13px); //微調整
+      left: calc(100% + 13px); // 微調整
       width: 8px; // 矢の長さ
       height: 8px; // 矢の幅
       border-right: 1px solid var(--color-text); // 右の矢の線
@@ -109,6 +126,7 @@ video {
   }
 }
 
+/* ------- svg ------- */
 #icon-instagram {
   width: 20px;
   height: 20px;
@@ -121,73 +139,72 @@ video {
   stroke-width: 1.2px;
   stroke-linecap: round;
   stroke-linejoin: round;
-  transition: stroke var(--hover-duration) var(--hover-timing-function);
 }
 
 .site-header__sns a:hover .cls-1 {
   stroke: var(--color-hover);
 }
+/* ------- /.svg ------- */
 
 /* ------- header ------- */
 .site-header {
-  width: 100%; //幅100%
-  height: 120px; //高さ120px
+  width: 100%; // 幅100%
+  height: 140px; // 高さ140px
   background: var(--header-gradation);
-  position: fixed; //固定
+  position: fixed; // 固定
   z-index: 5;
   top: 0;
   left: 0;
 
-  display: flex;
-  justify-content: center; //containerを水平方向に中央揃え
-  align-items: center; //containerを垂直方向に中央揃え
+  display: grid;
+  grid-template-columns: minmax(1.5rem, 1fr) minmax(auto, 1280px) minmax(1.5rem, 1fr);
+  justify-content: center; // containerを水平方向に中央揃え
+  align-items: center; // containerを垂直方向に中央揃え
 
   &__container {
-    width: 100%; //コンテナの幅を親要素の幅に合わせて伸縮させる
-    max-width: var(--container-width); //最大幅1080px
+    grid-column: 2;
+    width: 100%; // コンテナの幅を親要素の幅に合わせて伸縮させる
     justify-content: space-between;
     align-items: center;
-    display: flex; //.logoとnavを横に並べる
-    flex-shrink: 0; //フレックスアイテムが縮小させない
+    display: flex; // .logoとnavを横に並べる
   }
 
   &__logo a {
     display: grid;
     grid-template-columns: auto 1fr;
-    column-gap: 16px; //列のgapのみ
+    column-gap: 16px; // 列のgapのみ
     align-items: center;
     text-decoration: none;
 
     img {
       width: 24px;
       height: 24px;
-      grid-row: span 2; //2行
+      grid-row: span 2; // 2行
     }
   }
 
   &__position,
   &__name {
-    display: block; //spanはデフォルトでinlineなので、必要に応じてblockに変更
     @include enFont;
     font-size: 10px;
     line-height: 1rem;
     letter-spacing: 0.1em;
-    justify-self: start; //CSS Gridのコンテキストで使用され、個別のグリッドアイテムの水平方向の配置
+    justify-self: start; // CSS Gridのコンテキストで使用され、個別のグリッドアイテムの水平方向の配置
   }
 
   // ナビゲーションメニューのスタイリング
   &__gnav {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    gap: 4rem; //64px
+    gap: 4rem; // 64px
+
     ul {
       list-style: none;
       inset: 0;
-      //display: flex;
-      // align-items: flex-start; //display-flexの際、フレックスアイテムを親コンテナ内で制御
+
       display: grid;
       grid-template-columns: repeat(4, auto);
-      gap: 4rem; //64px
+      gap: 4rem; // 64px
       align-items: center;
       justify-self: flex-end;
 
@@ -199,7 +216,6 @@ video {
           @include enFont;
           text-transform: uppercase;
           transition: var(--hover);
-          @include hover-effect;
         }
       }
     }
@@ -214,12 +230,17 @@ video {
     justify-self: flex-end;
 
     a {
-      display: inline-flex; //flexコンテナとして振る舞い、子要素を中央揃えに
+      display: inline flex; // flexコンテナとして振る舞い、子要素を中央揃えに
     }
+  }
+
+  @include for-desktop {
+    display: grid;
+    grid-template-columns: minmax(1.5rem, 1fr) minmax(auto, 1080px) minmax(1.5rem, 1fr);
   }
 }
 
-/* ハンバーガーメニューのスタイル */
+/* ------- hamburger menu ------- */
 .site-nav-toggle {
   display: none;
   cursor: pointer;
@@ -257,13 +278,7 @@ video {
   display: none; // チェックボックスは画面上から隠します
 }
 
-/* 1080px以下の画面幅でのスタイル */
-@media (max-width: 1080px) {
-  .site-header__container {
-    padding: 3rem;
-    justify-content: space-between; // ロゴとハンバーガーメニューを両端に配置
-  }
-
+@include for-mobile-and-tablet {
   .site-nav-toggle {
     display: flex; // ハンバーガーメニューを表示します
   }
@@ -291,13 +306,13 @@ video {
     }
 
     &__gnav {
-      grid-template-columns: 1fr; //gridを1columnに指定
-      gap: 3.5rem; //56px
+      grid-template-columns: 1fr; // gridを1columnに指定
+      gap: 3.5rem; // 56px
       align-items: center;
 
       ul {
         grid-template-columns: 1fr;
-        gap: 3.5rem; //56px
+        gap: 3.5rem; // 56px
         justify-self: flex-start;
 
         li {
@@ -337,7 +352,7 @@ video {
   }
 }
 
-@include mq {
+@include for-mobile {
   .site-header {
     height: 80px;
   }
@@ -350,10 +365,11 @@ video {
     padding: 1.5rem;
   }
 }
+/* ------- /.hamburger menu ------- */
 
-// site-footer
+/* ------- footer ------- */
 .site-footer {
-  display: flex;
+  display: block flex;
   width: 100%;
   padding: 24px 0px;
   justify-content: center;
@@ -366,5 +382,92 @@ video {
     color: var(--color-white);
     font-size: 0.875rem; //14px
     line-height: normal;
+  }
+}
+
+/* ------- vertical-txt ------- */
+.vertical-category {
+  position: sticky;
+  grid-column: 1;
+  align-self: start;
+  top: 120px;
+
+  &__inner {
+    display: grid;
+    gap: 0.5rem;
+    justify-items: center; // 子要素を水平方向の中央に揃える
+  }
+
+  &__vertical,
+  &__horizontal {
+    white-space: nowrap;
+    width: 20px;
+  }
+
+  &__vertical {
+    @include jpFont;
+    font-size: 0.875rem; //14px
+    letter-spacing: 0.5em;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+
+  &__horizontal {
+    @include enFont;
+    font-size: 0.75rem; //12px
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    writing-mode: horizontal-tb;
+    transform: rotate(90deg) translateX(50%);
+    white-space: nowrap;
+  }
+
+  &__cross {
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0.5px;
+      height: 14px;
+      background-color: var(--color-text);
+      transform: translate(-50%, -50%);
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  @include for-mobile {
+    grid-column: 2;
+  }
+}
+/* ------- /.vertical-text ------- */
+
+/* ------- tag ------- */
+.works__seach-tag {
+  transition: all 0.3s ease; // Smooth transition for hover effect
+
+  &::before {
+    content: '#';
+    margin-right: 0.2em;
+    transition: all 0.3s ease; // Ensure the # symbol also transitions smoothly
+  }
+
+  &:hover {
+    color: var(--color-hover);
+
+    &::before {
+      color: var(--color-hover);
+      transform: scale(1.2);
+    }
   }
 }
