@@ -37,7 +37,7 @@
 					<li class="works__seach-tag"><a href="#">STUDIO</a></li>
 				</ul>
 			</div>
-			<div class="viewall works__all">
+			<div class="works__all animate-kochiradesu viewall">
 				<a href=""><span>View All</span></a>
 			</div>
 		</section>
@@ -54,7 +54,7 @@
 			<div class="about__text">
 				<h3>シンプルながらも深みのあるデザインで、あなたの物語を語りたい</h3>
 				<p>私の目標は、ユーザーに優しく、分かりやすい、効果的なウェブサイトを作ることです。<br />キャリアチェンジは大きな挑戦ですが、患者さんと共に歩んだ経験や緻密な作業の繰り返しは、どちらも大きな価値を持つと考えています。<br />クライアントとユーザーのニーズに寄り添い、直感的で理解しやすいサイトを作成することを目指していきます。</p>
-				<div class="viewall about__all">
+				<div class="about__all animate-kochiradesu viewall">
 					<a href=""><span>View All</span></a>
 				</div>
 			</div>

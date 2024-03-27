@@ -14,21 +14,21 @@
 
 // タブレット
 @mixin for-tablet {
-  @media (min-width: 481px) and (max-width: 959px) {
+  @media (min-width: 481px) and (max-width: 960px) {
     @content;
   }
 }
 
 // デスクトップ
 @mixin for-desktop {
-  @media (min-width: 960px) and (max-width: 1279px) {
+  @media (min-width: 961px) and (max-width: 1280px) {
     @content;
   }
 }
 
 // 大きなデスクトップ
 @mixin for-large-desktop {
-  @media (min-width: 1280px) {
+  @media (min-width: 1281px) {
     @content;
   }
 }

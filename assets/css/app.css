@@ -137,7 +137,7 @@
   grid-row: 3;
   justify-self: flex-end;
 }
-@media (min-width: 481px) and (max-width: 959px) {
+@media (min-width: 481px) and (max-width: 960px) {
   .works {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
@@ -270,7 +270,7 @@
   grid-row: 3;
   justify-self: flex-end;
 }
-@media (min-width: 481px) and (max-width: 959px) {
+@media (min-width: 481px) and (max-width: 960px) {
   .about {
     grid-template-columns: auto auto;
     gap: 1rem;
@@ -440,13 +440,14 @@ video {
 main {
   display: grid;
   grid-template-columns: minmax(2rem, 1fr) minmax(auto, 1280px) minmax(2rem, 1fr);
+  margin-top: 140px;
 }
-@media (min-width: 960px) and (max-width: 1279px) {
+@media (min-width: 961px) and (max-width: 1280px) {
   main {
     grid-template-columns: minmax(2rem, 1fr) minmax(auto, 1080px) minmax(2rem, 1fr);
   }
 }
-@media (min-width: 481px) and (max-width: 959px) {
+@media (min-width: 481px) and (max-width: 960px) {
   main {
     grid-template-columns: minmax(2rem, 1fr) minmax(auto, 680px) minmax(2rem, 1fr);
   }
@@ -454,6 +455,7 @@ main {
 @media (max-width: 480px) {
   main {
     grid-template-columns: 1.5rem 20px auto 1.5rem;
+    margin-top: 80px;
   }
 }
 
@@ -484,7 +486,6 @@ main {
   line-height: 1.42;
   letter-spacing: 0.07em;
   display: inline flow-root;
-  animation: fuwafuwa 1s linear infinite;
 }
 .viewall span {
   position: relative;
@@ -509,19 +510,51 @@ main {
   border-right: 1px solid var(--color-text);
   transform: translateX(-100%) rotate(-54deg);
 }
+.viewall:hover {
+  transform: scale(1.1, 1.1);
+}
 
-@keyframes fuwafuwa {
+.animate-kochiradesu {
+  animation: kochiradesu 2s cubic-bezier(0.42, 0, 0.27, 0.99) 0s 1;
+}
+
+@keyframes kochiradesu {
   0% {
-    transform: translateY(0);
+    transform: scale(1, 1) translate(0%, 0%);
   }
-  50% {
-    transform: translateY(-15%);
+  10% {
+    transform: scale(1, 1) translate(10%, 0%) skew(-10deg, 0deg);
+  }
+  60% {
+    transform: scale(1, 1) translate(15%, 0%) skew(-15deg, 0deg);
+  }
+  70% {
+    transform: scale(1, 1) translate(-10%, 0%) skew(10deg, 0deg);
+  }
+  80% {
+    transform: scale(1, 1) translate(10%, 0%) skew(-10deg, 0deg);
+  }
+  80% {
+    transform: scale(1, 1) translate(5%, 0%) skew(-5deg, 0deg);
+  }
+  90% {
+    transform: scale(1, 1) translate(-5%, 0%) skew(5deg, 0deg);
   }
   100% {
-    transform: translateY(0);
+    transform: scale(1, 1) translate(0%, 0%);
   }
+  /*
+   0% {
+     opacity: 0;
+     transform: translateX(-50px);
+   }
+   100% {
+     opacity: 1;
+     transform: translateX(0);
+   }
+  */
 }
-/* ------- svg ------- */
+/*  ------- svg ------- */
 #icon-instagram {
   width: 20px;
   height: 20px;
@@ -619,7 +652,7 @@ main {
 .site-header__sns a {
   display: inline flex;
 }
-@media (min-width: 960px) and (max-width: 1279px) {
+@media (min-width: 961px) and (max-width: 1280px) {
   .site-header {
     display: grid;
     grid-template-columns: minmax(1.5rem, 1fr) minmax(auto, 1080px) minmax(1.5rem, 1fr);
@@ -757,6 +790,7 @@ main {
 }
 .vertical-category__inner {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 0.5rem;
   justify-items: center;
 }
@@ -807,7 +841,9 @@ main {
 }
 @media (max-width: 480px) {
   .vertical-category {
-    grid-column: 2;
+    grid-column: 1;
+    top: 80px;
+    margin-left: 1rem;
   }
 }
 
@@ -835,13 +871,19 @@ main {
   grid-template-columns: 1fr;
   row-gap: 196px;
 }
+@media (max-width: 480px) {
+  .archive-container {
+    grid-column: 3;
+  }
+}
 
 .archive-works {
-  margin-top: 140px;
+  grid-column: 2;
   grid-row: auto;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 1rem;
+  padding-bottom: 20vh;
 }
 .archive-works__title {
   grid-row: 1;
@@ -883,12 +925,30 @@ main {
   font-size: 14px;
   letter-spacing: 0.083em;
 }
+@media (max-width: 480px) {
+  .archive-works {
+    grid-column: 3;
+    padding-bottom: 10vh;
+  }
+}
 
 .archive-cards {
+  grid-column: 2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-self: center;
   gap: 20px;
+}
+@media (min-width: 481px) and (max-width: 960px) {
+  .archive-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .archive-cards {
+    grid-column: 2/4;
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {

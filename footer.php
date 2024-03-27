@@ -1,8 +1,9 @@
     <!-- footer -->
     <footer class="site-footer">
-      <small>&copy;<span id="year"></span> Masaka Chika All rights reserved. </small>
+    	<small>&copy; <?= date("Y"); ?> Masaka Chika All rights reserved. </small>
     </footer>
 
-		<?php wp_footer(); ?>
-  </body>
-</html>
+    <?php wp_footer(); ?>
+    </body>
+
+    </html>

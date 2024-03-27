@@ -65,8 +65,6 @@
 
   display: grid;
   grid-template-columns: 1fr;
-  //display: block flex;
-  //flex-direction: column; //縦方向に並べる
   gap: 30vh; //セクション間の間隔
 
   @include for-mobile {

@@ -1,16 +1,23 @@
 @use '../mixins' as *;
+
 .archive-container {
   grid-column: 2;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 196px;
+
+  @include for-mobile {
+    grid-column: 3;
+  }
 }
 .archive-works {
-  margin-top: 140px;
+  grid-column: 2;
+  // margin-top: 140px;
   grid-row: auto;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 1rem;
+  padding-bottom: 20vh;
 
   &__title {
     grid-row: 1;
@@ -53,13 +60,27 @@
       }
     }
   }
+  @include for-mobile {
+    grid-column: 3;
+    padding-bottom: 10vh;
+  }
 }
 
 .archive-cards {
+  grid-column: 2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-self: center;
   gap: 20px;
+
+  @include for-tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include for-mobile {
+    grid-column: 2 / 4;
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {

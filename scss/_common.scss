@@ -52,6 +52,7 @@ video {
 main {
   display: grid;
   grid-template-columns: minmax(2rem, 1fr) minmax(auto, 1280px) minmax(2rem, 1fr);
+  margin-top: 140px;
 
   @include for-desktop {
     grid-template-columns: minmax(2rem, 1fr) minmax(auto, 1080px) minmax(2rem, 1fr);
@@ -62,6 +63,7 @@ main {
   }
   @include for-mobile {
     grid-template-columns: 1.5rem 20px auto 1.5rem;
+    margin-top: 80px;
   }
 }
 
@@ -111,22 +113,54 @@ main {
       transform: translateX(-100%) rotate(-54deg); // 位置を調整して45度に回転
     }
   }
-  animation: fuwafuwa 1s linear infinite;
+  &:hover {
+    transform: scale(1.1, 1.1);
+  }
 }
 
-@keyframes fuwafuwa {
+.animate-kochiradesu {
+  animation: kochiradesu 2s cubic-bezier(0.42, 0, 0.27, 0.99) 0s 1;
+}
+
+@keyframes kochiradesu {
   0% {
-    transform: translateY(0);
+    transform: scale(1, 1) translate(0%, 0%);
   }
-  50% {
-    transform: translateY(-15%);
+  10% {
+    transform: scale(1, 1) translate(10%, 0%) skew(-10deg, 0deg);
+  }
+  60% {
+    transform: scale(1, 1) translate(15%, 0%) skew(-15deg, 0deg);
+  }
+  70% {
+    transform: scale(1, 1) translate(-10%, 0%) skew(10deg, 0deg);
+  }
+  80% {
+    transform: scale(1, 1) translate(10%, 0%) skew(-10deg, 0deg);
+  }
+  80% {
+    transform: scale(1, 1) translate(5%, 0%) skew(-5deg, 0deg);
+  }
+  90% {
+    transform: scale(1, 1) translate(-5%, 0%) skew(5deg, 0deg);
   }
   100% {
-    transform: translateY(0);
+    transform: scale(1, 1) translate(0%, 0%);
   }
+
+  /*
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+	*/
 }
 
-/* ------- svg ------- */
+/*  ------- svg ------- */
 #icon-instagram {
   width: 20px;
   height: 20px;
@@ -394,6 +428,7 @@ main {
 
   &__inner {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 0.5rem;
     justify-items: center; // 子要素を水平方向の中央に揃える
   }
@@ -447,7 +482,9 @@ main {
   }
 
   @include for-mobile {
-    grid-column: 2;
+    grid-column: 1;
+    top: 80px;
+    margin-left: 1rem;
   }
 }
 /* ------- /.vertical-text ------- */
