@@ -4,7 +4,7 @@
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>MasakaChika PortfolioSite</title>
+	<!-- <title><?php bloginfo('name'); ?></title> -->
 	<meta name="discription" content="Webデザイナー・コーダー" />
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />

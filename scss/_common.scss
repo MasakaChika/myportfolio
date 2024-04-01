@@ -52,7 +52,7 @@ video {
 main {
   display: grid;
   grid-template-columns: minmax(2rem, 1fr) minmax(auto, 1280px) minmax(2rem, 1fr);
-  margin-top: 140px;
+  // margin-top: 140px;
 
   @include for-desktop {
     grid-template-columns: minmax(2rem, 1fr) minmax(auto, 1080px) minmax(2rem, 1fr);
@@ -63,7 +63,7 @@ main {
   }
   @include for-mobile {
     grid-template-columns: 1.5rem 20px auto 1.5rem;
-    margin-top: 80px;
+    //   margin-top: 80px;
   }
 }
 
@@ -81,13 +81,50 @@ main {
   }
 }
 
+.section-subheader {
+  @include enFont;
+  font-size: 24px;
+  line-height: 24px; /* 100% */
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+
+  @include for-mobile {
+    font-size: 24px;
+    line-height: 1; // 24px
+    letter-spacing: 0.1em; // 2.4px
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: auto;
+    height: 1px; // 下線の太さ
+    background: var(--color-text); // 下線の色
+    z-index: -1;
+    transition: all 0.8s;
+  }
+}
+
 .viewall {
   @include enFont;
   font-size: 14px;
   line-height: 1.42;
   letter-spacing: 0.07em;
-  display: inline flow-root; // spanのサイズに合わせる
+  text-transform: uppercase;
+  // display: inline flow-root; // spanのサイズに合わせる
+  > a {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2つの子要素を横並びに */
+    align-items: center; /* 縦方向の中央揃え */
+    gap: 20px; /* `p` タグと `.arrow` の間隔 */
+  }
 
+  p {
+    grid-column: 1;
+  }
+  /*
   span {
     position: relative; // arrow(擬似要素)を配置する基準点にするため
     left: -14px; // arrowとの関係で左に寄せる
@@ -116,48 +153,67 @@ main {
   &:hover {
     transform: scale(1.1, 1.1);
   }
+	*/
 }
 
-.animate-kochiradesu {
-  animation: kochiradesu 2s cubic-bezier(0.42, 0, 0.27, 0.99) 0s 1;
+.animate-slide {
+  animation: animate-slide 2s cubic-bezier(0.42, 0, 0.27, 0.99) 0s 1;
 }
 
-@keyframes kochiradesu {
-  0% {
-    transform: scale(1, 1) translate(0%, 0%);
-  }
-  10% {
-    transform: scale(1, 1) translate(10%, 0%) skew(-10deg, 0deg);
-  }
-  60% {
-    transform: scale(1, 1) translate(15%, 0%) skew(-15deg, 0deg);
-  }
-  70% {
-    transform: scale(1, 1) translate(-10%, 0%) skew(10deg, 0deg);
-  }
-  80% {
-    transform: scale(1, 1) translate(10%, 0%) skew(-10deg, 0deg);
-  }
-  80% {
-    transform: scale(1, 1) translate(5%, 0%) skew(-5deg, 0deg);
-  }
-  90% {
-    transform: scale(1, 1) translate(-5%, 0%) skew(5deg, 0deg);
-  }
+@keyframes animate-slide {
+  0%,
   100% {
-    transform: scale(1, 1) translate(0%, 0%);
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 
-  /*
+  50% {
+    transform: translateX(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+}
+
+/* ------- arrow ------- */
+.arrow {
+  grid-column: 2;
+  grid-row: 1;
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+
+.arrow span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-bottom: 1px solid var(--color-text);
+  border-right: 1px solid var(--color-text);
+  transform: rotate(45deg);
+  margin: -15px;
+  animation: animate-arrow 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate-arrow {
   0% {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: rotate(45deg) translate(-20px, -20px);
   }
-  100% {
+
+  50% {
     opacity: 1;
-    transform: translateX(0);
   }
-	*/
+
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
 }
 
 /*  ------- svg ------- */
@@ -191,7 +247,7 @@ main {
   left: 0;
 
   display: grid;
-  grid-template-columns: minmax(1.5rem, 1fr) minmax(auto, 1280px) minmax(1.5rem, 1fr);
+  grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1280px) minmax(1.5rem, 1fr);
   justify-content: center; // containerを水平方向に中央揃え
   align-items: center; // containerを垂直方向に中央揃え
 
@@ -394,10 +450,6 @@ main {
     width: 50%;
     height: 100vh;
   }
-
-  .site-header__container {
-    padding: 1.5rem;
-  }
 }
 /* ------- /.hamburger menu ------- */
 
@@ -506,5 +558,30 @@ main {
       color: var(--color-hover);
       transform: scale(1.2);
     }
+  }
+}
+
+/* ------- swiper ------- */
+/* ページネーションのサイズと色 */
+.swiper-pagination-bullet {
+  background-color: var(--color-text-soft);
+}
+
+.xo-slider .swiper-slide > img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+/* ------- br ------- */
+/* デフォルトでは`.mobile-only-br`クラスを持つ`<br>`を表示 */
+.mobile-only-br {
+  display: none;
+}
+
+/* スマートフォン表示時にのみ`.mobile-only-br`クラスを持つ`<br>`を表示 */
+@include for-mobile {
+  .mobile-only-br {
+    display: inline;
   }
 }

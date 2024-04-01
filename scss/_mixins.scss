@@ -47,6 +47,14 @@
   color: var(--color-text);
 }
 
+[lang='en'] {
+  @include enFont;
+}
+
+[lang='ja'] {
+  @include jpFont;
+}
+
 @mixin textFont {
   font-family: var(--font-praimary);
   font-weight: 400;

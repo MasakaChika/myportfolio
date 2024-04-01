@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 <main>
-
-	<!-- vertical text -->
+	<!-- vertical category -->
 	<div class="vertical-category">
 		<div class="vertical-category__inner">
 			<span class="vertical-category__vertical">作品集</span>
@@ -9,7 +8,8 @@
 			<span class="vertical-category__horizontal">works</span>
 		</div>
 	</div>
-	<!-- /.vertical text -->
+	<!-- /.vertical category -->
+
 	<!-- works -->
 	<section class="archive-works">
 		<header class="section-header archive-works__title">works</header>
@@ -22,7 +22,6 @@
 				<li class="works__seach-tag"><a href="#">Logo</a></li>
 				<li class="works__seach-tag"><a href="#">Banner</a></li>
 				<li class="works__seach-tag"><a href="#">Icon</a></li>
-				<li class="works__seach-tag"><a href="#">HTML+CSS</a></li>
 				<li class="works__seach-tag"><a href="#">JavaScript</a></li>
 				<li class="works__seach-tag"><a href="#">WordPress</a></li>
 				<li class="works__seach-tag"><a href="#">Illustrator</a></li>
@@ -74,7 +73,17 @@
 		</div>
 	</section>
 
-	<div class="pagenation"></div>
+	<div class="pagenation">
+		<?php
+		$args = array(
+			'mid_size' => 1,
+			'prev_text' => '&lt;&lt;前へ',
+			'next_text' => '次へ&gt;&gt;',
+			'screen_reader_text' => ' ',
+		);
+		the_posts_pagination($args);
+		?>
+	</div>
 </main>
 
 
