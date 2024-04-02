@@ -126,7 +126,7 @@ const mySwiper = new Swiper('.swiper', {
   loop: true,
   loopAdditionalSlides: 1,
 
-  speed: 600,
+  speed: 1600,
 
   autoplay: {
     delay: 3000,

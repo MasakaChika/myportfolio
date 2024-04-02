@@ -27,6 +27,16 @@ function my_theme_support()
 }
 add_action('after_setup_theme', 'my_theme_support');
 
+// サイドメニューを非表示
+function remove_menus()
+{
+	remove_menu_page('edit.php'); // 投稿
+	remove_menu_page('edit-comments.php'); // コメント
+}
+add_action('admin_menu', 'remove_menus', 999);
+
+
+
 /**
  * <title>の区切り文字を変更する
  *
@@ -125,3 +135,68 @@ function post_has_archive($args, $post_type)
 	return $args;
 }
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
+
+function cptui_register_my_cpts_work()
+{
+
+	/**
+	 * Post Type: works.
+	 */
+
+	$labels = [
+		"name" => esc_html__("works", "custom-post-type-ui"),
+		"singular_name" => esc_html__("work", "custom-post-type-ui"),
+	];
+
+	$args = [
+		"label" => esc_html__("works", "custom-post-type-ui"),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => false,
+		"rewrite" => ["slug" => "work", "with_front" => true],
+		"query_var" => true,
+		"menu_icon" => "dashicons-welcome-add-page",
+		"supports" => ["title", "editor", "thumbnail", "excerpt", "trackbacks", "custom-fields", "revisions"],
+		"taxonomies" => ["design-tech-tools"],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type("work", $args);
+}
+
+add_action('init', 'cptui_register_my_cpts_work');
+
+// 特定のカスタム投稿タイプのアーカイブページである場合、そのカスタム投稿タイプの複数形ラベル（label）をタイトルとして使用
+// 将来的に他のカスタム投稿タイプを追加した場合にも、各カスタム投稿タイプのlabelに基づいたタイトルが表示される
+add_filter('get_the_archive_title', function ($title) {
+	// 現在のページが任意のカスタム投稿タイプのアーカイブページであるかどうかをチェックする
+	if (is_post_type_archive()) {
+
+		// 現在のクエリからカスタム投稿タイプのスラッグを取得します。
+		$post_type = get_query_var('post_type');
+
+		// スラッグを使用して、そのカスタム投稿タイプのオブジェクトを取得
+		$post_type_object = get_post_type_object($post_type);
+
+		// カスタム投稿タイプオブジェクトからnameラベル（通常は複数形）を取得し、それをエスケープしてタイトルとして設定
+		if ($post_type_object) {
+			$title = esc_html($post_type_object->labels->name);
+		}
+	}
+	return $title;
+});

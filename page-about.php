@@ -1,14 +1,10 @@
 <?php get_header(); ?>
 <main>
-	<!-- vertical category -->
-	<div class="vertical-category">
-		<div class="vertical-category__inner">
-			<span class="vertical-category__vertical">私について</span>
-			<span class="vertical-category__cross"></span>
-			<span class="vertical-category__horizontal">about</span>
-		</div>
-	</div>
-	<!-- /.vertical category -->
+	<?php get_template_part('template-parts/vertical-category', null, array(
+		'vertical' => '私について',
+		'horizontal' => 'about'
+	)); ?>
+
 
 	<!-- about -->
 	<section class="page-about">

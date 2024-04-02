@@ -1,3 +1,5 @@
+@use '../mixins' as *;
+
 .enFont,
 .jpFont {
   font-size: 40px;
@@ -8,4 +10,141 @@
 .work {
   grid-column: 2;
   padding-top: 140px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  &__title {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  &__tags {
+    grid-column: 1;
+    grid-row: 2; // titleの下
+    @include enFont;
+    font-size: 0.75rem; // 12px
+    line-height: 1.66; // 20px
+    letter-spacing: 0.17em; // 0.2px
+  }
+
+  &__img {
+    grid-column: 1;
+    grid-row: 3;
+    img {
+      width: 100%;
+      height: auto; // 比率keep
+    }
+  }
+
+  &__content {
+    grid-column: 1;
+    grid-row: 4;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    &-tools {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    &-period {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    &-concepts {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    &-points {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    &-info {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+
+  @include for-mobile {
+    grid-column: 3;
+    &__title {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    &__tags {
+      grid-column: 1;
+      grid-row: 2; // titleの下
+      @include enFont;
+      font-size: 0.75rem; // 12px
+      line-height: 1.66; // 20px
+      letter-spacing: 0.17em; // 0.2px
+    }
+
+    &__img {
+      grid-column: 1;
+      grid-row: 3;
+      img {
+        width: 100%;
+        height: auto; // 比率keep
+      }
+    }
+
+    &__content {
+      width: 100%;
+      grid-column: 1;
+      grid-row: 4;
+
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+
+      &-tools {
+        grid-row: 1;
+      }
+
+      &-period {
+        grid-row: 2;
+      }
+
+      &-concepts {
+        grid-row: 3;
+      }
+
+      &-points {
+        grid-column: 1;
+        grid-row: 4;
+      }
+
+      &-info {
+        grid-column: 1;
+        grid-row: 5;
+      }
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 0.4rem;
+  &-title {
+    @include enFont;
+  }
+
+  &-text {
+    @include textFont;
+  }
+}
+
+.post__pagination {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
 }

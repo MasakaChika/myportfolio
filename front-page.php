@@ -41,17 +41,17 @@
 					<!-- Slides -->
 					<div class="swiper-slide">
 						<div class="swiper-slide__img">
-							<img src=<?= get_theme_file_uri('/assets/img/portfolio_thumbnail.png'); ?> alt="portfolio">
+							<img src=<?= get_theme_file_uri('assets/img/portfoilo.png'); ?> alt="portfolio">
 						</div>
 					</div>
 					<div class="swiper-slide">
 						<div class="swiper-slide__img">
-							<img src=<?= get_theme_file_uri('/assets/img/portfolio_thumbnail.png'); ?> alt="portfolio">
+							<img src=<?= get_theme_file_uri('assets/img/icons.png'); ?> alt="portfolio">
 						</div>
 					</div>
 					<div class="swiper-slide">
 						<div class="swiper-slide__img">
-							<img src=<?= get_theme_file_uri('/assets/img/portfolio_thumbnail.png'); ?> alt="portfolio">
+							<img src=<?= get_theme_file_uri('assets/img/logo-thumbnail.png'); ?> alt="portfolio">
 						</div>
 					</div>
 				</div>

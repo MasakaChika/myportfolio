@@ -27,40 +27,67 @@
 		$related_information = get_post_meta($post_id, 'related-information', true);
 		$github = get_post_meta($post_id, 'github', true);
 		$gallery = get_post_meta($post_id, 'gallery', true); // 提案したフィールド名を使用
-		$post_date = get_the_date('Y-n');
-		?>
+		$post_date = get_the_date('Y-n'); ?>
 
+		<!-- tagを取得 -->
 		<div class="work__tags">
 			<?php
-			$post_tags = get_the_tags($post->ID);
-			if ($post_tags) {
-				echo '<ul>'; // <ul>タグでリストを開始
-				foreach ($post_tags as $tag) {
-					echo '<li>' . $tag->name . '</li>'; // 各タグ項目を<li>で囲む
+			// 現在の投稿に紐づいたタグを取得
+			$tags = get_the_tags($post_id);
+
+			if ($tags) {
+				echo '<ul>';
+				foreach ($tags as $tag) {
+					echo '<li>' . esc_html($tag->name) . '</li>'; // タグ名をエスケープして表示
 				}
-				echo '</ul>'; // <ul>タグでリストを閉じる
+				echo '</ul>';
 			}
 			?>
 		</div>
-
+		<!-- img -->
 		<div class="work__img"><?= '<img src="esc_url($work_img)" alt="メイン画像">'; ?></div>
-		<div class="work__content">
-			<time datetime="<?= "$post_date"; ?>"></time>
-			<div class="content">
-				<div class="content-title">Tools</div>
+		<!-- 投稿年月 -->
+		<time datetime="<?= "$post_date"; ?>"></time>
+
+		<!-- 詳細内容 -->
+		<div class="work__content ">
+			<div class="work__content-tools content">
+				<h3 class="content-title">Tools</h3>
 				<p class="content-text"><?= esc_html($tools); ?></p>
-				<div class="content-title">Period</div>
-				<p class="content-text"><?= esc_html($period); ?></p>
-				<div class="content-title">Issues/Concepts</div>
-				<p class="content-text"><?= esc_html($concepts); ?></p>
-				<div class="content-title">Points</div>
-				<p class="content-text"><?= esc_html($point); ?></p>
-				<div class="content-title">Related information</div>
-				<p class="content-text"><?= esc_html($related_information); ?></p>
 			</div>
-		</div>
+
+			<div class="work__content-period content">
+				<h3 class="content-title">Period</h3>
+				<p class="content-text"><?= esc_html($period); ?></p>
+			</div>
+
+			<div class="work__content-concepts content">
+				<h3 class="content-title">Issues/Concepts</h3>
+				<p class="content-text"><?= esc_html($concepts); ?></p>
+			</div>
+
+			<div class="work__content-points content">
+				<h3 class="content-title">Points</h3>
+				<p class="content-text"><?= esc_html($point); ?></p>
+			</div>
+
+			<div class="work__content-info">
+				<h3 class="content-title">Related information</h3>
+				<!-- 入力がある場合のみ表示にする -->
+				<ul>
+					<li>
+						<?= esc_html($related_information); ?>
+					</li>
+					<li>
+						<?= esc_html($github); ?>
+					</li>
+				</ul>
+			</div>
+			<!-- 参考画像も入力がある場合のみ表示にする -->
+
 
 	</section>
+	<!-- pagenation -->
 	<div class="post__pagination">
 		<?php $nextpost = get_adjacent_post(false, '', false);
 		if ($nextpost) : ?>
