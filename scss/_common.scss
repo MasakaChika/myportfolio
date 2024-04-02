@@ -108,54 +108,25 @@ main {
 }
 
 .viewall {
-  @include enFont;
-  font-size: 14px;
-  line-height: 1.42;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  // display: inline flow-root; // spanのサイズに合わせる
-  > a {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2つの子要素を横並びに */
-    align-items: center; /* 縦方向の中央揃え */
-    gap: 20px; /* `p` タグと `.arrow` の間隔 */
-  }
+  a {
+    // display: grid;
+    display: flex;
+    // grid-template-columns: repeat(2, 1fr); // 2つの子要素を横並びに
+    align-items: center; //縦方向の中央揃え
+    gap: 2rem; // `p` タグと `.arrow` の間隔
 
-  p {
-    grid-column: 1;
-  }
-  /*
-  span {
-    position: relative; // arrow(擬似要素)を配置する基準点にするため
-    left: -14px; // arrowとの関係で左に寄せる
+    //hoverした時の挙動
 
-    &::before {
-      content: '';
-      position: absolute; // fontに対して絶対配置
-      width: calc(100% + 14px); // spanの幅に長さを足す
-      height: 1px;
-      background-color: var(--color-text);
-      bottom: -5px; // spanの下に配置
-      left: 0;
-    }
-
-    &::after {
-      content: '';
-      position: absolute; // fontに対して絶対配置
-      bottom: -9px;
-      left: calc(100% + 13px); // 微調整
-      width: 8px; // 矢の長さ
-      height: 8px; // 矢の幅
-      border-right: 1px solid var(--color-text); // 右の矢の線
-      transform: translateX(-100%) rotate(-54deg); // 位置を調整して45度に回転
+    p {
+      grid-column: 1;
+      @include enFont;
+      font-size: 14px;
+      line-height: 1.42;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
     }
   }
-  &:hover {
-    transform: scale(1.1, 1.1);
-  }
-	*/
 }
-
 .animate-slide {
   animation: animate-slide 2s cubic-bezier(0.42, 0, 0.27, 0.99) 0s 1;
 }
@@ -183,12 +154,12 @@ main {
 
 .arrow span {
   display: block;
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   border-bottom: 1px solid var(--color-text);
   border-right: 1px solid var(--color-text);
   transform: rotate(45deg);
-  margin: -15px;
+  margin: -4px;
   animation: animate-arrow 2s infinite;
 }
 

@@ -59,7 +59,7 @@
 .mv {
   grid-column: 2;
   margin-top: 120px;
-  height: 85vh;
+  height: 90vh;
   display: grid;
   place-items: center; //水平および垂直方向の中央揃え
 
@@ -75,7 +75,7 @@
     @include enFont;
     text-align: right;
     font-size: 1.5rem; //24px
-    line-height: normal;
+    line-height: 1.5;
     letter-spacing: 0.07em; // 1.68px
     span {
       display: inline-block;
@@ -304,8 +304,8 @@
 
     h3 {
       grid-row: 1;
-      @include textFont;
-      font-size: 1rem;
+      @include jpFont;
+      font-size: 1.2rem;
       font-weight: 500;
       line-height: 1.25; // 20px
       letter-spacing: 0.075em; // 0.2px

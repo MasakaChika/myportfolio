@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+
+
 <main>
 	<!-- vertical category -->
 	<div class="vertical-category">
@@ -9,10 +11,12 @@
 		</div>
 	</div>
 	<!-- /.vertical category -->
-
+	<?php if (have_posts()): ?>
 	<!-- works -->
 	<section class="archive-works">
-		<header class="section-header archive-works__title">works</header>
+		<header class="section-header archive-works__title">
+			<?php the_archive_title('<h1 class="page-title"></h1>'); ?>
+		works</header>,
 		<div class="archive-works__search">
 			<span>search</span>
 			<hr />
@@ -35,6 +39,9 @@
 
 
 	<section class="archive-cards">
+	<?php while (have_posts()): ?>
+		<?php the_post();
+		get_template_part('excerpt') ?>
 		<div class="card">
 			<div class="card__thumbnail"></div>
 		</div>

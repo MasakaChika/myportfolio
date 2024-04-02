@@ -35,13 +35,13 @@
 			<div class="page-about__content">
 				<span class="page-about__content-label">Concept</span>
 				<h3 class="page-about__content-title">UI・UXデザインの探求</h3>
-				<p class="page-about__content-text">シンプルながらも深みを持つデザインを心がけ、UI・UXの追求に励み、形やレイアウトに注目し、ユーザーに必要な情報が伝わるよう努力しています。<br>これらの要素を組み合わせ、ユーザーにとって最適な体験を提供することを目指しています。</p>
+				<p class="page-about__content-text">シンプルながらも深みを持つデザインを心がけています。UI・UXを追求し、形やレイアウトを考え、ユーザーに必要な情報が伝わるよう努力しています。<br>これらの要素を組み合わせ、ユーザーにとって最適な体験を提供することを目指しています。</p>
 			</div>
 			<hr>
 			<div class="page-about__content">
 				<span class="page-about__content-label">Goals</span>
 				<h3 class="page-about__content-title">デザインとコーディング</h3>
-				<p class="page-about__content-text">インタープランITスクール新宿校でコーディングを学んでいくのち、コーダーとしのスキルもしっかりと身につけたいと考えるようになりました<br><br>デザインの概念からコーディングの具体的な実装に至るまでのプロセスをカバーできるよう幅広い知識を習得し、実務に活かせる能力を身につけることに専念したいと考えています。</p>
+				<p class="page-about__content-text">インタープランITスクール新宿校でコーディングを学んでいくのち、コーダーとしのスキルもしっかりと身につけたいと考えるようになりました。<br><br>デザインの概念からコーディングの具体的な実装に至るまでのプロセスをカバーできるよう幅広い知識を習得し、実務に活かせる能力を身につけていきたいと考えています。</p>
 			</div>
 		</div>
 	</section>
@@ -95,7 +95,8 @@
 		</div>
 
 		<div class="strengths__img">
-			<img src="<?= get_theme_file_uri('/assets/img/strengths.png'); ?>" alt="ベージュの毛糸で編まれた手編みのセーター">
+			<picture class="strengths__img-photo"><img src="<?= get_theme_file_uri('/assets/img/strengths.png'); ?>" alt="ベージュの毛糸で編まれた手編みのセーター"></picture>
+			<!-- <img class="strengths__img-frame" src="<?= get_theme_file_uri('/assets/img/frame.png'); ?>" alt="写真を囲むフレーム"> -->
 		</div>
 
 		<div class="strengths__certified">

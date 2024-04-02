@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html <?php language_attributes(); ?>>
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
@@ -32,22 +32,16 @@
 
 			<div class="site-nav site-header__nav-container">
 				<nav class="site-header__gnav">
-					<ul class="site-header__nav">
-						<li>
-							<a href="<?= home_url() ?>">home</a>
-						</li>
-						<li>
-							<a href="<?= home_url('/works/') ?>">works</a>
-						</li>
-						<li>
-							<a href="<?= home_url('/about/') ?>">about</a>
-						</li>
-						<li>
-							<a href="<?= home_url('/contact/') ?>">contact</a>
-						</li>
-					</ul>
+					<?php
+					$args = [
+						'menu' => 'grobal-navigation',
+						'menu_class' => 'site-header__nav',
+						'container' => false,
+					];
+					wp_nav_menu($args);
+					?>
 					<div class="site-header__sns">
-						<a href="https://www.instagram.com/masaka_chika" target="_blank">
+						<a href="https://www.instagram.com/chocostagram_img" target="_blank">
 							<svg id="icon-instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 								<g id="openmoji:instagram">
 									<path id="Vector" class="cls-1" d="M17.42.25H6.58C3.08.25.25,3.08.25,6.58v10.84c0,3.5,2.83,6.33,6.33,6.33h10.84c3.5,0,6.33-2.83,6.33-6.33V6.58c0-3.5-2.83-6.33-6.33-6.33Z" />

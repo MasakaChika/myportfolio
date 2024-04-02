@@ -292,7 +292,7 @@
 .mv {
   grid-column: 2;
   margin-top: 120px;
-  height: 85vh;
+  height: 90vh;
   display: grid;
   place-items: center;
   /*
@@ -337,7 +337,7 @@
   color: var(--color-text);
   text-align: right;
   font-size: 1.5rem;
-  line-height: normal;
+  line-height: 1.5;
   letter-spacing: 0.07em;
 }
 .mv__msg span {
@@ -515,11 +515,11 @@
 }
 .about__text h3 {
   grid-row: 1;
-  font-family: var(--font-praimary);
-  font-weight: 400;
+  font-family: var(--font-title-jp);
+  font-weight: 500;
   font-style: normal;
   color: var(--color-text);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: 0.075em;
@@ -844,7 +844,13 @@ main {
   transition: all 0.8s;
 }
 
-.viewall {
+.viewall a {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.viewall a p {
+  grid-column: 1;
   font-family: var(--font-title-en);
   font-weight: 400;
   font-style: normal;
@@ -853,45 +859,6 @@ main {
   line-height: 1.42;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  /*
-   span {
-     position: relative; // arrow(擬似要素)を配置する基準点にするため
-     left: -14px; // arrowとの関係で左に寄せる
-
-     &::before {
-       content: '';
-       position: absolute; // fontに対して絶対配置
-       width: calc(100% + 14px); // spanの幅に長さを足す
-       height: 1px;
-       background-color: var(--color-text);
-       bottom: -5px; // spanの下に配置
-       left: 0;
-     }
-
-     &::after {
-       content: '';
-       position: absolute; // fontに対して絶対配置
-       bottom: -9px;
-       left: calc(100% + 13px); // 微調整
-       width: 8px; // 矢の長さ
-       height: 8px; // 矢の幅
-       border-right: 1px solid var(--color-text); // 右の矢の線
-       transform: translateX(-100%) rotate(-54deg); // 位置を調整して45度に回転
-     }
-   }
-   &:hover {
-     transform: scale(1.1, 1.1);
-   }
-  */
-}
-.viewall > a {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2つの子要素を横並びに */
-  align-items: center; /* 縦方向の中央揃え */
-  gap: 20px; /* `p` タグと `.arrow` の間隔 */
-}
-.viewall p {
-  grid-column: 1;
 }
 
 .animate-slide {
@@ -918,12 +885,12 @@ main {
 
 .arrow span {
   display: block;
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   border-bottom: 1px solid var(--color-text);
   border-right: 1px solid var(--color-text);
   transform: rotate(45deg);
-  margin: -15px;
+  margin: -4px;
   animation: animate-arrow 2s infinite;
 }
 
@@ -1372,7 +1339,7 @@ main {
   width: 345px;
   height: 345px;
   flex-shrink: 0;
-  background-color: var(--color-white);
+  background-image: url(assets/img/thumnail-bg.png) no-repeat;
   display: block grid;
   place-items: center;
 }
@@ -1477,7 +1444,7 @@ main {
   font-style: normal;
   font-weight: 350;
   line-height: 2;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.2em;
 }
 .page-about__info {
   display: grid;
@@ -1567,9 +1534,9 @@ main {
     font-weight: 400;
     font-style: normal;
     color: var(--color-text);
+    font-size: 10px;
     font-weight: 300;
     line-height: 1.5;
-    letter-spacing: 0.06em;
   }
   .page-about__info {
     display: grid;
@@ -1784,11 +1751,26 @@ hr {
   align-self: center;
   justify-self: center;
 }
-.strengths__img img {
-  width: 100%;
+.strengths__img-photo img {
   max-width: 383px;
+  width: 100%;
   height: auto;
   border-radius: 90%;
+  position: relative;
+  /* ------- kurukuru ------- */
+}
+.strengths__img-photo img:after {
+  content: "";
+  background-image: url("../../assets/img/frame.png");
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: center center no-repeat;
+  background-size: 98% auto;
+  pointer-events: none;
+  animation: 60s linear infinite rotation;
 }
 @media (max-width: 959px) {
   .strengths {
@@ -1817,23 +1799,6 @@ hr {
   .strengths {
     grid-column: 3;
   }
-}
-
-/* ------- kurukuru ------- */
-.product-lineup__item .image picture::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  padding-top: 100%;
-  background: center center no-repeat;
-  background-size: 98% auto;
-  pointer-events: none;
-  -webkit-animation: 60s linear infinite rotation;
-  animation: 60s linear infinite rotation;
 }
 
 .enFont,

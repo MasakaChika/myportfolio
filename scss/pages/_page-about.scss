@@ -44,7 +44,7 @@
       font-style: normal;
       font-weight: 350;
       line-height: 2; // 24px
-      letter-spacing: 0.02em; // 0.24px
+      letter-spacing: 0.2em; // 2.4px
     }
   }
 
@@ -128,9 +128,9 @@
       }
       p {
         @include textFont;
+        font-size: 10px;
         font-weight: 300;
         line-height: 1.5; // 15px
-        letter-spacing: 0.06em; // 0.6px
       }
     }
 
@@ -147,6 +147,7 @@
       grid-template-rows: repeat(3, auto);
       row-gap: 0.5rem;
       height: auto;
+
       &-label {
         @include enFont;
         color: var(--color-gray);
@@ -341,14 +342,31 @@ hr {
     align-self: center;
     justify-self: center;
 
-    img {
-      width: 100%;
-      max-width: 383px;
-      height: auto;
-      border-radius: 90%;
+    &-photo {
+      img {
+        max-width: 383px;
+        width: 100%; //親要素に合わせて広がる
+        height: auto; //アスペクト比を保つ
+        border-radius: 90%;
+        position: relative;
+
+        /* ------- kurukuru ------- */
+        &:after {
+          content: '';
+          background-image: url('../../assets/img/frame.png');
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background: center center no-repeat;
+          background-size: 98% auto;
+          pointer-events: none;
+          animation: 60s linear infinite rotation;
+        }
+      }
     }
   }
-
   @include for-mobile-and-tablet {
     display: grid;
     grid-template-columns: 1fr;
@@ -377,21 +395,4 @@ hr {
   @include for-mobile {
     grid-column: 3;
   }
-}
-
-/* ------- kurukuru ------- */
-.product-lineup__item .image picture::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  padding-top: 100%;
-  background: center center no-repeat;
-  background-size: 98% auto;
-  pointer-events: none;
-  -webkit-animation: 60s linear infinite rotation;
-  animation: 60s linear infinite rotation;
 }
