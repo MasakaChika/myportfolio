@@ -1,9 +1,9 @@
 <?php
 
-/**
+/**------------------------------------------
  * テーマの機能を追加する
  * @return void
- */
+ *------------------------------------------*/
 
 function my_theme_support()
 {
@@ -27,7 +27,9 @@ function my_theme_support()
 }
 add_action('after_setup_theme', 'my_theme_support');
 
-// サイドメニューを非表示
+/**------------------------------------------
+ *  サイドメニューで非表示にする
+ *------------------------------------------*/
 function remove_menus()
 {
 	remove_menu_page('edit.php'); // 投稿
@@ -103,20 +105,22 @@ function my_scripts_method()
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 
 
-//title
+/*------------------------------------------
+ *  titleが英語のみか日本語を含むかチェックする
+ *----------------------------------------*/
 function determine_language_class($post_id)
 {
 	$title = get_the_title($post_id);
 
 	// 英語のみで構成されているかチェック（ASCII文字のみ）
-	if (preg_match('/^[A-Za-z0-9 .,!?]+$/', $title)) {
+	if (preg_match('/^[A-Za-z0-9 .,!?|]+$/', $title)) {
 		return 'enFont';
 	}
 	// 日本語を含むかチェック（ひらがな、カタカナ、漢字）
 	elseif (preg_match('/[\x{3040}-\x{30FF}\x{4E00}-\x{9FAF}]+/u', $title)) {
 		return 'jpFont';
 	}
-	// どちらでもない場合はデフォルトクラスを返す（オプション）
+	// どちらでもない場合はデフォルトクラスを返す
 	else {
 		return 'defaultFont';
 	}
@@ -136,13 +140,11 @@ function post_has_archive($args, $post_type)
 }
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
+/*------------------------------------------
+ *  Post Type: works.
+ *----------------------------------------*/
 function cptui_register_my_cpts_work()
 {
-
-	/**
-	 * Post Type: works.
-	 */
-
 	$labels = [
 		"name" => esc_html__("works", "custom-post-type-ui"),
 		"singular_name" => esc_html__("work", "custom-post-type-ui"),
@@ -178,25 +180,25 @@ function cptui_register_my_cpts_work()
 
 	register_post_type("work", $args);
 }
-
 add_action('init', 'cptui_register_my_cpts_work');
 
-// 特定のカスタム投稿タイプのアーカイブページである場合、そのカスタム投稿タイプの複数形ラベル（label）をタイトルとして使用
-// 将来的に他のカスタム投稿タイプを追加した場合にも、各カスタム投稿タイプのlabelに基づいたタイトルが表示される
+/*------------------------------------------
+ * 特定のカスタム投稿タイプのアーカイブページである場合、そのカスタム投稿タイプの複数形ラベル（label）をタイトルとして使用
+ * 将来的に他のカスタム投稿タイプを追加した場合にも、各カスタム投稿タイプのlabelに基づいたタイトルが表示される
+ *----------------------------------------*/
+
 add_filter('get_the_archive_title', function ($title) {
-	// 現在のページが任意のカスタム投稿タイプのアーカイブページであるかどうかをチェックする
+	// カスタム投稿タイプのアーカイブページの場合
 	if (is_post_type_archive()) {
-
-		// 現在のクエリからカスタム投稿タイプのスラッグを取得します。
 		$post_type = get_query_var('post_type');
-
-		// スラッグを使用して、そのカスタム投稿タイプのオブジェクトを取得
 		$post_type_object = get_post_type_object($post_type);
-
-		// カスタム投稿タイプオブジェクトからnameラベル（通常は複数形）を取得し、それをエスケープしてタイトルとして設定
 		if ($post_type_object) {
 			$title = esc_html($post_type_object->labels->name);
 		}
+	}
+	// 特定のカスタムタクソノミーのアーカイブページの場合
+	elseif (is_tax('design-tech-tools')) {
+		$title = single_term_title('', false);
 	}
 	return $title;
 });

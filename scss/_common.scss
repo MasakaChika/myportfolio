@@ -533,7 +533,7 @@ main {
 }
 
 /* ------- swiper ------- */
-/* ページネーションのサイズと色 */
+// ページネーションのサイズと色
 .swiper-pagination-bullet {
   background-color: var(--color-text-soft);
 }
@@ -545,14 +545,124 @@ main {
 }
 
 /* ------- br ------- */
-/* デフォルトでは`.mobile-only-br`クラスを持つ`<br>`を表示 */
+// デフォルトでは`.mobile-only-br`クラスを持つ`<br>`を表示
 .mobile-only-br {
   display: none;
 }
 
-/* スマートフォン表示時にのみ`.mobile-only-br`クラスを持つ`<br>`を表示 */
+// スマートフォン表示時にのみ`.mobile-only-br`クラスを持つ`<br>`を表示
 @include for-mobile {
   .mobile-only-br {
     display: inline;
+  }
+}
+
+/* ------- pagenation ------- */
+// 真ん中に設置
+.pagination {
+  text-align: center;
+}
+
+// 横並びにする
+.nav-links .page-numbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+// ページタブの共通スタイル
+.nav-links a.page-numbers,
+.nav-links .current,
+.nav-links a.prev,
+.nav-links a.next,
+.nav-links .dots {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  background: var(--color-background);
+  color: var(--color-text);
+  border-radius: 50%;
+  margin-right: 25px;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid var(--color-text);
+}
+
+// マウスが乗った時の、ボタンの背景の色と文字の色
+.nav-links a.page-numbers:hover {
+  color: var(--color-white);
+  background-color: var(--color-hover);
+  border-color: var(--color-hover);
+  border-radius: 50%;
+}
+
+// 現在のページのタブ
+.nav-links .current {
+  background: var(--color-text);
+  color: var(--color-white);
+  padding: 0;
+}
+
+// 前への「＜」、次への「＞」
+.nav-links a.prev,
+.nav-links a.next {
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+  position: relative;
+}
+
+// 縦線の共通CSS
+.nav-links .next::before,
+.nav-links .prev::after {
+  content: '';
+  display: inline-block;
+  width: 0.5px;
+  height: 40px;
+  background-color: rgb(224, 215, 215);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// 「次へ」の前の縦線位置
+.nav-links .next::before {
+  left: -15px;
+}
+
+//「前へ」の後の縦線位置
+.nav-links .prev::after {
+  right: -15px;
+}
+
+// 数字省略の「・・・」
+.nav-links .dots {
+  background: transparent;
+  border: none;
+}
+// レスポンシブデザインのためのメディアクエリ
+@media (max-width: 600px) {
+  .page-numbers,
+  .page-numbers.current {
+    padding: 5px 10px; // パディングを小さく
+  }
+}
+
+/* ------- card ------- */
+.card {
+  width: minmax(200px 100%);
+  height: minmax(200px 100%);
+  background-image: url(assets/img/thumnail-bg.png);
+  display: block grid;
+  place-items: center; //水平および垂直方向の中央揃え
+
+  &__thumbnail {
+    width: 300px;
+    height: 200px;
+
+    background: lightgray 0px 0.144px / 100% 103.783% no-repeat;
+
+    /* thumnail */
+    box-shadow: 4px 4px 16.5px 2px rgba(0, 0, 0, 0.1);
   }
 }

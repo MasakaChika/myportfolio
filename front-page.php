@@ -57,7 +57,7 @@
 				</div>
 			</div>
 			<div class="works__all animate-slide viewall">
-				<a href="'/works/'">
+				<a href="'/work/'">
 					<p>works</p>
 					<div class="arrow"><span></span><span></span><span></span></div>
 				</a>

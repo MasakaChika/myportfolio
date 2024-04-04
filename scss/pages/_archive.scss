@@ -12,12 +12,11 @@
 }
 .archive-works {
   grid-column: 2;
-  // margin-top: 140px;
   grid-row: auto;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 1rem;
-  padding-bottom: 20vh;
+  padding-bottom: 10vh;
   margin-top: 140px;
 
   &__title {
@@ -50,7 +49,6 @@
 
     > ul {
       grid-row: 3;
-
       display: flex; // gridではなくflexで
       flex-wrap: wrap; // 折り返す
       gap: 0.5rem 1.5rem; // 行８px 列 24pxアイテム間の間隔
@@ -59,6 +57,10 @@
         @include enFont;
         font-size: 14px;
         letter-spacing: 0.083em;
+
+        &::before {
+          content: '#';
+        }
       }
     }
   }
@@ -82,68 +84,5 @@
   @include for-mobile {
     grid-column: 2 / 4;
     grid-template-columns: 1fr;
-  }
-}
-
-.card {
-  width: 345px;
-  height: 345px;
-  flex-shrink: 0;
-  background-image: url(assets/img/thumnail-bg.png) no-repeat;
-  display: block grid;
-  place-items: center; //水平および垂直方向の中央揃え
-
-  &__thumbnail {
-    width: 300px;
-    height: 200px;
-
-    background: lightgray 0px 0.144px / 100% 103.783% no-repeat;
-
-    /* thumnail */
-    box-shadow: 4px 4px 16.5px 2px rgba(0, 0, 0, 0.1);
-  }
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-}
-
-.nav-links {
-  display: flex;
-}
-.page-numbers {
-  display: inline-block;
-  margin-right: 10px;
-  padding: 10px 20px;
-  color: #666666;
-  border-radius: 3px;
-  background: #ffffff;
-  border: 1px solid #666666;
-}
-.page-numbers.current {
-  padding: 10px 20px;
-  background: #db7093;
-  color: #ffffff;
-}
-.page-numbers.prev,
-.page-numbers.next {
-  background: transparent;
-  box-shadow: none;
-  border: none;
-  color: #666666;
-}
-.page-numbers.dots {
-  background: transparent;
-  box-shadow: none;
-  border: none;
-  color: #666666;
-}
-
-/* レスポンシブデザインのためのメディアクエリ */
-@media (max-width: 600px) {
-  .page-numbers,
-  .page-numbers.current {
-    padding: 5px 10px; /* パディングを小さく */
   }
 }

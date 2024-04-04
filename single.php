@@ -18,12 +18,13 @@
 		// 投稿のIDを取得
 		$post_id = get_the_ID();
 
-		// カスタムフィールドの値を取得
-		$work_img = get_post_meta($post_id, 'work-img', true);
+		// カスタムフィールドの値を取得(get_post_meta(&post_id, $key, $single))
+		$attachment_id = get_post_meta($post_id, 'work-img', true); // カスタムフィールド 'work-img' から画像の添付ファイル ID を取得
+		$image_url = wp_get_attachment_image_src($attachment_id, 'full')[0];	// 添付ファイル ID から画像の URL を取得
 		$tools = get_post_meta($post_id, 'tools', true);
 		$period = get_post_meta($post_id, 'period', true); // 誤字(peirod)を修正
 		$concepts = get_post_meta($post_id, 'concepts', true);
-		$point = get_post_meta($post_id, 'point', true);
+		$points = get_post_meta($post_id, 'points', true);
 		$related_information = get_post_meta($post_id, 'related-information', true);
 		$github = get_post_meta($post_id, 'github', true);
 		$gallery = get_post_meta($post_id, 'gallery', true); // 提案したフィールド名を使用
@@ -38,14 +39,28 @@
 			if ($tags) {
 				echo '<ul>';
 				foreach ($tags as $tag) {
-					echo '<li>' . esc_html($tag->name) . '</li>'; // タグ名をエスケープして表示
+					echo '<li>' . esc_html($tag->name) . '</li>'; // タグ名をエスケープ処理して表示
 				}
 				echo '</ul>';
 			}
 			?>
 		</div>
 		<!-- img -->
-		<div class="work__img"><?= '<img src="esc_url($work_img)" alt="メイン画像">'; ?></div>
+
+		<?php
+		// URL が存在するか確認し、存在する場合は画像を表示
+		if (!empty($image_url)) {
+			echo '<div class="work__img">';
+			echo '<img src="' . esc_url($image_url) . '" alt="メイン画像" >';
+			echo '</div>';
+		} else {
+			// 画像が見つからない場合の処理をここに書く
+			echo '<p>画像が見つかりません。</p>';
+		}
+		?>
+		<!-- <div class="work__img">
+			<?= '<img src="' . esc_url($image_url) . '" alt="メイン画像">'; ?>
+		</div> -->
 		<!-- 投稿年月 -->
 		<time datetime="<?= "$post_date"; ?>"></time>
 
@@ -68,12 +83,14 @@
 
 			<div class="work__content-points content">
 				<h3 class="content-title">Points</h3>
-				<p class="content-text"><?= esc_html($point); ?></p>
+				<p class="content-text"><?= esc_html($points); ?></p>
 			</div>
 
+
+
+			<!-- 入力がある場合のみ表示にする -->
 			<div class="work__content-info">
 				<h3 class="content-title">Related information</h3>
-				<!-- 入力がある場合のみ表示にする -->
 				<ul>
 					<li>
 						<?= esc_html($related_information); ?>
@@ -87,23 +104,23 @@
 
 
 	</section>
+
+
 	<!-- pagenation -->
 	<div class="post__pagination">
-		<?php $nextpost = get_adjacent_post(false, '', false);
-		if ($nextpost) : ?>
+		<?php $prevpost = get_adjacent_post(false, '', true);
+		if ($prevpost) : ?>
 			<div class="post__pagination__left">
-				<a href="<?php echo get_permalink($nextpost->ID); ?>">
-					<span class="post__pagination__left__img"><?php echo get_the_post_thumbnail($nextpost->ID); ?></span>
-					<span class="post__pagination__left__text">«<?php echo esc_attr($nextpost->post_title); ?></span>
+				<a href="<?php echo get_permalink($prevpost->ID); ?>">
+					<span class="post__pagination__left-text"><?php echo esc_attr($prevpost->post_title); ?></span>
 				</a>
 			</div>
 		<?php endif; ?>
-		<?php $prevpost = get_adjacent_post(false, '', true);
-		if ($prevpost) : ?>
+		<?php $nextpost = get_adjacent_post(false, '', false);
+		if ($nextpost) : ?>
 			<div class="post__pagination__right">
-				<a href="<?php echo get_permalink($prevpost->ID); ?>">
-					<span class="post__pagination__right__img"><?php echo get_the_post_thumbnail($prevpost->ID); ?></span>
-					<span class="post__pagination__right__text"><?php echo esc_attr($prevpost->post_title); ?>»</span>
+				<a href="<?php echo get_permalink($nextpost->ID); ?>">
+					<span class="post__pagination__right-text"><?php echo esc_attr($nextpost->post_title); ?></span>
 				</a>
 			</div>
 		<?php endif; ?>

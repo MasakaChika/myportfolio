@@ -44,7 +44,7 @@
       font-style: normal;
       font-weight: 350;
       line-height: 2; // 24px
-      letter-spacing: 0.2em; // 2.4px
+      letter-spacing: 0.14em; // 1.68px
     }
   }
 
@@ -195,13 +195,17 @@ hr {
   }
 }
 
+.skills,
+.strengths {
+  margin-top: 20rem;
+}
+
 .skills {
   grid-column: 2;
   grid-row: 2;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: 1fr;
-  margin-top: 10rem;
   gap: 6rem 4rem;
 
   ul {
@@ -284,7 +288,6 @@ hr {
 .strengths {
   grid-column: 2;
   grid-row: 3;
-  margin-top: 10rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem 4rem;
@@ -343,30 +346,41 @@ hr {
     justify-self: center;
 
     &-photo {
+      position: relative;
       img {
         max-width: 383px;
         width: 100%; //親要素に合わせて広がる
         height: auto; //アスペクト比を保つ
         border-radius: 90%;
-        position: relative;
-
-        /* ------- kurukuru ------- */
-        &:after {
-          content: '';
-          background-image: url('../../assets/img/frame.png');
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          background: center center no-repeat;
-          background-size: 98% auto;
-          pointer-events: none;
-          animation: 60s linear infinite rotation;
-        }
+      }
+      /* ------- kurukuru ------- */
+      &:after {
+        content: '';
+        background-image: url('../../assets/img/frame.png');
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; // 擬似要素の高さを親要素と同じにする
+        background-size: 98% auto;
+        background-repeat: no-repeat;
+        background-position: center center;
+        pointer-events: none;
+        animation: 20s rotation linear infinite;
       }
     }
   }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   @include for-mobile-and-tablet {
     display: grid;
     grid-template-columns: 1fr;

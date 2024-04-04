@@ -1,9 +1,20 @@
 <?php get_header(); ?>
 <main>
-	<?php get_template_part('template-parts/vertical-category', null, array(
-		'vertical' => '私について',
-		'horizontal' => 'about'
-	)); ?>
+	<?php
+	// カスタムフィールド 'vertical-jp' の値を取得します。
+	// get_the_ID() は現在のページまたは投稿の ID を返します。
+	$vertical_value = get_post_meta(get_the_ID(), 'vertical-jp', true);
+
+	// 現在のページのタイトルを取得し、大文字に変換します。
+	$page_title_uppercase = strtoupper(get_the_title());
+
+	get_template_part('template-parts/vertical-category', null, array(
+		'vertical' => $vertical_value, // カスタムフィールドの値
+		'horizontal' => $page_title_uppercase, // 大文字に変換したページタイトル
+	));
+	?>
+
+
 
 
 	<!-- about -->
@@ -92,7 +103,6 @@
 
 		<div class="strengths__img">
 			<picture class="strengths__img-photo"><img src="<?= get_theme_file_uri('/assets/img/strengths.png'); ?>" alt="ベージュの毛糸で編まれた手編みのセーター"></picture>
-			<!-- <img class="strengths__img-frame" src="<?= get_theme_file_uri('/assets/img/frame.png'); ?>" alt="写真を囲むフレーム"> -->
 		</div>
 
 		<div class="strengths__certified">

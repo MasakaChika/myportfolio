@@ -4,8 +4,8 @@
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<!-- <title><?php bloginfo('name'); ?></title> -->
-	<meta name="discription" content="Webデザイナー・コーダー" />
+	<meta name="description" content="<?php bloginfo('description'); ?>" />
+
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
