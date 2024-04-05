@@ -14,17 +14,9 @@
 		<?php get_template_part('template-parts/archive', 'works-search'); ?>
 	</section>
 
-	<?php if (have_posts()) : ?>
-		<ul class="archive-cards">
-			<?php while (have_posts()) : the_post(); ?>
-				<li><?php get_template_part('template-parts/content', 'post'); ?></li>
-			<?php endwhile; ?>
-		</ul>
-
-		<?php the_posts_navigation(); ?>
-	<?php else : ?>
-		<p>投稿が見つかりませんでした。</p>
-	<?php endif; ?>
+	<!-- loop -->
+	<?php get_template_part('template-parts/content', 'post'); ?>
+	<!-- /.loop -->
 
 	<div class="pagenation">
 		<?php get_template_part('template-parts/pagination'); ?>

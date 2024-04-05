@@ -22,7 +22,7 @@
 		$attachment_id = get_post_meta($post_id, 'work-img', true); // カスタムフィールド 'work-img' から画像の添付ファイル ID を取得
 		$image_url = wp_get_attachment_image_src($attachment_id, 'full')[0];	// 添付ファイル ID から画像の URL を取得
 		$tools = get_post_meta($post_id, 'tools', true);
-		$period = get_post_meta($post_id, 'period', true); // 誤字(peirod)を修正
+		$period = get_post_meta($post_id, 'period', true);
 		$concepts = get_post_meta($post_id, 'concepts', true);
 		$points = get_post_meta($post_id, 'points', true);
 		$related_information = get_post_meta($post_id, 'related-information', true);
@@ -110,17 +110,17 @@
 	<div class="post__pagination">
 		<?php $prevpost = get_adjacent_post(false, '', true);
 		if ($prevpost) : ?>
-			<div class="post__pagination__left">
+			<div class="post__pagination__prev">
 				<a href="<?php echo get_permalink($prevpost->ID); ?>">
-					<span class="post__pagination__left-text"><?php echo esc_attr($prevpost->post_title); ?></span>
+					<span class="post__pagination__prev-text"><?php echo esc_attr($prevpost->post_title); ?></span>
 				</a>
 			</div>
 		<?php endif; ?>
 		<?php $nextpost = get_adjacent_post(false, '', false);
 		if ($nextpost) : ?>
-			<div class="post__pagination__right">
+			<div class="post__pagination__next">
 				<a href="<?php echo get_permalink($nextpost->ID); ?>">
-					<span class="post__pagination__right-text"><?php echo esc_attr($nextpost->post_title); ?></span>
+					<span class="post__pagination__next-text"><?php echo esc_attr($nextpost->post_title); ?></span>
 				</a>
 			</div>
 		<?php endif; ?>

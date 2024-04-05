@@ -6,6 +6,12 @@
   font-size: 40px;
   line-height: normal;
   letter-spacing: 0.1em;
+
+  @include for-mobile {
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: 0.1em; // 2.4px
+  }
 }
 
 .work {
@@ -73,10 +79,13 @@
 
   @include for-mobile {
     grid-column: 3;
+    padding-top: 80px;
+
     &__title {
       grid-column: 1;
       grid-row: 1;
     }
+
     &__tags {
       grid-column: 1;
       grid-row: 2; // titleの下
@@ -149,7 +158,11 @@
   grid-template-columns: repeat(2, 1fr);
   row-gap: 2rem;
 
-  &__left {
+  @include for-mobile {
+    grid-column: 2 / 4;
+  }
+
+  &__prev {
     grid-column: 1;
     grid-row: 1;
 
@@ -173,7 +186,7 @@
     }
   }
 
-  &__right {
+  &__next {
     grid-column: 2;
     grid-row: 1;
     justify-self: flex-end;
@@ -195,6 +208,21 @@
         top: 50%; // 要素の中央に配置
         transform: translateY(-50%); // 矢印を垂直方向の中央に合わせる
       }
+    }
+  }
+
+  @include for-mobile {
+    &__prev-text,
+    &__next-text {
+      font-size: 0.8rem;
+    }
+
+    &__prev-text {
+      padding-right: 0.5rem; // 矢印分のスペースを確保
+    }
+
+    &__next-text {
+      padding-left: 0.5rem;
     }
   }
 }

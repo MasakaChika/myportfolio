@@ -60,7 +60,7 @@
 				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/html.png'); ?>" alt="html5 icon"></div><span>HTML</span>
 			</li>
 			<li class="skills__item">
-				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/CSS.png'); ?>" alt="css3 icon"></div><span>CSS</span>
+				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/css.png'); ?>" alt="css3 icon"></div><span>CSS</span>
 			</li>
 			<li class="skills__item">
 				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/scss.png'); ?>" alt="scss icon"></div><span>Scss</span>
