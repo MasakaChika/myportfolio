@@ -426,19 +426,21 @@ main {
 
 /* ------- footer ------- */
 .site-footer {
-  display: block flex;
-  width: 100%;
-  padding: 24px 0px;
-  justify-content: center;
-  align-items: center;
-  background: var(--color-text);
-  margin-top: 128px;
+  &__inner {
+    display: block flex;
+    width: 100%;
+    padding: 24px 0px;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-text);
+    margin-top: 128px;
 
-  small {
-    @include enFont;
-    color: var(--color-white);
-    font-size: 0.875rem; //14px
-    line-height: normal;
+    small {
+      @include enFont;
+      color: var(--color-white);
+      font-size: 0.875rem; //14px
+      line-height: normal;
+    }
   }
 }
 

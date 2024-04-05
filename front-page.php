@@ -37,23 +37,45 @@
 			<!-- Slider main container -->
 			<div class="swiper works__slider">
 				<!-- Additional required wrapper -->
+				<!-- Slides -->
 				<div class="swiper-wrapper">
-					<!-- Slides -->
-					<div class="swiper-slide">
-						<div class="swiper-slide__img">
-							<img src=<?= get_theme_file_uri('assets/img/portfoilo.png'); ?> alt="portfolio">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="swiper-slide__img">
-							<img src=<?= get_theme_file_uri('assets/img/icons.png'); ?> alt="portfolio">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="swiper-slide__img">
-							<img src=<?= get_theme_file_uri('assets/img/logo-thumbnail.png'); ?> alt="portfolio">
-						</div>
-					</div>
+					<?php
+					// カスタム投稿タイプ 'work' の投稿を取得するクエリパラメータを設定
+					$args = array(
+						'post_type' => 'work', // カスタム投稿タイプを指定
+						'posts_per_page' => -1, // 全ての投稿を取得
+					);
+
+					// WP_Query インスタンスを作成
+					$the_query = new WP_Query($args);
+
+					// 投稿があるか確認
+					if ($the_query->have_posts()) :
+						// 投稿をループ
+						while ($the_query->have_posts()) : $the_query->the_post(); ?>
+							<div class="swiper-slide">
+								<div class="swiper-slide__img">
+									<a href="<?php the_permalink(); ?>">
+										<?php
+										// アイキャッチがあるか確認
+										if (has_post_thumbnail()) :
+											the_post_thumbnail('medium'); // アイキャッチ画像を表示
+										else : ?>
+											<!-- アイキャッチがない場合のデフォルト画像 -->
+											<img src="<?= get_template_directory_uri(); ?>/assets/img/noimage.png" alt="">
+										<?php endif; ?>
+									</a>
+								</div>
+							</div>
+						<?php endwhile;
+					else : ?>
+						<!-- 投稿がない場合のメッセージ -->
+						<p>投稿が見つかりませんでした。</p>
+					<?php endif;
+
+					// メインクエリの投稿データをリセット
+					wp_reset_postdata();
+					?>
 				</div>
 			</div>
 			<div class="works__all animate-slide viewall">

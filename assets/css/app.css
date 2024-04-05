@@ -466,15 +466,16 @@
 
 .swiper {
   width: 100%;
+  height: 400px;
 }
 .swiper-slide {
   display: flex;
-  justify-content: center; /* 水平方向の中央寄せ */
-  align-items: center; /* 垂直方向の中央寄せ */
+  justify-content: center;
+  align-items: center;
 }
-.swiper-slide__img {
-  max-width: 400px; /* 画像がコンテナを超えないように */
-  height: auto; /* アスペクト比を維持 */
+.swiper-slide__img img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ------- /. works ------- */
@@ -1125,7 +1126,7 @@ main {
 }
 /* ------- /.hamburger menu ------- */
 /* ------- footer ------- */
-.site-footer {
+.site-footer__inner {
   display: block flex;
   width: 100%;
   padding: 24px 0px;
@@ -1134,7 +1135,7 @@ main {
   background: var(--color-text);
   margin-top: 128px;
 }
-.site-footer small {
+.site-footer__inner small {
   font-family: var(--font-title-en);
   font-weight: 400;
   font-style: normal;
@@ -2045,57 +2046,106 @@ hr {
 .contact {
   grid-column: 2;
   margin-top: 140px;
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(auto, 700px) minmax(0, auto);
+  row-gap: 2rem;
 }
-
-.form-group {
+@media (max-width: 480px) {
+  .contact {
+    grid-column: 3;
+  }
+}
+.contact__container {
+  grid-column: 2;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 3rem;
 }
-.form-group > div {
-  width: 20vw;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, auto);
-  gap: 0.5rem;
+@media (max-width: 959px) {
+  .contact__container {
+    grid-column: 1/-1;
+  }
 }
-
-.form-label {
+.contact label {
   font-family: var(--font-praimary);
   font-weight: 400;
   font-style: normal;
   color: var(--color-text);
   font-size: 15px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 21px; /* 140% */
+  line-height: 1.4;
   letter-spacing: 2px;
 }
-
-.form-control {
-  height: 21px;
+.contact__campany-name, .contact__your-name, .contact__your-email, .contact__phone-number, .contact__your-message {
+  width: 100%;
 }
-
-.form-send {
+@media (max-width: 959px) {
+  .contact__campany-name, .contact__your-name, .contact__your-email, .contact__phone-number, .contact__your-message {
+    width: 100%;
+  }
+}
+.contact__campany-name, .contact__your-name, .contact__your-email, .contact__phone-number {
+  height: 2rem;
+}
+.contact__contact {
+  text-transform: uppercase;
+}
+.contact__privacy {
+  font-family: var(--font-praimary);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-text);
+}
+.contact__privacy > p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.contact__privacy > p a {
+  font-weight: 600;
+  color: var(--color-text-soft);
+}
+.contact__privacy > p > span {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.contact__submit {
+  justify-self: center;
   font-family: var(--font-title-en);
   font-weight: 400;
   font-style: normal;
   color: var(--color-text);
   color: var(--color-white);
   font-size: 15px;
-  line-height: 21px; /* 140% */
-  letter-spacing: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.93em;
   text-transform: uppercase;
   display: flex;
   padding: 11px 55px;
-  justify-content: center;
   align-items: center;
   gap: 8px;
   width: 200px;
   border-radius: 8px;
   background: var(--color-text);
-  /* neumo */
   box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
+}
+@media (max-width: 480px) {
+  .contact__submit {
+    justify-self: start;
+  }
+}
+
+.wpcf7-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.wpcf7-form > p {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 0.5rem;
 }
 
 .archive-container {
@@ -2116,7 +2166,7 @@ hr {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 1rem;
-  padding-bottom: 20vh;
+  padding-bottom: 10vh;
   margin-top: 140px;
 }
 .taxonomy-works__title {

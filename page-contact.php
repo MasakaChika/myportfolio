@@ -19,12 +19,11 @@
 			));
 			?>
 
-
-
-
 			<section class="contact">
-				<?php get_template_part('template-parts/header', 'title'); ?>
-
+				<div class="contact__container">
+					<?php get_template_part('template-parts/header', 'title'); ?>
+					<?php the_content(); ?>
+				</div>
 			</section>
 		</main>
 	<?php endwhile; ?>

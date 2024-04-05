@@ -3,52 +3,111 @@
 .contact {
   grid-column: 2;
   margin-top: 140px;
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(auto, 700px) minmax(0, auto);
+  row-gap: 2rem;
+
+  @include for-mobile {
+    grid-column: 3;
+  }
+
+  &__container {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+
+    @include for-mobile-and-tablet {
+      grid-column: 1 / -1;
+    }
+  }
+
+  label {
+    @include textFont;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4; // 21px
+    letter-spacing: 2px;
+  }
+
+  &__campany-name,
+  &__your-name,
+  &__your-email,
+  &__phone-number,
+  &__your-message {
+    width: 100%;
+
+    @include for-mobile-and-tablet {
+      width: 100%;
+    }
+  }
+
+  &__campany-name,
+  &__your-name,
+  &__your-email,
+  &__phone-number {
+    height: 2rem;
+  }
+
+  &__contact {
+    text-transform: uppercase;
+  }
+
+  &__privacy {
+    @include textFont;
+    > p {
+      font-size: 13px;
+      line-height: 1.5; // 19.5px
+
+      a {
+        font-weight: 600;
+        color: var(--color-text-soft);
+      }
+
+      > span {
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 1.5; // 16.5px
+      }
+    }
+  }
+
+  &__submit {
+    justify-self: center;
+    @include enFont;
+    color: var(--color-white);
+    font-size: 15px;
+    line-height: 1.4; // 21px
+    letter-spacing: 0.93em; // 14px
+    text-transform: uppercase;
+
+    display: flex;
+    padding: 11px 55px;
+    align-items: center;
+    gap: 8px;
+    width: 200px;
+    border-radius: 8px;
+    background: var(--color-text);
+
+    // neumo
+    box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
+
+    @include for-mobile {
+      justify-self: start;
+    }
+  }
 }
 
-.form-group {
+.wpcf7-form {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
 
-  > div {
-    width: 20vw;
+  > p {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
     gap: 0.5rem;
   }
-}
-
-.form-label {
-  @include textFont;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 21px; /* 140% */
-  letter-spacing: 2px;
-}
-
-.form-control {
-  height: 21px;
-}
-
-.form-send {
-  @include enFont;
-  color: var(--color-white);
-  font-size: 15px;
-  line-height: 21px; /* 140% */
-  letter-spacing: 14px;
-  text-transform: uppercase;
-
-  display: flex;
-  padding: 11px 55px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  width: 200px;
-  border-radius: 8px;
-  background: var(--color-text);
-
-  /* neumo */
-  box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
 }
