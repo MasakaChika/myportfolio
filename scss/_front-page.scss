@@ -101,35 +101,12 @@
       fill: none;
       stroke: var(--color-text);
       stroke-width: 2px;
-    }
-  }
-  /*
-  &__anime {
-    --pathlength: 1384;
-    fill: transparent;
-    stroke: var(--color-text);
-    stroke-linecap: round;
-    stroke-width: 1.8px;
-    stroke-dashoffset: var(--pathlength);
-    stroke-dasharray: 0 var(--pathlength);
-    animation: loader 5.5s ease-out both;
-  }
 
-  @keyframes loader {
-    0% {
-      stroke-dashoffset: var(--pathlength);
-    }
-    100% {
-      stroke-dasharray: var(--pathlength) 0;
+      @include for-mobile {
+        stroke-width: 3.5px;
+      }
     }
   }
-
-  &__name {
-    width: 90%;
-    height: auto;
-    display: block;
-  }
-*/
   &__sitename {
     @include enFont;
     text-align: right;
@@ -248,6 +225,9 @@
     grid-row: 3;
     justify-self: flex-end; // 右端に寄せる(gridの時はjustify-self)
   }
+  @include for-mobile {
+    gap: 0;
+  }
 }
 
 .swiper {
@@ -314,7 +294,7 @@
       grid-row: 1;
       @include jpFont;
       font-size: 1.2rem;
-      font-weight: 500;
+      font-weight: 600;
       line-height: 1.25; // 20px
       letter-spacing: 0.075em; // 0.2px
     }
@@ -404,11 +384,9 @@
       gap: 1rem;
 
       h3 {
-        @include textFont;
         grid-column: 1;
         grid-row: 1;
         font-size: 0.93rem; // 15px
-        font-weight: 500; // default400
         line-height: 1.5; // 22.5px
         letter-spacing: 0.073em; // 1.1px
       }
@@ -432,73 +410,3 @@
 }
 
 /* ------- /.about ------- */
-/*
-button {
-  padding: 0;
-  margin: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-button {
-  --primary-color: #111;
-  --hovered-color: #c84747;
-  position: relative;
-  display: flex;
-  font-weight: 600;
-  font-size: 20px;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-button p {
-  margin: 0;
-  position: relative;
-  font-size: 20px;
-  color: var(--primary-color);
-}
-
-button::after {
-  position: absolute;
-  content: '';
-  width: 0;
-  left: 0;
-  bottom: -7px;
-  background: var(--hovered-color);
-  height: 2px;
-  transition: 0.3s ease-out;
-}
-
-button p::before {
-  position: absolute;
-  //box-sizing: border-box; 
-  content: 'Subscribe';
-  width: 0%;
-  inset: 0;
-  color: var(--hovered-color);
-  overflow: hidden;
-  transition: 0.3s ease-out;
-}
-
-button:hover::after {
-  width: 100%;
-}
-
-button:hover p::before {
-  width: 100%;
-}
-
-button:hover svg {
-  transform: translateX(4px);
-  color: var(--hovered-color);
-}
-
-button svg {
-  color: var(--primary-color);
-  transition: 0.2s;
-  position: relative;
-  width: 15px;
-  transition-delay: 0.2s;
-}
-*/

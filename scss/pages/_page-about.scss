@@ -181,6 +181,12 @@
 
   @include for-mobile {
     grid-column: 3;
+
+    &__name {
+      h2 {
+        font-size: 1.25rem;
+      }
+    }
   }
 }
 
