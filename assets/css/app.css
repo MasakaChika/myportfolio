@@ -1825,6 +1825,7 @@ hr {
   grid-row: 4;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  column-gap: 2.5rem;
 }
 .work__content-left, .work__content-right {
   display: grid;
