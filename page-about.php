@@ -92,7 +92,7 @@
 
 	<section class="strengths">
 
-		<header class="section-subheader strengths__title">strengths</header>
+		<header class="section-subheader strengths__title">strength</header>
 
 		<div class="strengths__meticulous">
 			<h2 class="strengths__header">Meticulous</h2>
