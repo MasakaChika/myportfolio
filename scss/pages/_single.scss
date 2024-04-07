@@ -16,7 +16,7 @@
     @include jpFont;
     font-weight: 600;
     font-size: clamp(0.85rem, 5vw, 2.5rem);
-    line-height: 1;
+    line-height: normal;
     letter-spacing: 0.1em;
   }
 

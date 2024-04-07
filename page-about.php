@@ -23,7 +23,7 @@
 		<div class="page-about__main">
 			<header class="section-header page-about__title">about</header>
 			<div class="page-about__photo">
-				<img src=<?= get_theme_file_uri('/assets/img/photo.jpg'); ?> alt="眞坂千佳が写っている写真" />
+				<img src=<?= get_theme_file_uri('/assets/img/photo.webpƒ'); ?> alt="マサカチカが写っている写真" />
 			</div>
 
 			<div class="page-about__name">
@@ -87,7 +87,7 @@
 				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/git.png'); ?>" alt="git icon"></div><span>Git</span>
 			</li>
 		</ul>
-		<img class="skills__img" src="<?= get_theme_file_uri('/assets/img/skills.png'); ?>" alt="作業環境の写真iMacとデスクライト">
+		<img class="skills__img" src="<?= get_theme_file_uri('/assets/img/skills.webp'); ?>" alt="作業環境の写真iMacとデスクライト">
 	</section>
 
 	<section class="strengths">
@@ -102,7 +102,7 @@
 		</div>
 
 		<div class="strengths__img">
-			<picture class="strengths__img-photo"><img src="<?= get_theme_file_uri('/assets/img/strengths.png'); ?>" alt="ベージュの毛糸で編まれた手編みのセーター"></picture>
+			<picture class="strengths__img-photo"><img src="<?= get_theme_file_uri('/assets/img/strengths.webp'); ?>" alt="ベージュの毛糸で編まれた手編みのセーター"></picture>
 		</div>
 
 		<div class="strengths__certified">

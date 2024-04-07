@@ -1225,7 +1225,7 @@ main {
   grid-template-columns: 1fr;
   row-gap: 1rem;
   padding-bottom: 10vh;
-  margin-top: 140px;
+  margin-top: clamp(100px, 10vw, 140px);
 }
 .archive-works__title {
   grid-row: 1;
@@ -1234,7 +1234,6 @@ main {
   .archive-works {
     grid-column: 3;
     padding-bottom: 1vh;
-    margin-top: 100px;
   }
 }
 .archive-works__title {
@@ -1550,7 +1549,7 @@ hr {
 }
 .strengths__img-photo:after {
   content: "";
-  background-image: url("../../assets/img/frame.png");
+  background-image: url("../../assets/img/frame.webp");
   display: block;
   position: absolute;
   top: 0;
@@ -1617,7 +1616,7 @@ hr {
   color: var(--color-text);
   font-weight: 600;
   font-size: clamp(0.85rem, 5vw, 2.5rem);
-  line-height: 1;
+  line-height: normal;
   letter-spacing: 0.1em;
 }
 .work__tags {
@@ -1902,7 +1901,7 @@ hr {
   grid-template-columns: 1fr;
   row-gap: 1rem;
   padding-bottom: 10vh;
-  margin-top: 140px;
+  margin-top: clamp(100px, 10vw, 140px);
 }
 .taxonomy-works__title {
   grid-row: 1;
@@ -1911,7 +1910,6 @@ hr {
   .taxonomy-works {
     grid-column: 3;
     padding-bottom: 1vh;
-    margin-top: 100px;
   }
 }
 .taxonomy-works__title {

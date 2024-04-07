@@ -61,7 +61,7 @@
 											the_post_thumbnail('medium'); // アイキャッチ画像を表示
 										else : ?>
 											<!-- アイキャッチがない場合のデフォルト画像 -->
-											<img src="<?= get_template_directory_uri(); ?>/assets/img/noimage.png" alt="">
+											<img src="<?= get_template_directory_uri(); ?>/assets/img/noimage.webp" alt="">
 										<?php endif; ?>
 									</a>
 								</div>
@@ -93,7 +93,7 @@
 				<h2>眞坂ちか</h2>
 			</div>
 			<div class="about__photo">
-				<img src=<?= get_theme_file_uri('/assets/img/photo.jpg'); ?> alt="眞坂千佳が写っている写真" />
+				<img src=<?= get_theme_file_uri('/assets/img/photo.webp'); ?> alt="マサカチカが写っている写真" />
 			</div>
 			<div class="about__text">
 				<h3>シンプルながらも深みのあるデザインで、あなたの物語を語りたい</h3>
