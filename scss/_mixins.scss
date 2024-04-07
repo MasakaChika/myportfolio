@@ -70,3 +70,22 @@
     }
   }
 }
+
+@mixin works-style {
+  grid-column: 2;
+  grid-row: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+  padding-bottom: 10vh;
+  margin-top: 140px;
+
+  &__title {
+    grid-row: 1;
+  }
+  @include for-mobile {
+    grid-column: 3;
+    padding-bottom: 1vh;
+    margin-top: 80px;
+  }
+}

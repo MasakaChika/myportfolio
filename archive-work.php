@@ -11,7 +11,7 @@
 		<header class="section-header archive-works__title">
 			<?php the_archive_title('<h1 class="page-title"></h1>'); ?>
 		</header>
-		<?php get_template_part('template-parts/archive', 'works-search'); ?>
+		<?php get_template_part('template-parts/tag', 'selecter'); ?>
 	</section>
 
 	<!-- loop -->

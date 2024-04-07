@@ -1,4 +1,4 @@
-<div class="archive-works__search">
+<div class="tag-selector">
 	<span>search</span>
 	<hr />
 	<ul>

@@ -1,32 +1,9 @@
 @use '../mixins' as *;
 
-.archive-container {
-  grid-column: 2;
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 196px;
-
-  @include for-mobile {
-    grid-column: 3;
-  }
-}
 .taxonomy-works {
-  grid-column: 2;
-  grid-row: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 1rem;
-  padding-bottom: 10vh;
-  margin-top: 140px;
+  @include works-style;
 
   &__title {
-    grid-row: 1;
     text-transform: none;
-  }
-
-  @include for-mobile {
-    grid-column: 3;
-    padding-bottom: 10vh;
-    margin-top: 80px;
   }
 }

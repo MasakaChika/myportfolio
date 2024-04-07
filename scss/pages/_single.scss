@@ -27,7 +27,7 @@
     > ul {
       display: flex; // gridではなくflexで
       flex-wrap: wrap; // 折り返す
-      gap: 0.5rem 1.5rem; // 行８px 列 24pxアイテム間の間隔
+      gap: 0.5rem 1.5rem; // 行８px 列24pxアイテム間の間隔
 
       > li {
         @include enFont;
@@ -100,6 +100,10 @@
     &-info {
       grid-row: 2;
     }
+
+    &-gallery {
+      grid-row: 3;
+    }
   }
   @include for-tablet {
     &__content {
@@ -107,39 +111,8 @@
       grid-template-columns: 1fr;
       gap: 2rem;
 
-      &-left {
-        grid-row: 1;
-      }
-
       &-right {
         grid-column: 1;
-        grid-row: 2;
-      }
-      &-left {
-        grid-row: 1;
-      }
-
-      &-date {
-        grid-row: 1;
-      }
-
-      &-tools {
-        grid-row: 2;
-      }
-
-      &-period {
-        grid-row: 3;
-      }
-
-      &-concepts {
-        grid-row: 4;
-      }
-
-      &-points {
-        grid-row: 1;
-      }
-
-      &-info {
         grid-row: 2;
       }
     }
@@ -157,10 +130,9 @@
     &__tags {
       grid-column: 1;
       grid-row: 2; // titleの下
-      @include enFont;
-      font-size: 0.75rem; // 12px
-      line-height: 1.66; // 20px
-      letter-spacing: 0.17em; // 0.2px
+      ul {
+        gap: 0.5rem 0.5rem;
+      }
     }
 
     &__img {
@@ -174,43 +146,12 @@
 
     &__content {
       width: 100%;
-      grid-column: 1;
-      grid-row: 4;
-
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
 
-      &-left {
-        grid-row: 1;
-      }
-
       &-right {
         grid-column: 1;
-        grid-row: 2;
-      }
-
-      &-date {
-        grid-row: 1;
-      }
-
-      &-tools {
-        grid-row: 2;
-      }
-
-      &-period {
-        grid-row: 3;
-      }
-
-      &-concepts {
-        grid-row: 4;
-      }
-
-      &-points {
-        grid-row: 1;
-      }
-
-      &-info {
         grid-row: 2;
       }
     }

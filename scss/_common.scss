@@ -69,53 +69,26 @@ main {
 
 .section-header {
   @include enFont;
-  font-size: 2.5rem; // 40px
-  line-height: normal;
-  letter-spacing: 0.1em; //4px;
-  text-transform: uppercase;
-
-  @include for-mobile {
-    font-size: 2rem; // 36px
-    line-height: 1; // 24px
-    letter-spacing: 0.1em; // 2.4px
-  }
+  font-size: 2.5rem;
 }
 
 .section-subheader {
   @include enFont;
-  font-size: 24px;
-  line-height: 24px; /* 100% */
-  letter-spacing: 2.4px;
+  font-size: 1.5rem;
+}
+
+.section-header,
+.section-subheader {
+  line-height: 1;
+  letter-spacing: 0.1em; //4px;
   text-transform: uppercase;
-
-  @include for-mobile {
-    font-size: 24px;
-    line-height: 1; // 24px
-    letter-spacing: 0.1em; // 2.4px
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: auto;
-    height: 1px; // 下線の太さ
-    background: var(--color-text); // 下線の色
-    z-index: -1;
-    transition: all 0.8s;
-  }
 }
 
 .viewall {
   a {
-    // display: grid;
     display: flex;
-    // grid-template-columns: repeat(2, 1fr); // 2つの子要素を横並びに
     align-items: center; //縦方向の中央揃え
     gap: 2rem; // `p` タグと `.arrow` の間隔
-
-    //hoverした時の挙動
 
     p {
       grid-column: 1;
@@ -127,6 +100,7 @@ main {
     }
   }
 }
+
 .animate-slide {
   animation: animate-slide 2s cubic-bezier(0.42, 0, 0.27, 0.99) 0s 1;
 }
@@ -510,38 +484,6 @@ main {
 }
 /* ------- /.vertical-text ------- */
 
-/* ------- tag ------- */
-.works__seach-tag {
-  transition: all 0.3s ease; // Smooth transition for hover effect
-
-  &::before {
-    content: '#';
-    margin-right: 0.2em;
-    transition: all 0.3s ease; // Ensure the # symbol also transitions smoothly
-  }
-
-  &:hover {
-    color: var(--color-hover);
-
-    &::before {
-      color: var(--color-hover);
-      transform: scale(1.2);
-    }
-  }
-}
-
-/* ------- swiper ------- */
-// ページネーションのサイズと色
-.swiper-pagination-bullet {
-  background-color: var(--color-text-soft);
-}
-
-.xo-slider .swiper-slide > img {
-  object-fit: cover;
-  width: 100%;
-  height: auto;
-}
-
 /* ------- br ------- */
 // デフォルトでは`.mobile-only-br`クラスを持つ`<br>`を表示
 .mobile-only-br {
@@ -555,7 +497,7 @@ main {
   }
 }
 
-/* ------- pagenation ------- */
+/* ------- pagenation 未実装------- */
 // 真ん中に設置
 .pagination {
   text-align: center;
@@ -647,14 +589,13 @@ main {
 }
 
 /* ------- works and tag card ------- */
-
 .works__archive {
   grid-column: 2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   justify-self: center;
-  gap: 20px;
+  gap: 2%;
 
   li {
     width: 100%;
@@ -682,5 +623,48 @@ main {
   @include for-mobile {
     grid-column: 2 / 4;
     grid-template-columns: 1fr;
+    gap: 0.5%;
+  }
+}
+
+/* ------- tag selecter ------- */
+.tag-selector {
+  grid-row: 2;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 1rem;
+
+  > span {
+    grid-row: 1;
+    align-self: end;
+    @include enFont;
+    font-size: 0.875rem; //14px
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  > hr {
+    grid-row: 2;
+    width: auto;
+    border-top: 1px solid var(--color-text-soft);
+  }
+
+  > ul {
+    grid-row: 3;
+    display: flex; // gridではなくflexで
+    flex-wrap: wrap; // 折り返す
+    gap: 0.5rem 1.5rem; // 行８px 列 24pxアイテム間の間隔
+
+    > li {
+      @include enFont;
+      font-size: 0.875rem; //14px
+      letter-spacing: 0.083em;
+
+      &::before {
+        content: '#';
+      }
+    }
   }
 }

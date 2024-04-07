@@ -86,7 +86,7 @@
 				<?php endif; ?>
 
 				<?php if (!empty($gallery)) : ?>
-					<section class="work__gallery">
+					<section class="work__content-gallery content">
 						<h3 class="content-title">ギャラリー</h3>
 						<div class="content-text"><?= $gallery ?></div>
 					</section>

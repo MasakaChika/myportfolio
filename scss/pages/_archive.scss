@@ -1,72 +1,9 @@
 @use '../mixins' as *;
 
-.archive-container {
-  grid-column: 2;
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 196px;
-
-  @include for-mobile {
-    grid-column: 3;
-  }
-}
 .archive-works {
-  grid-column: 2;
-  grid-row: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 1rem;
-  padding-bottom: 10vh;
-  margin-top: 140px;
+  @include works-style;
 
   &__title {
     grid-row: 1;
-  }
-
-  &__search {
-    grid-row: 2;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    row-gap: 1rem;
-
-    > span {
-      grid-row: 1;
-      align-self: end;
-      @include enFont;
-      font-size: 14px;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-    }
-
-    > hr {
-      grid-row: 2;
-      height: 1px;
-      width: auto;
-      color: var(--color-text-soft);
-    }
-
-    > ul {
-      grid-row: 3;
-      display: flex; // gridではなくflexで
-      flex-wrap: wrap; // 折り返す
-      gap: 0.5rem 1.5rem; // 行８px 列 24pxアイテム間の間隔
-
-      > li {
-        @include enFont;
-        font-size: 14px;
-        letter-spacing: 0.083em;
-
-        &::before {
-          content: '#';
-        }
-      }
-    }
-  }
-  @include for-mobile {
-    grid-column: 3;
-    padding-bottom: 10vh;
-    margin-top: 80px;
   }
 }
