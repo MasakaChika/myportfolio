@@ -1234,7 +1234,7 @@ main {
   .archive-works {
     grid-column: 3;
     padding-bottom: 1vh;
-    margin-top: 80px;
+    margin-top: 100px;
   }
 }
 .archive-works__title {
@@ -1339,7 +1339,7 @@ main {
 @media (max-width: 959px) {
   .page-about {
     grid-template-columns: 1fr;
-    margin-top: 80px;
+    margin-top: 100px;
   }
   .page-about__main {
     display: grid;
@@ -1911,7 +1911,7 @@ hr {
   .taxonomy-works {
     grid-column: 3;
     padding-bottom: 1vh;
-    margin-top: 80px;
+    margin-top: 100px;
   }
 }
 .taxonomy-works__title {
