@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 <main>
 	<?php get_template_part('template-parts/vertical-category', null, array(
 		'vertical' => '作品集',
@@ -15,11 +14,11 @@
 	</section>
 
 	<!-- loop -->
-	<?php get_template_part('template-parts/content', 'post'); ?>
-	<!-- /.loop -->
+	<?php get_template_part('template-parts/archive', 'work-filtered') ?>
 
+	<!-- pagenation -->
 	<div class="pagenation">
-		<?php get_template_part('template-parts/pagination'); ?>
+		<?php get_template_part('template-parts/pagination', 'numbers'); ?>
 	</div>
 </main>
 

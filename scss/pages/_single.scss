@@ -1,28 +1,10 @@
 @use '../mixins' as *;
 
-.enFont,
-.jpFont,
-.defaultFont {
-  font-size: 40px;
-  line-height: normal;
-  letter-spacing: 0.1em;
-  color: var(--color-text);
-
-  @include for-tablet {
-    font-size: 2rem; // 32px
-  }
-
-  @include for-mobile {
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: 0.1em; // 2.4px
-  }
-}
-
 .work {
   grid-column: 2;
   padding-top: 140px;
   padding-bottom: 160px;
+
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -30,14 +12,34 @@
   &__title {
     grid-column: 1;
     grid-row: 1;
+
+    @include jpFont;
+    font-weight: 600;
+    font-size: clamp(0.85rem, 5vw, 2.5rem);
+    line-height: 1;
+    letter-spacing: 0.1em;
   }
+
   &__tags {
     grid-column: 1;
     grid-row: 2; // titleの下
-    @include enFont;
-    font-size: 0.75rem; // 12px
-    line-height: 1.66; // 20px
-    letter-spacing: 0.17em; // 0.2px
+
+    > ul {
+      display: flex; // gridではなくflexで
+      flex-wrap: wrap; // 折り返す
+      gap: 0.5rem 1.5rem; // 行８px 列 24pxアイテム間の間隔
+
+      > li {
+        @include enFont;
+        font-size: 0.75rem; // 12px
+        line-height: 1.66; // 20px
+        letter-spacing: 0.17em; // 0.2px
+
+        &::before {
+          content: '#';
+        }
+      }
+    }
   }
 
   &__img {
@@ -55,7 +57,7 @@
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 2.5rem;
+    column-gap: 4rem;
 
     &-left,
     &-right {
@@ -74,7 +76,9 @@
 
     &-date {
       grid-row: 1;
-      @include enFont;
+      @include textFont;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
     }
 
     &-tools {
@@ -220,89 +224,34 @@
   gap: 0.5rem;
 
   &-title {
-    @include enFont;
+    @include textFont;
+    font-weight: 500;
+    font-size: clamp(0.85rem, 5vw, 1.2em);
     letter-spacing: 0.1em;
+    line-height: 1.6;
   }
 
   &-text {
     @include textFont;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 0.2rem;
+    @include textFont;
     font-size: 0.75rem;
-    line-height: 1.6;
+    line-height: 1.8;
     letter-spacing: 0.2em;
-  }
-}
 
-.post__pagination {
-  grid-column: 2;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 2rem;
-
-  @include for-mobile {
-    grid-column: 2 / 4;
-  }
-
-  &__prev {
-    grid-column: 1;
-    grid-row: 1;
-
-    &-text {
-      position: relative;
-      padding-left: 1rem; // 矢印分のスペースを確保
-
-      &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 0;
-        height: 0;
-        border-top: 6px solid transparent;
-        border-bottom: 6px solid transparent;
-        border-right: 10px solid var(--color-text); // 三角形の色とサイズ
-        left: -15px; // 矢印を左に移動。この値は矢印のサイズや望むスペースに応じて調整
-        top: 50%; // 要素の中央に配置
-        transform: translateY(-50%); // 矢印を垂直方向の中央に合わせる
+    > ul {
+      padding-left: 1rem;
+      height: auto;
+      > li {
+        @include textFont;
+        font-size: 0.75rem;
+        line-height: 1.8;
+        letter-spacing: 0.2em;
+        list-style: disc;
       }
     }
   }
-
-  &__next {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: flex-end;
-
-    &-text {
-      position: relative;
-      padding-right: 1rem; // 矢印分のスペースを確保
-
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 0;
-        height: 0;
-        border-top: 6px solid transparent;
-        border-bottom: 6px solid transparent;
-        border-left: 10px solid var(--color-text); // 矢印の色とサイズ
-        right: -15px; // 矢印を右に移動
-        top: 50%; // 要素の中央に配置
-        transform: translateY(-50%); // 矢印を垂直方向の中央に合わせる
-      }
-    }
-  }
-
-  @include for-mobile {
-    &__prev-text {
-      padding-right: 0.5rem; // 矢印分のスペースを確保
-    }
-
-    &__next-text {
-      padding-left: 0.5rem;
-    }
-  }
-}
-
-.pagenation-text {
-  @include textFont;
-  font-size: 0.8rem;
 }
