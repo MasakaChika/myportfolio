@@ -17,11 +17,10 @@
 	<!-- loop -->
 	<?php get_template_part('template-parts/archive', 'work-filtered') ?>
 
-
 	<!-- pagenation -->
-	<div class="pagenation">
+	<nav class="pagination">
 		<?php get_template_part('template-parts/pagination', 'numbers'); ?>
-	</div>
+	</nav>
 </main>
 
 <?php get_footer(); ?>

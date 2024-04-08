@@ -61,7 +61,7 @@
 											the_post_thumbnail('medium'); // アイキャッチ画像を表示
 										else : ?>
 											<!-- アイキャッチがない場合のデフォルト画像 -->
-											<img src="<?= get_template_directory_uri(); ?>/assets/img/noimage.webp" alt="">
+											<img src="<?= get_template_directory_uri(); ?>/assets/img/noimage.webp" alt="No image">
 										<?php endif; ?>
 									</a>
 								</div>
@@ -71,7 +71,6 @@
 						<!-- 投稿がない場合のメッセージ -->
 						<p>投稿が見つかりませんでした。</p>
 					<?php endif;
-
 					// メインクエリの投稿データをリセット
 					wp_reset_postdata();
 					?>

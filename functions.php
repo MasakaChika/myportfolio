@@ -37,12 +37,9 @@ function remove_menus()
 }
 add_action('admin_menu', 'remove_menus', 999);
 
-
-
-/**
+/**------------------------------------------
  * <title>の区切り文字を変更する
- *
- */
+ *------------------------------------------*/
 function my_document_title_separator($separator)
 {
 	$separator = '|';
@@ -50,7 +47,10 @@ function my_document_title_separator($separator)
 }
 add_filter('document_title_separator', 'my_document_title_separator');
 
-// CSSとJavaScriptの読み込み 
+
+/**------------------------------------------
+ * CSSとJavaScriptの読み込み
+ *------------------------------------------*/
 function my_scripts_method()
 {
 	// jQuery の登録解除

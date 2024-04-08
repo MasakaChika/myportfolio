@@ -1,10 +1,7 @@
 <?php get_header(); ?>
-
-<?php if (have_posts()) : ?>
-	<?php while (have_posts()) : the_post(); ?>
-
-		<main>
-
+<main>
+	<?php if (have_posts()) : ?>
+		<?php while (have_posts()) : the_post(); ?>
 			<?php
 			// カスタムフィールド 'vertical-jp' の値を取得します。
 			// get_the_ID() は現在のページまたは投稿の ID を返します。
@@ -25,7 +22,7 @@
 					<?php the_content(); ?>
 				</div>
 			</section>
-		</main>
-	<?php endwhile; ?>
-<?php endif; ?>
+		<?php endwhile; ?>
+	<?php endif; ?>
+</main>
 <?php get_footer(); ?>

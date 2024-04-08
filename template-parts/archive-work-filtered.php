@@ -1,6 +1,3 @@
-<!-- content-postとworks-filterをまとめたもの -->
-
-
 <?php
 // タクソノミーのタームslugを取得します。
 $term_slug = get_query_var('term');

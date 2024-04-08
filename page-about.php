@@ -14,16 +14,13 @@
 	));
 	?>
 
-
-
-
 	<!-- about -->
 	<section class="page-about">
 
 		<div class="page-about__main">
 			<header class="section-header page-about__title">about</header>
 			<div class="page-about__photo">
-				<img src=<?= get_theme_file_uri('/assets/img/photo.webpƒ'); ?> alt="マサカチカが写っている写真" />
+				<img src=<?= get_theme_file_uri('/assets/img/photo.webp'); ?> alt="マサカチカが写っている写真" />
 			</div>
 
 			<div class="page-about__name">

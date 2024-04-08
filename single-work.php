@@ -16,7 +16,7 @@
 		$points = get_post_meta($post_id, 'points', true);
 		$related_information = get_post_meta($post_id, 'related-information', true);
 		$gallery = get_post_meta($post_id, 'gallery', true);
-		$post_date = get_the_date('Y-n');
+		$post_date = get_the_date('Y-m');
 		?>
 
 		<!-- タグの出力 -->
@@ -41,7 +41,7 @@
 		<!-- 画像の出力 -->
 		<?php if (!empty($image_url)) : ?>
 			<div class="work__img">
-				<img src="<?= esc_url($image_url); ?>" alt="メイン画像">
+				<img src="<?= esc_url($image_url); ?>" alt="メイン画像" loading="lazy">
 			</div>
 		<?php else : ?>
 			<p>画像が見つかりません。</p>
@@ -52,7 +52,7 @@
 			<div class="work__content-left">
 				<section class="work__content-date">
 					<time datetime="<?= $post_date; ?>">
-						<?= date('Y-n', strtotime($post_date)); ?>
+						<?= date('Y-m', strtotime($post_date)); ?>
 					</time>
 				</section>
 
@@ -68,27 +68,27 @@
 
 				<section class="work__content-concepts content">
 					<h3 class="content-title">課題・コンセプト</h3>
-					<div class="content-text"><?= $concepts; ?></div>
+					<div class="content-text"><?= wp_kses_post($concepts); ?></div>
 				</section>
 			</div>
 
 			<div class="work__content-right">
 				<section class="work__content-points content">
 					<h3 class="content-title">ポイント</h3>
-					<div class="content-text"><?= $points; ?></div>
+					<div class="content-text"><?= wp_kses_post($points); ?></div>
 				</section>
 
 				<?php if (!empty($related_information)) : ?>
 					<section class="work__content-info content">
 						<h3 class="content-title">関連情報</h3>
-						<div class="content-text"><?= $related_information; ?></div>
+						<div class="content-text"><?= wp_kses_post($related_information); ?></div>
 					</section>
 				<?php endif; ?>
 
 				<?php if (!empty($gallery)) : ?>
 					<section class="work__content-gallery content">
 						<h3 class="content-title">ギャラリー</h3>
-						<div class="content-text"><?= $gallery ?></div>
+						<div class="content-text"><?= wp_kses_post($gallery) ?></div>
 					</section>
 				<?php endif; ?>
 
