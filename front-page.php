@@ -27,7 +27,6 @@
 		<div class="vertical-title__text">Web Creater Masaka Chika Portfolio</div>
 	</div>
 
-
 	<!-- main content -->
 	<div class="main-content">
 		<!-- works -->

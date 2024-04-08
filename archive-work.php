@@ -18,9 +18,9 @@
 	<?php get_template_part('template-parts/archive', 'work-filtered') ?>
 
 	<!-- pagenation -->
-	<nav class="pagination">
+	<!-- <nav class="pagination">
 		<?php get_template_part('template-parts/pagination', 'numbers'); ?>
-	</nav>
+	</nav> -->
 </main>
 
 <?php get_footer(); ?>
