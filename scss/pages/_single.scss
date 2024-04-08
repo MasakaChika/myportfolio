@@ -196,3 +196,11 @@
     }
   }
 }
+
+.newworks__title {
+  grid-column: 2;
+
+  @include for-mobile {
+    grid-column: 3;
+  }
+}

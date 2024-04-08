@@ -5,6 +5,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 2rem;
+  height: clamp(2rem, 10vw, 5rem);
 
   @include for-mobile {
     grid-column: 2 / 4;
@@ -64,4 +65,5 @@
   @include textFont;
   font-size: clamp(0.6rem, 2vw, 0.8rem);
   letter-spacing: clamp(0.02em, 2vw, 0.1em);
+  height: clamp(2rem, 5vw, 3rem);
 }

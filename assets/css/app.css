@@ -1789,6 +1789,15 @@ hr {
   list-style: disc;
 }
 
+.newworks__title {
+  grid-column: 2;
+}
+@media (max-width: 480px) {
+  .newworks__title {
+    grid-column: 3;
+  }
+}
+
 .contact {
   grid-column: 2;
   margin-top: 140px;
@@ -1921,6 +1930,7 @@ hr {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 2rem;
+  height: clamp(2rem, 10vw, 5rem);
 }
 @media (max-width: 480px) {
   .post__pagination {
@@ -1978,4 +1988,5 @@ hr {
   color: var(--color-text);
   font-size: clamp(0.6rem, 2vw, 0.8rem);
   letter-spacing: clamp(0.02em, 2vw, 0.1em);
+  height: clamp(2rem, 5vw, 3rem);
 }/*# sourceMappingURL=app.css.map */

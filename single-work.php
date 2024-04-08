@@ -97,5 +97,9 @@
 	</section>
 	<!-- pagenation -->
 	<?php get_template_part('template-parts/post', 'navigation'); ?>
+	<header class="section-subheader newworks__title">new works</header>
+	<?php show_latest_work_thumbnails(); ?>
+
+	</section>
 </main>
 <?php get_footer(); ?>

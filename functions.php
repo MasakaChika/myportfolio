@@ -1,5 +1,6 @@
 <?php
 get_template_part('functions/admin');
+get_template_part('functions/loop');
 get_template_part('functions/setting');
 
 /*------------------------------------------
