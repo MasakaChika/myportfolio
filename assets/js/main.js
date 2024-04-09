@@ -40,42 +40,6 @@ function applyAnimationToText(selector, staggerTime) {
 // 関数を使用してアニメーションを適用（異なるアニメーション時間を指定）
 applyAnimationToText('.mv__msg', 0.032); // .mv__msgの時間
 applyAnimationToText('.mv__sitename', 0.23); // .mv__sitenameの時間
-/* ------- media query mv change------- */
-/*
-document.addEventListener('DOMContentLoaded', function () {
-  const video = document.querySelector('.mv__video');
-
-  function updateVideoSource() {
-    if (window.matchMedia('(max-width: 480px)').matches) {
-      video.src = 'assets/video/spmv.mp4';
-    } else {
-      video.src = 'assets/video/pcmv.mp4';
-    }
-  }
-
-  // ページロード時とウィンドウサイズ変更時にビデオソースを更新
-  const mediaQueryList = window.matchMedia('(max-width: 767px)');
-  mediaQueryList.addListener(updateVideoSource); // メディアクエリの状態が変化したときに実行
-  updateVideoSource();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  const video = document.querySelector('.mv__video');
-
-  function updateVideoSource() {
-    if (window.matchMedia('(max-width: 480px)').matches) {
-      video.src = `${themeParams.templateUrl}/assets/video/spmv.mp4`;
-    } else {
-      video.src = `${themeParams.templateUrl}/assets/video/pcmv.mp4`;
-    }
-  }
-
-  // ページロード時とウィンドウサイズ変更時にビデオソースを更新
-  const mediaQueryList = window.matchMedia('(min-width: 481px)');
-  mediaQueryList.addListener(updateVideoSource);
-  updateVideoSource();
-});
-*/
 
 /* ------- navigation画面外タップで閉じる ------- */
 document.addEventListener('DOMContentLoaded', function () {
