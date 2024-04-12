@@ -76,7 +76,7 @@
   grid-row: auto;
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 1rem;
+  row-gap: 2rem;
   padding-bottom: 10vh;
   margin-top: clamp(100px, 10vw, 140px);
 
@@ -86,6 +86,5 @@
   @include for-mobile {
     grid-column: 3;
     padding-bottom: 1vh;
-    // margin-top: 100px;
   }
 }

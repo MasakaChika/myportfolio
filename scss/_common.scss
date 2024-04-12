@@ -397,7 +397,7 @@ main {
 /* ------- footer ------- */
 .site-footer {
   &__inner {
-    display: block flex;
+    display: flex;
     width: 100%;
     padding: 24px 0px;
     justify-content: center;
@@ -420,6 +420,7 @@ main {
   grid-column: 1;
   align-self: start;
   top: 120px;
+  width: 2rem;
 
   &__inner {
     display: grid;
@@ -596,6 +597,7 @@ main {
   grid-template-rows: auto;
   justify-self: center;
   gap: 2%;
+  min-height: 90vh;
 
   li {
     width: 100%;
@@ -648,6 +650,7 @@ main {
   > hr {
     grid-row: 2;
     width: auto;
+    height: 0;
     border-top: 1px solid var(--color-text-soft);
   }
 
