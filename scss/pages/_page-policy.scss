@@ -1,0 +1,52 @@
+@use '../mixins' as *;
+
+.privacy-policy {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10vh;
+  margin-top: 140px;
+
+  @include for-mobile {
+    grid-column: 3;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 2rem;
+  }
+  &__introduction {
+    @include textFont;
+  }
+
+  &__section {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 0.4rem;
+  }
+
+  &__heading {
+    @include textFont;
+    font-size: 1rem;
+  }
+
+  &__text {
+    @include textFont;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    letter-spacing: 0.014em;
+  }
+
+  &__list {
+    list-style: inside;
+    @include textFont;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    letter-spacing: 0.014em;
+  }
+
+  &__button {
+    @include button-style;
+  }
+}

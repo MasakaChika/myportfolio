@@ -1,5 +1,62 @@
 @use '../mixins' as *;
 
+.form_block {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 5em;
+}
+
+.form-required {
+  @include textFont;
+  font-size: 0.5rem;
+  margin-left: 1em;
+  color: #fff;
+  background-color: #f67a7a;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+}
+
+.form_field {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  align-self: start;
+}
+
+.--textfield {
+  height: 20em;
+  resize: none;
+}
+
+.form-btn {
+  @include button-style;
+}
+
+/* ------------------------------------ */
+/* 送信後のサンクスページ専用 */
+/* ------------------------------------ */
+.section-thanks {
+  padding: 100px 40px;
+}
+.thanks_h1 {
+  font-size: 2.8rem;
+  text-align: center;
+}
+.thanks_a {
+  background-color: #6695ed;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.8rem;
+  width: 12em;
+  height: 3em;
+}
+
 .contact {
   grid-column: 2;
   margin-top: 140px;
@@ -22,14 +79,26 @@
     }
   }
 
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   label {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 0.5rem;
     @include textFont;
     font-size: 15px;
     font-weight: 500;
     line-height: 1.4; // 21px
     letter-spacing: 2px;
   }
-
+  /*
   &__campany-name,
   &__your-name,
   &__your-email,
@@ -48,7 +117,7 @@
   &__phone-number {
     height: 2rem;
   }
-
+*/
   &__contact {
     text-transform: uppercase;
   }
@@ -70,31 +139,6 @@
         font-weight: 300;
         line-height: 1.5; // 16.5px
       }
-    }
-  }
-
-  &__submit {
-    justify-self: center;
-    @include enFont;
-    color: var(--color-white);
-    font-size: 15px;
-    line-height: 1.4; // 21px
-    letter-spacing: 0.3em; // 14px
-    text-transform: uppercase;
-
-    display: flex;
-    padding: 0.5rem 1rem;
-    align-items: center;
-    gap: 8px;
-    width: 200px;
-    border-radius: 8px;
-    background: var(--color-text);
-
-    // neumo
-    box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
-
-    @include for-mobile {
-      justify-self: start;
     }
   }
 }

@@ -110,3 +110,8 @@ const mySwiper = new Swiper('.swiper', {
     },
   },
 });
+
+/* ------- back ------- */
+function goBack() {
+  window.history.back();
+}

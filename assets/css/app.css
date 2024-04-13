@@ -646,6 +646,34 @@ video {
   border: none;
 }
 
+/* 全ブラウザでのplaceholderスタイル */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #888; /* Placeholderテキストの色 */
+  opacity: 1; /* Firefoxではデフォルトで少し透明になるため、明確に指定 */
+  font-weight: 400; /* フォントの太さ */
+  text-align: left; /* テキストを左揃えに */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #888;
+  font-weight: 400;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #888;
+  font-weight: 400;
+}
+
+/* Firefox 18- のためのプレフィックス */
+::-moz-placeholder {
+  color: #888;
+  opacity: 1; /* Firefoxではデフォルトでplaceholderが少し透明になるため、明確に指定 */
+  font-weight: 400;
+}
+
 /* ------- layout ------- */
 main {
   display: grid;
@@ -1801,12 +1829,135 @@ hr {
   }
 }
 
+.form_block {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 5em;
+}
+
+.form-required {
+  font-family: var(--font-praimary);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-text);
+  font-size: 0.5rem;
+  margin-left: 1em;
+  color: #fff;
+  background-color: #f67a7a;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+}
+
+.form_field {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  align-self: start;
+}
+
+.--textfield {
+  height: 20em;
+  resize: none;
+}
+
+.form-btn {
+  justify-self: center;
+  font-family: var(--font-title-en);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-text);
+  color: var(--color-white);
+  font-size: 15px;
+  line-height: 1.4;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  display: flex;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 200px;
+  border-radius: 8px;
+  background: var(--color-text);
+  box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
+}
+@media (max-width: 480px) {
+  .form-btn {
+    justify-self: start;
+  }
+}
+
+textarea::placeholder {
+  font-weight: normal; /* または 400 で指定 */
+  color: rgba(0, 0, 0, 0.6); /* Placeholderの色を少し薄くして、通常のテキストと区別しやすくする */
+}
+
+/* Firefox のためのスタイル */
+textarea::-moz-placeholder {
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.6);
+  opacity: 1; /* Firefoxではデフォルトでopacityが0.4なので、明確に指定する */
+}
+
+/* Internet Explorer と Edge のためのスタイル */
+textarea:-ms-input-placeholder {
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* ------------------------------------ */
+/* 送信後のサンクスページ専用 */
+/* ------------------------------------ */
+.section-thanks {
+  padding: 100px 40px;
+}
+
+.thanks_h1 {
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.thanks_a {
+  background-color: #6695ed;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.8rem;
+  width: 12em;
+  height: 3em;
+}
+
 .contact {
   grid-column: 2;
   margin-top: 140px;
   display: grid;
   grid-template-columns: minmax(0, auto) minmax(auto, 700px) minmax(0, auto);
   row-gap: 2rem;
+  /*
+    &__campany-name,
+    &__your-name,
+    &__your-email,
+    &__phone-number,
+    &__your-message {
+      width: 100%;
+
+      @include for-mobile-and-tablet {
+        width: 100%;
+      }
+    }
+
+    &__campany-name,
+    &__your-name,
+    &__your-email,
+    &__phone-number {
+      height: 2rem;
+    }
+  */
 }
 @media (max-width: 480px) {
   .contact {
@@ -1824,7 +1975,18 @@ hr {
     grid-column: 1/-1;
   }
 }
+.contact__form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
 .contact label {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 0.5rem;
   font-family: var(--font-praimary);
   font-weight: 400;
   font-style: normal;
@@ -1833,17 +1995,6 @@ hr {
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: 2px;
-}
-.contact__campany-name, .contact__your-name, .contact__your-email, .contact__phone-number, .contact__your-message {
-  width: 100%;
-}
-@media (max-width: 959px) {
-  .contact__campany-name, .contact__your-name, .contact__your-email, .contact__phone-number, .contact__your-message {
-    width: 100%;
-  }
-}
-.contact__campany-name, .contact__your-name, .contact__your-email, .contact__phone-number {
-  height: 2rem;
 }
 .contact__contact {
   text-transform: uppercase;
@@ -1867,31 +2018,6 @@ hr {
   font-style: normal;
   font-weight: 300;
   line-height: 1.5;
-}
-.contact__submit {
-  justify-self: center;
-  font-family: var(--font-title-en);
-  font-weight: 400;
-  font-style: normal;
-  color: var(--color-text);
-  color: var(--color-white);
-  font-size: 15px;
-  line-height: 1.4;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  display: flex;
-  padding: 0.5rem 1rem;
-  align-items: center;
-  gap: 8px;
-  width: 200px;
-  border-radius: 8px;
-  background: var(--color-text);
-  box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
-}
-@media (max-width: 480px) {
-  .contact__submit {
-    justify-self: start;
-  }
 }
 
 .wpcf7-form {
@@ -1992,4 +2118,85 @@ hr {
   font-size: clamp(0.6rem, 2vw, 0.8rem);
   letter-spacing: clamp(0.02em, 2vw, 0.1em);
   height: clamp(2rem, 5vw, 3rem);
+}
+
+.privacy-policy {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10vh;
+  margin-top: 140px;
+}
+@media (max-width: 480px) {
+  .privacy-policy {
+    grid-column: 3;
+  }
+}
+.privacy-policy__container {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 2rem;
+}
+.privacy-policy__introduction {
+  font-family: var(--font-praimary);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-text);
+}
+.privacy-policy__section {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 0.4rem;
+}
+.privacy-policy__heading {
+  font-family: var(--font-praimary);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+.privacy-policy__text {
+  font-family: var(--font-praimary);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  letter-spacing: 0.014em;
+}
+.privacy-policy__list {
+  list-style: inside;
+  font-family: var(--font-praimary);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  letter-spacing: 0.014em;
+}
+.privacy-policy__button {
+  justify-self: center;
+  font-family: var(--font-title-en);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-text);
+  color: var(--color-white);
+  font-size: 15px;
+  line-height: 1.4;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  display: flex;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 200px;
+  border-radius: 8px;
+  background: var(--color-text);
+  box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
+}
+@media (max-width: 480px) {
+  .privacy-policy__button {
+    justify-self: start;
+  }
 }/*# sourceMappingURL=app.css.map */

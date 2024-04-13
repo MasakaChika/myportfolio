@@ -88,3 +88,29 @@
     padding-bottom: 1vh;
   }
 }
+
+@mixin button-style {
+  justify-self: center;
+  @include enFont;
+  color: var(--color-white);
+  font-size: 15px;
+  line-height: 1.4; // 21px
+  letter-spacing: 0.3em; // 14px
+  text-transform: uppercase;
+
+  display: flex;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 200px;
+  border-radius: 8px;
+  background: var(--color-text);
+
+  // neumo
+  box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
+
+  @include for-mobile {
+    justify-self: start;
+  }
+}
