@@ -41,7 +41,7 @@
 					wp_nav_menu($args);
 					?>
 					<div class="site-header__sns">
-						<a href="https://www.instagram.com/chococcoccco" target="_blank">
+						<a href="https://www.instagram.com/i_am_masaka" target="_blank">
 							<svg id="icon-instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 								<g id="openmoji:instagram">
 									<path id="Vector" class="cls-1" d="M17.42.25H6.58C3.08.25.25,3.08.25,6.58v10.84c0,3.5,2.83,6.33,6.33,6.33h10.84c3.5,0,6.33-2.83,6.33-6.33V6.58c0-3.5-2.83-6.33-6.33-6.33Z" />

@@ -13,7 +13,13 @@
 		'horizontal' => $page_title_uppercase, // 大文字に変換したページタイトル
 	));
 	?>
-
+	<section class="thanks-message">
+		<div class="thanks-message__container">
+			<header class="section-subheader thanks-message__title">お問い合わせありがとうございます</header>
+			<p thanks-message__text>送信が完了しました。お問い合わせいただいた内容には、数日中にメールで回答させていただきます。しばらくお待ちください。</p>
+			<a href="<?= home_url(); ?>" class="form-btn">home</a>
+		</div>
+	</section>
 
 </main>
 <?php get_footer(); ?>

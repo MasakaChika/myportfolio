@@ -32,31 +32,6 @@
   @include button-style;
 }
 
-/* ------------------------------------ */
-/* 送信後のサンクスページ専用 */
-/* ------------------------------------ */
-.section-thanks {
-  padding: 100px 40px;
-}
-.thanks_h1 {
-  font-size: 2.8rem;
-  text-align: center;
-}
-.thanks_a {
-  background-color: #6695ed;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.8rem;
-  width: 12em;
-  height: 3em;
-}
-
 .contact {
   grid-column: 2;
   margin-top: 140px;

@@ -115,3 +115,20 @@ const mySwiper = new Swiper('.swiper', {
 function goBack() {
   window.history.back();
 }
+
+/* ------- googleform submit ------- */
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.querySelector('.contact__form');
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var formData = new FormData(form);
+    fetch('YOUR_GOOGLE_SCRIPT_URL', {
+      // Google Scriptの公開URL
+      method: 'POST',
+      body: formData,
+    })
+      .then((response) => response.text())
+      .then((data) => (window.location.href = '/contact/thanks')) // 成功時のリダイレクト
+      .catch((error) => console.error('Error:', error));
+  });
+});

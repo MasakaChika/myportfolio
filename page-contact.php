@@ -54,7 +54,10 @@
 					</p>
 				</div>
 				<!-- 送信ボタン -->
-				<button type="submit" class="form-btn">confirm</button>
+				<button type="submit" class="form-btn">send</button>
 			</form>
+		</div>
+	</section>
+
 </main>
 <?php get_footer(); ?>
