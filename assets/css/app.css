@@ -646,34 +646,6 @@ video {
   border: none;
 }
 
-/* 全ブラウザでのplaceholderスタイル */
-::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #888; /* Placeholderテキストの色 */
-  opacity: 1; /* Firefoxではデフォルトで少し透明になるため、明確に指定 */
-  font-weight: 400; /* フォントの太さ */
-  text-align: left; /* テキストを左揃えに */
-}
-
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: #888;
-  font-weight: 400;
-}
-
-::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: #888;
-  font-weight: 400;
-}
-
-/* Firefox 18- のためのプレフィックス */
-::-moz-placeholder {
-  color: #888;
-  opacity: 1; /* Firefoxではデフォルトでplaceholderが少し透明になるため、明確に指定 */
-  font-weight: 400;
-}
-
 /* ------- layout ------- */
 main {
   display: grid;
@@ -1885,24 +1857,6 @@ hr {
   .form-btn {
     justify-self: start;
   }
-}
-
-textarea::placeholder {
-  font-weight: normal; /* または 400 で指定 */
-  color: rgba(0, 0, 0, 0.6); /* Placeholderの色を少し薄くして、通常のテキストと区別しやすくする */
-}
-
-/* Firefox のためのスタイル */
-textarea::-moz-placeholder {
-  font-weight: normal;
-  color: rgba(0, 0, 0, 0.6);
-  opacity: 1; /* Firefoxではデフォルトでopacityが0.4なので、明確に指定する */
-}
-
-/* Internet Explorer と Edge のためのスタイル */
-textarea:-ms-input-placeholder {
-  font-weight: normal;
-  color: rgba(0, 0, 0, 0.6);
 }
 
 /* ------------------------------------ */
