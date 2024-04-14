@@ -115,3 +115,12 @@ const mySwiper = new Swiper('.swiper', {
 function goBack() {
   window.history.back();
 }
+
+/* ------- contact ------- */
+var submitted = false;
+
+function redirectOnSubmit() {
+  if (submitted) {
+    window.location.href = '/contact/thanks';
+  }
+}

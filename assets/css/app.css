@@ -1224,7 +1224,7 @@ main {
 
 .archive-works {
   grid-column: 2;
-  margin-top: clamp(80px, 10vw, 140px);
+  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
@@ -1245,10 +1245,11 @@ main {
 
 .page-about {
   grid-column: 2;
-  margin-top: clamp(80px, 10vw, 140px);
+  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
+  row-gap: 8vh;
 }
 .page-about__main {
   display: grid;
@@ -1393,7 +1394,7 @@ hr {
 
 .skills,
 .strengths {
-  margin-top: 20vh;
+  margin-top: clamp(20vh, 20vw, 30vh);
 }
 
 .skills {
@@ -1793,7 +1794,7 @@ hr {
 
 .newarchive-works {
   grid-column: 2;
-  margin-top: clamp(80px, 10vw, 140px);
+  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
@@ -1848,7 +1849,7 @@ hr {
 
 .taxonomy-works {
   grid-column: 2;
-  margin-top: clamp(80px, 10vw, 140px);
+  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
@@ -1935,11 +1936,11 @@ hr {
 
 .privacy-policy {
   grid-column: 2;
-  margin-top: clamp(80px, 10vw, 140px);
+  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
-  grid-template-columns: minmax(0, auto) minmax(auto, 700px) minmax(0, auto);
+  grid-template-columns: minmax(0, auto) minmax(auto, 1080px) minmax(0, auto);
 }
 @media (max-width: 480px) {
   .privacy-policy {
@@ -2085,11 +2086,11 @@ hr {
 
 .contact {
   grid-column: 2;
-  margin-top: clamp(80px, 10vw, 140px);
+  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
-  grid-template-columns: minmax(0, auto) minmax(auto, 700px) minmax(0, auto);
+  grid-template-columns: minmax(0, auto) minmax(auto, 1080px) minmax(0, auto);
   /*
     &__campany-name,
     &__your-name,
@@ -2186,11 +2187,11 @@ hr {
 
 .thanks-message {
   grid-column: 2;
-  margin-top: clamp(80px, 10vw, 140px);
+  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
-  grid-template-columns: minmax(0, auto) minmax(auto, 700px) minmax(0, auto);
+  grid-template-columns: minmax(0, auto) minmax(auto, 1080px) minmax(0, auto);
   margin-bottom: 80vh;
 }
 @media (max-width: 480px) {

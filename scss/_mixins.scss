@@ -112,7 +112,7 @@
 
 @mixin common-section-style {
   grid-column: 2;
-  margin-top: clamp(80px, 10vw, 140px);
+  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;

@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+Ω<?php get_header(); ?>
 <main>
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
@@ -21,7 +21,7 @@
 	<section class="contact">
 		<div class="contact__container">
 			<header class="section-header contact__title">Contact</header>
-			<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeMWEj_fwyidcP-HasVrFJXiYWt7KMOdkiP05HmHrK-5mG5SQ/formResponse" class="contact__form">
+			<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeMWEj_fwyidcP-HasVrFJXiYWt7KMOdkiP05HmHrK-5mG5SQ/formResponse" class="contact__form" target="hidden_iframe" onsubmit="submitted=true;">
 				<!-- 会社名 -->
 				<label class="form_block contact__campany-name">
 					<div class="form_label">会社名</div>
@@ -56,6 +56,7 @@
 				<!-- 送信ボタン -->
 				<button type="submit" class="form-btn">send</button>
 			</form>
+			<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='/contact/thanks';}"></iframe>
 		</div>
 	</section>
 

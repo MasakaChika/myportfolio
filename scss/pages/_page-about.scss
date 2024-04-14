@@ -2,6 +2,7 @@
 
 .page-about {
   @include common-section-style;
+  row-gap: 8vh;
 
   &__main {
     display: grid;
@@ -144,7 +145,7 @@ hr {
 
 .skills,
 .strengths {
-  margin-top: 20vh;
+  margin-top: clamp(20vh, 20vw, 30vh);
 }
 
 .skills {

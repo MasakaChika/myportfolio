@@ -34,7 +34,7 @@
 
 .contact {
   @include common-section-style;
-  grid-template-columns: minmax(0, auto) minmax(auto, 700px) minmax(0, auto);
+  grid-template-columns: minmax(0, auto) minmax(auto, 1080px) minmax(0, auto);
 
   @include for-mobile {
     grid-column: 3;
