@@ -1,11 +1,9 @@
 @use '../mixins' as *;
 
 .thanks-message {
-  grid-column: 2;
-  margin-top: 140px;
-  display: grid;
+  @include common-section-style;
   grid-template-columns: minmax(0, auto) minmax(auto, 700px) minmax(0, auto);
-  row-gap: 2rem;
+
   margin-bottom: 80vh;
 
   @include for-mobile {
@@ -18,5 +16,16 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     gap: 4rem;
+  }
+
+  &__title {
+    @include jpFont;
+    font-size: 1.5rem;
+  }
+
+  &__text {
+    @include textFont;
+    font-size: 0.875rem;
+    letter-spacing: 0.014em;
   }
 }

@@ -72,13 +72,8 @@
 }
 
 @mixin works-style {
-  grid-column: 2;
-  grid-row: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 2rem;
+  @include common-section-style;
   padding-bottom: 10vh;
-  margin-top: clamp(10px, 10vw, 140px);
 
   &__title {
     grid-row: 1;
@@ -113,4 +108,12 @@
   @include for-mobile {
     justify-self: start;
   }
+}
+
+@mixin common-section-style {
+  grid-column: 2;
+  margin-top: clamp(80px, 10vw, 140px);
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
 }

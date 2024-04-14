@@ -1,18 +1,8 @@
 @use '../mixins' as *;
 
 .privacy-policy {
-  /*
-  grid-column: 2;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10vh;
-  margin-top: clamp(10px, 10vw, 140px);
-	*/
-  grid-column: 2;
-  margin-top: clamp(10px, 10vw, 140px);
-  display: grid;
+  @include common-section-style;
   grid-template-columns: minmax(0, auto) minmax(auto, 700px) minmax(0, auto);
-  row-gap: 2rem;
 
   @include for-mobile {
     grid-column: 3;

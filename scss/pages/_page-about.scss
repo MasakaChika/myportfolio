@@ -1,12 +1,7 @@
 @use '../mixins' as *;
 
 .page-about {
-  grid-column: 2;
-  grid-row: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 2rem;
-  margin-top: clamp(10px, 10vw, 140px);
+  @include common-section-style;
 
   &__main {
     display: grid;
