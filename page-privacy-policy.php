@@ -9,8 +9,6 @@
 		<header class="section-header privacy-policy__title">Privacy Policy
 		</header>
 
-
-
 		<div class="privacy-policy__container">
 			<p class="privacy-policy__introduction">
 				Masaka Chika Portfolio Site（以下、「当サイト」といいます。）は、当サイトの提供するサービス（以下、「本サービス」といいます。）において、ユーザーのプライバシーを尊重し、個人情報の保護に努めます。<br>

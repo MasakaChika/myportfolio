@@ -1,23 +1,37 @@
 @use '../mixins' as *;
 
 .privacy-policy {
+  /*
   grid-column: 2;
   display: grid;
   grid-template-columns: 1fr;
   gap: 10vh;
-  margin-top: 140px;
+  margin-top: clamp(10px, 10vw, 140px);
+	*/
+  grid-column: 2;
+  margin-top: clamp(10px, 10vw, 140px);
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(auto, 700px) minmax(0, auto);
+  row-gap: 2rem;
 
   @include for-mobile {
     grid-column: 3;
   }
-
+  &__title {
+    grid-column: 2;
+    grid-row: 1;
+  }
   &__container {
+    grid-column: 2;
+    grid-row: 2;
     display: grid;
     grid-template-columns: auto;
     row-gap: 2rem;
   }
   &__introduction {
     @include textFont;
+    font-size: 0.875rem;
+    letter-spacing: 0.014em;
   }
 
   &__section {
@@ -47,6 +61,8 @@
   }
 
   &__button {
+    grid-column: 2;
+    grid-row: 3;
     @include button-style;
   }
 }

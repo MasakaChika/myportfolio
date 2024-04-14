@@ -78,7 +78,7 @@
   grid-template-columns: 1fr;
   row-gap: 2rem;
   padding-bottom: 10vh;
-  margin-top: clamp(100px, 10vw, 140px);
+  margin-top: clamp(10px, 10vw, 140px);
 
   &__title {
     grid-row: 1;

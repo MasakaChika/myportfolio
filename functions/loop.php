@@ -11,14 +11,13 @@ function show_latest_work_thumbnails()
 	);
 	$query = new WP_Query($args); // 変数名を $query に統一
 
-	if ($query->have_posts()) : // $query を正しく使用
-		echo '<ul class="works__archive">'; // PHP の echo を使う形式に統一
+	if ($query->have_posts()) :
+		echo '<ul class="newworks__archive">';
 		while ($query->have_posts()) : $query->the_post();
 			echo '<li><div class="works__archive-card"><a href="' . get_permalink() . '">';
 			if (has_post_thumbnail()) {
 				the_post_thumbnail('medium');
 			} else {
-				// デフォルト画像のパスはプロジェクトに合わせて調整してください
 				echo '<img src="' . get_template_directory_uri() . '/assets/img/noimage.png" alt="">';
 			}
 			echo '</a></div></li>';
