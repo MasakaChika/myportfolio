@@ -33,19 +33,19 @@
 			<div class="page-about__content">
 				<span class="page-about__content-label">Initiation</span>
 				<h3 class="page-about__content-title">歯科衛生士からWebデザイナーへ</h3>
-				<p class="page-about__content-text">長きにわたり、歯科衛生士として患者さんの健康をサポートしてまいりました。情報をお伝えする中で、さまざまな課題に直面しましたが、言葉だけではなく視覚的な手段がいかに重要かを学びました。<br>試行錯誤の末、リーフレットやポスターを作成し、患者さんの理解を得ることができた時の喜びは、次第にデザイナーを目指すきっかけをもたらしました。</p>
+				<p class="page-about__content-text common__desc">長きにわたり、歯科衛生士として患者さんの健康をサポートしてまいりました。情報をお伝えする中で、さまざまな課題に直面しましたが、言葉だけではなく視覚的な手段がいかに重要かを学びました。<br>説明用リーフレットや院内ポスターを作成し、患者さんの理解を得ることができた時の喜びは、次第にデザイナーを目指すきっかけをもたらしました。</p>
 			</div>
 			<hr>
 			<div class="page-about__content">
 				<span class="page-about__content-label">Concept</span>
 				<h3 class="page-about__content-title">UI・UXデザインの探求</h3>
-				<p class="page-about__content-text">シンプルながらも深みを持つデザインを心がけています。UI・UXを追求し、形やレイアウトを考え、ユーザーに必要な情報が伝わるよう努力しています。<br>これらの要素を組み合わせ、ユーザーにとって最適な体験を提供することを目指しています。</p>
+				<p class="page-about__content-text common__desc">シンプルながらも深みを持つデザインを心がけています。UI・UXを追求し、形やレイアウトを考え、ユーザーに必要な情報が伝わるよう努力しています。<br>これらの要素を組み合わせ、ユーザーにとって最適な体験を提供することを目指しています。</p>
 			</div>
 			<hr>
 			<div class="page-about__content">
 				<span class="page-about__content-label">Goals</span>
 				<h3 class="page-about__content-title">デザインとコーディング</h3>
-				<p class="page-about__content-text">インタープランITスクール新宿校でコーディングを学んでいくのち、コーダーとしのスキルもしっかりと身につけたいと考えるようになりました。<br><br>デザインの概念からコーディングの具体的な実装に至るまでのプロセスをカバーできるよう幅広い知識を習得し、実務に活かせる能力を身につけていきたいと考えています。</p>
+				<p class="page-about__content-text common__desc">インタープランITスクール新宿校でコーディングを学んでいくのち、コーディングスキルもしっかりと身につけたいと考えるようになりました。<br><br>デザインの概念からコーディングの具体的な実装に至るまでのプロセスをカバーできるよう幅広い知識を習得し、実務に活かせる能力を身につけていきたいと考えています。</p>
 			</div>
 		</div>
 	</section>
@@ -93,8 +93,8 @@
 
 		<div class="strengths__meticulous">
 			<h2 class="strengths__header">Meticulous</h2>
-			<p class="strengths__desc">ものづくりが得意で編み物やレジン小物、DIYなどをします。<br>
-				製作において、素材の選択からプロセス全体にわたって細部にわたる注意を払い、精密さを重視しています。<br>製図や段取りが工程を左右するため、根気よく丁寧に進めることが必要です。<br>
+			<p class="strengths__desc common__desc">ものづくりが得意で編み物やレジン小物、DIYなどをします。<br>
+				製作において、素材の選択からプロセス全体にわたって細部にわたる注意を払い、精密さを重視しています。<br>製図や段取りが仕上がりを左右するため、各工程を根気よく丁寧に進めることが必要です。<br>
 				これらの経験はサイト制作においても活かされると考えます。</p>
 		</div>
 
@@ -104,7 +104,7 @@
 
 		<div class="strengths__certified">
 			<h2 class="strengths__header">Certified</h2>
-			<p class="strengths__desc">2003年 歯科衛生士免許取得<br>
+			<p class="strengths__desc common__desc">2003年 歯科衛生士免許取得<br>
 				2023年 MOS Excel 365<br>
 				2023年 MOS PowerPoint 365<br>
 				2023年 色彩検定2級<br>

@@ -1,4 +1,4 @@
-@use './mixins' as *;
+@use '../mixins' as *;
 /* ------- name animetion ------- */
 @for $i from 1 through 11 {
   $dashValue: 0;
@@ -137,9 +137,14 @@
     position: -webkit-sticky; // WebKitブラウザ用のフォールバック
     position: sticky;
     top: 56vh;
+    padding-right: clamp(0rem, -1.455rem + 7.27vw, 4rem);
+    justify-self: flex-end;
+    width: 2rem;
     @include for-mobile {
       top: 50svh;
     }
+    justify-self: flex-end;
+    width: 2rem;
   }
   &__text {
     display: inline flow-root; //幅を自動的に内包するコンテンツに合わせるため
@@ -191,8 +196,9 @@
 }
 
 .swiper {
-  width: 100%;
-  height: 400px;
+  // width: 100%;
+  // // height: 400px;
+  // height: clamp(25rem, 22.727rem + 11.36vw, 31.25rem);
 
   &-slide {
     display: flex;
@@ -237,7 +243,7 @@
 
     h2 {
       @include jpFont;
-      font-size: clamp(1.25rem, 2vw, 1.75rem);
+      font-size: clamp(1.5rem, 1.409rem + 0.45vw, 1.75rem);
       line-height: normal;
       letter-spacing: clamp(0.15em, 0.05vw, 0.214em);
       text-wrap: nowrap;
@@ -254,7 +260,7 @@
       grid-row: 1;
       @include jpFont;
       font-weight: 600;
-      font-size: clamp(0.93rem, 1.2vw, 1.2rem);
+      font-size: clamp(1rem, 0.891rem + 0.55vw, 1.3rem);
       line-height: 1.6;
       letter-spacing: clamp(0.073em, 0.075vw, 0.075em);
     }
@@ -275,7 +281,6 @@
 
   @include for-tablet {
     grid-template-columns: auto auto; //tablet->2culumns
-    gap: 1rem;
     width: 100%;
 
     &__title {
@@ -302,12 +307,14 @@
       grid-row: 3;
     }
   }
+  @include for-mobile-and-tablet {
+    gap: clamp(0.5rem, 0.25rem + 1.25vw, 1rem);
+    width: 100%;
+  }
 
   @include for-mobile {
     grid-template-columns: 1fr; // mobile->1column
     grid-template-rows: auto; // heightは要素に応じて
-    gap: 1rem;
-    width: 100%;
 
     &__title {
       grid-column: 1;

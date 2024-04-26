@@ -54,35 +54,27 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
-    row-gap: 0.5rem;
+    row-gap: 0.2rem;
     height: 280px;
 
     &-label {
       @include enFont;
       color: var(--color-gray);
-      font-size: 0.75rem; // 12px
+      font-size: clamp(0.875rem, 0.852rem + 0.11vw, 0.938rem);
       line-height: normal;
       letter-spacing: 0.06em; //0.72px
-      height: 1rem;
     }
 
     &-title {
       @include jpFont;
       color: var(--color-text);
-      font-size: 0.93rem; // 15px
+      font-size: clamp(0.938rem, 0.869rem + 0.34vw, 1.125rem);
       font-weight: 500;
       line-height: normal;
-      letter-spacing: 0.06em; // 0.9px
+      letter-spacing: 0.1em;
     }
 
     &-text {
-      @include textFont;
-      color: var(----color-s-text);
-      font-size: 0.75rem; // 12px
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1.91; // 23px
-      letter-spacing: 0.14em;
       margin-top: 2rem;
     }
   }
@@ -243,28 +235,26 @@ hr {
   &__title {
     grid-column: 2;
   }
-  &__meticulous {
-    grid-column: 2;
-    grid-row: 2;
+
+  &__meticulous,
+  &__certified {
     width: 100%;
     background-color: var(--color-background);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
-    grid-gap: 2rem;
+    grid-gap: clamp(0.5rem, 0.227rem + 1.36vw, 1.25rem);
     align-self: start;
+  }
+
+  &__meticulous {
+    grid-column: 2;
+    grid-row: 2;
   }
 
   &__certified {
     grid-column: 3;
     grid-row: 2;
-    width: 100%;
-    background-color: var(--color-background);
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto);
-    grid-gap: 2rem;
-    align-self: start;
   }
 
   &__header {
@@ -280,11 +270,6 @@ hr {
   &__desc {
     grid-column: 1;
     grid-row: 2;
-    @include textFont;
-    font-size: 0.75rem; // 12px
-    line-height: 1.92; // 23px
-    letter-spacing: 0.08em; // 0.96px
-    height: auto;
   }
 
   &__img {
@@ -332,7 +317,6 @@ hr {
   @include for-mobile-and-tablet {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem 2rem;
 
     &__title {
       grid-column: 1;

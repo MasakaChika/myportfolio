@@ -60,6 +60,23 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.getElementById('nav-toggle');
+  const toggleText = document.querySelector('.site-nav-toggle__text');
+
+  toggleText.textContent = 'menu';
+  // チェックボックスの状態が変更されたときのイベントリスナーを追加
+  hamburger.addEventListener('change', function () {
+    if (hamburger.checked) {
+      toggleText.textContent = 'close';
+      toggleText.classList.add('white-text'); // テキスト色を白に変更
+    } else {
+      toggleText.textContent = 'menu';
+      toggleText.classList.remove('white-text'); // テキスト色を元に戻す
+    }
+  });
+});
+
 /* ------- animation loop ------- */
 function loopAnimation(id, className, delay) {
   // getElementsByClassName で得られるコレクションを取得
@@ -86,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /* ------- swiper ------- */
 const mySwiper = new Swiper('.swiper', {
   slidesPerView: 1,
-  spaceBetween: 20,
+  // spaceBetween: 20,
   loop: true,
   loopAdditionalSlides: 1,
 
@@ -101,12 +118,12 @@ const mySwiper = new Swiper('.swiper', {
     //640px以上の時
     640: {
       slidesPerView: 2,
-      spaceBetween: 20,
+      // spaceBetween: 20,
     },
     //768px以上の時
     768: {
       slidesPerView: 3,
-      spaceBetween: 20,
+      // spaceBetween: 20,
     },
   },
 });

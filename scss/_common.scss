@@ -43,11 +43,6 @@ ol {
   list-style: none;
 }
 
-video {
-  outline: none;
-  border: none;
-}
-
 /* ------- layout ------- */
 main {
   display: grid;
@@ -69,12 +64,12 @@ main {
 
 .section-header {
   @include enFont;
-  font-size: 2.5rem;
+  font-size: clamp(1.85rem, 1.286rem + 2.82vw, 3.4rem);
 }
 
 .section-subheader {
   @include enFont;
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1.318rem + 0.91vw, 2rem);
 }
 
 .section-header,
@@ -272,39 +267,55 @@ main {
 }
 
 /* ------- hamburger menu ------- */
+
 .site-nav-toggle {
   display: none;
   cursor: pointer;
   width: 32px;
   height: 32px;
   z-index: 10;
-  justify-content: center;
-  align-items: center;
+  position: relative; /* 追加 */
 
-  &::before,
-  &::after,
-  span {
+  &__text {
+    text-transform: capitalize;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6875rem;
+    @include jpFont;
+  }
+
+  > span:nth-of-type(1),
+  > span:nth-of-type(2),
+  > span:nth-of-type(3) {
     content: '';
-    height: 1px;
+    height: 1.2px;
     width: 30px;
     background-color: var(--color-text);
     position: absolute;
     transition: 0.4s var(--easeing);
   }
 
-  span {
+  > span:nth-of-type(1) {
+    top: calc(30% - 6px);
+  }
+
+  > span:nth-of-type(2) {
+    top: 30%;
+  }
+
+  > span:nth-of-type(3) {
+    top: calc(30% + 6px);
+  }
+
+  > span:nth-of-type(2),
+  > span:nth-of-type(3) {
     transform-origin: left center;
-  }
-
-  &::before {
-    top: calc(50% - 8px);
-  }
-
-  &::after {
-    top: calc(50% + 8px);
   }
 }
 
+/* ------- nav ------- */
 .site-nav-checkbox {
   display: none; // チェックボックスは画面上から隠します
 }
@@ -362,22 +373,24 @@ main {
   }
 
   .site-nav-checkbox:checked ~ .site-nav-toggle {
-    span {
-      transform: scaleX(0); // チェックボックスがチェックされたときに表示
+    span:nth-of-type(2) {
+      transform: scaleX(0); // チェックボックスがチェックされたときに非表示にする
     }
 
-    &::before {
-      top: 50%;
-      transform: rotate(30deg);
-      background-color: var(--color-white);
+    span:nth-of-type(1),
+    span:nth-of-type(3) {
+      top: 30%;
+      transform: rotate(24deg); // 30度回転させて斜めに表示
+      transform-origin: center center; // 変形の原点を中心に設定
+      background-color: var(--color-white); // 色を変更
     }
 
-    &::after {
-      top: 50%;
-      transform: rotate(-30deg);
-      background-color: var(--color-white);
+    span:nth-of-type(3) {
+      transform: rotate(-24deg); // 反対方向に30度回転させて斜めに表示
+      transform-origin: center center; // 変形の原点を中心に設定
     }
   }
+
   .cls-1 {
     stroke: var(--color-white);
   }
@@ -392,6 +405,11 @@ main {
     height: 100vh;
   }
 }
+
+.white-text {
+  color: var(--color-white);
+}
+
 /* ------- /.hamburger menu ------- */
 
 /* ------- footer ------- */
@@ -419,7 +437,9 @@ main {
   position: sticky;
   grid-column: 1;
   align-self: start;
-  top: 120px;
+  justify-self: flex-end;
+  padding-right: clamp(0rem, -1.993rem + 6.66vw, 3rem);
+  top: clamp(5rem, 4.091rem + 4.55vw, 7.5rem);
   width: 2rem;
 
   &__inner {
@@ -479,7 +499,7 @@ main {
 
   @include for-mobile {
     grid-column: 1;
-    top: 80px;
+    // top: 80px;
     margin-left: 1rem;
     width: auto;
   }
@@ -671,4 +691,12 @@ main {
       }
     }
   }
+}
+
+/* ------- desc ------- */
+.common__desc {
+  @include textFont;
+  font-size: 0.75rem;
+  line-height: 1.91;
+  letter-spacing: 0.1em;
 }

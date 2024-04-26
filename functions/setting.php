@@ -93,6 +93,21 @@ function my_scripts_method()
 }
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 
+/**------------------------------------------
+ * Google Fontの読み込み
+ *------------------------------------------*/
+function enqueue_google_fonts()
+{
+	// Google FontsのURLを指定
+	$font_url = 'https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@400;500;600&display=swap';
+
+	// Google Fontsをenqueue（キューに追加）
+	wp_enqueue_style('google-fonts', $font_url, array(), null);
+}
+// wp_enqueue_scripts アクションフックで関数を呼び出す
+add_action('wp_enqueue_scripts', 'enqueue_google_fonts');
+
+
 /*------------------------------------------
  *  アーカイブページを有効にする
  *----------------------------------------*/
@@ -100,8 +115,8 @@ function post_has_archive($args, $post_type)
 {
 	if ('post' == $post_type) {
 		$args['rewrite'] = true;
-		$args['has_archive'] = 'works';
-		$args['label'] = 'works';
+		$args['has_archive'] = 'news';
+		$args['label'] = 'news';
 	}
 	return $args;
 }

@@ -5,12 +5,6 @@
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="<?php bloginfo('description'); ?>" />
-
-	<!-- Google Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" />
-
 	<?php wp_head(); ?>
 </head>
 
@@ -25,9 +19,13 @@
 					<span class="site-header__position">Web Designer / Coder</span><span class="site-header__name">MasakaChika</span>
 				</a>
 			</h1>
+
 			<input type="checkbox" id="nav-toggle" class="site-nav-checkbox" />
 			<label for="nav-toggle" class="site-nav-toggle">
 				<span></span>
+				<span></span>
+				<span></span>
+				<span class="site-nav-toggle__text"></span>
 			</label>
 
 			<div class="site-nav site-header__nav-container">

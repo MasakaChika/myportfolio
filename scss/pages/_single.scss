@@ -15,7 +15,7 @@
 
     @include jpFont;
     font-weight: 600;
-    font-size: clamp(0.85rem, 5vw, 2.5rem);
+    font-size: clamp(1.8rem, 1.364rem + 2.18vw, 3rem);
     line-height: normal;
     letter-spacing: 0.1em;
   }
@@ -179,18 +179,18 @@
     grid-template-rows: auto;
     gap: 0.2rem;
     @include textFont;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     line-height: 1.8;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
 
     > ul {
       padding-left: 1rem;
       height: auto;
       > li {
         @include textFont;
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         line-height: 1.8;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.1em;
         list-style: disc;
       }
     }
