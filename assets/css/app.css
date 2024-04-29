@@ -305,14 +305,15 @@ main {
 .site-nav-toggle__text {
   text-transform: capitalize;
   position: absolute;
-  top: 16px;
+  top: 18px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.6875rem;
+  font-size: 0.6rem;
   font-family: var(--font-title-jp);
   font-weight: 500;
   font-style: normal;
   color: var(--color-text);
+  letter-spacing: 0.05em;
 }
 .site-nav-toggle > span:nth-of-type(1),
 .site-nav-toggle > span:nth-of-type(2),
@@ -500,6 +501,7 @@ main {
     grid-column: 1;
     margin-left: 1rem;
     width: auto;
+    justify-self: auto;
   }
 }
 
@@ -602,7 +604,6 @@ main {
   grid-template-rows: auto;
   justify-self: center;
   gap: 2%;
-  min-height: 90vh;
 }
 .works__archive li {
   width: 100%;
@@ -1297,6 +1298,22 @@ main {
 .page-about__photo {
   grid-column: 2;
   grid-row: span 2;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.page-about__photo-caption {
+  justify-self: end;
+  font-family: var(--font-title-jp);
+  font-weight: 500;
+  font-style: normal;
+  color: var(--color-text);
+  font-weight: 200;
+  font-size: 0.6rem;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+.page-about__photo-caption > a {
+  text-transform: uppercase;
 }
 .page-about__name {
   grid-column: 1;
@@ -1321,7 +1338,6 @@ main {
   color: var(--color-text);
   font-size: clamp(0.625rem, 2vw, 0.75rem);
   font-style: normal;
-  font-weight: 300;
   line-height: clamp(150%, 5vw, 200%);
   letter-spacing: 0.14em;
 }

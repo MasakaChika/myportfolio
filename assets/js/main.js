@@ -38,8 +38,10 @@ function applyAnimationToText(selector, staggerTime) {
 }
 
 // 関数を使用してアニメーションを適用（異なるアニメーション時間を指定）
-applyAnimationToText('.mv__msg', 0.032); // .mv__msgの時間
-applyAnimationToText('.mv__sitename', 0.23); // .mv__sitenameの時間
+document.addEventListener('DOMContentLoaded', function () {
+  applyAnimationToText('.mv__msg', 0.032); // .mv__msgの時間
+  applyAnimationToText('.mv__sitename', 0.23); // .mv__sitenameの時間
+});
 
 /* ------- navigation画面外タップで閉じる ------- */
 document.addEventListener('DOMContentLoaded', function () {
@@ -56,6 +58,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // ナビゲーションメニュー以外の場所をクリックした場合にチェックを外す
     if (navToggleCheckbox.checked && !document.querySelector('.site-nav').contains(clickedElement)) {
       navToggleCheckbox.checked = false;
+
+      // チェックを外す際に、テキストを元に戻す
+      const toggleText = document.querySelector('.site-nav-toggle__text');
+      toggleText.textContent = 'menu';
+      toggleText.classList.remove('white-text'); // テキスト色を元に戻す
     }
   });
 });

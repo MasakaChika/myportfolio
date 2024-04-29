@@ -267,7 +267,6 @@ main {
 }
 
 /* ------- hamburger menu ------- */
-
 .site-nav-toggle {
   display: none;
   cursor: pointer;
@@ -279,11 +278,12 @@ main {
   &__text {
     text-transform: capitalize;
     position: absolute;
-    top: 16px;
+    top: 18px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 0.6875rem;
+    font-size: 0.6rem;
     @include jpFont;
+    letter-spacing: 0.05em;
   }
 
   > span:nth-of-type(1),
@@ -499,9 +499,9 @@ main {
 
   @include for-mobile {
     grid-column: 1;
-    // top: 80px;
     margin-left: 1rem;
     width: auto;
+    justify-self: auto;
   }
 }
 /* ------- /.vertical-text ------- */
@@ -618,7 +618,6 @@ main {
   grid-template-rows: auto;
   justify-self: center;
   gap: 2%;
-  min-height: 90vh;
 
   li {
     width: 100%;

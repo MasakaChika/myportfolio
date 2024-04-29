@@ -21,6 +21,9 @@
 			<header class="section-header page-about__title">about</header>
 			<div class="page-about__photo">
 				<img src=<?= get_theme_file_uri('/assets/img/photo.webp'); ?> alt="マサカチカが写っている写真" />
+				<div class="page-about__photo-caption">
+					photo by <a href="https://www.instagram.com/kanagraph__1005" target="_blank">kanagraph</a>
+				</div>
 			</div>
 
 			<div class="page-about__name">

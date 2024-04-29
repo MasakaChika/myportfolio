@@ -19,6 +19,21 @@
   &__photo {
     grid-column: 2;
     grid-row: span 2;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &-caption {
+      justify-self: end;
+      @include jpFont;
+      font-weight: 200;
+      font-size: 0.6rem;
+      line-height: 1.5;
+      letter-spacing: 0.1em;
+
+      > a {
+        text-transform: uppercase;
+      }
+    }
   }
 
   &__name {
@@ -38,7 +53,6 @@
       @include textFont;
       font-size: clamp(0.625rem, 2vw, 0.75rem);
       font-style: normal;
-      font-weight: 300;
       line-height: clamp(150%, 5vw, 200%);
       letter-spacing: 0.14em; // 1.68px
     }
