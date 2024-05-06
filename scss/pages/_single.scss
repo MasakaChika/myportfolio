@@ -13,8 +13,8 @@
     grid-column: 1;
     grid-row: 1;
 
-    @include jpFont;
-    font-weight: 600;
+    @include enFont;
+    font-weight: bold;
     font-size: clamp(1.8rem, 1.364rem + 2.18vw, 3rem);
     line-height: normal;
     letter-spacing: 0.1em;
@@ -164,24 +164,35 @@
   grid-template-rows: repeat(2, auto);
   gap: 0.5rem;
 
-  &-title {
+  &-title,
+  &-subtitle,
+  &-text {
     @include textFont;
+  }
+
+  &-title {
     font-weight: 500;
     font-size: clamp(0.85rem, 5vw, 1.2em);
     letter-spacing: 0.1em;
     line-height: 1.6;
   }
 
+  &-subtitle,
   &-text {
-    @include textFont;
+    font-size: 0.875rem;
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+  }
+
+  &-subtitle {
+    font-weight: 500;
+  }
+
+  &-text {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 0.2rem;
-    @include textFont;
-    font-size: 0.875rem;
-    line-height: 1.8;
-    letter-spacing: 0.1em;
 
     > ul {
       padding-left: 1rem;

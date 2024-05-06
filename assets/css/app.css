@@ -1637,11 +1637,11 @@ hr {
 .work__title {
   grid-column: 1;
   grid-row: 1;
-  font-family: var(--font-title-jp);
-  font-weight: 500;
+  font-family: var(--font-title-en);
+  font-weight: 400;
   font-style: normal;
   color: var(--color-text);
-  font-weight: 600;
+  font-weight: bold;
   font-size: clamp(1.8rem, 1.364rem + 2.18vw, 3rem);
   line-height: normal;
   letter-spacing: 0.1em;
@@ -1774,32 +1774,31 @@ hr {
   grid-template-rows: repeat(2, auto);
   gap: 0.5rem;
 }
-.content-title {
+.content-title, .content-subtitle, .content-text {
   font-family: var(--font-praimary);
   font-weight: 400;
   font-style: normal;
   color: var(--color-text);
+}
+.content-title {
   font-weight: 500;
   font-size: clamp(0.85rem, 5vw, 1.2em);
   letter-spacing: 0.1em;
   line-height: 1.6;
 }
+.content-subtitle, .content-text {
+  font-size: 0.875rem;
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+}
+.content-subtitle {
+  font-weight: 500;
+}
 .content-text {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
-  color: var(--color-text);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 0.2rem;
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
-  color: var(--color-text);
-  font-size: 0.875rem;
-  line-height: 1.8;
-  letter-spacing: 0.1em;
 }
 .content-text > ul {
   padding-left: 1rem;
