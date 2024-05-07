@@ -423,7 +423,7 @@ main {
   justify-content: center;
   align-items: center;
   background: var(--color-text);
-  margin-top: 128px;
+  margin-top: clamp(7.5rem, 3.409rem + 20.45vw, 18.75rem);
 }
 .site-footer__inner small {
   font-family: var(--font-title-en);
@@ -615,6 +615,9 @@ main {
   height: auto;
   display: grid;
   place-items: center;
+}
+.works__archive-card:hover {
+  opacity: 0.5;
 }
 .works__archive-card img {
   width: 100%;
@@ -1107,6 +1110,9 @@ main {
 .swiper-slide__img img {
   max-width: 100%;
   height: auto;
+}
+.swiper-slide__img img:hover {
+  opacity: 0.5;
 }
 
 /* ------- /. works ------- */

@@ -209,6 +209,9 @@
       img {
         max-width: 100%; // 画像がコンテナを超えないように
         height: auto; // アスペクト比を維持
+        &:hover {
+          opacity: 0.5;
+        }
       }
     }
   }

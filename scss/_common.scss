@@ -421,7 +421,7 @@ main {
     justify-content: center;
     align-items: center;
     background: var(--color-text);
-    margin-top: 128px;
+    margin-top: clamp(7.5rem, 3.409rem + 20.45vw, 18.75rem);
 
     small {
       @include enFont;
@@ -630,6 +630,9 @@ main {
     height: auto;
     display: grid;
     place-items: center; //水平および垂直方向の中央揃え
+    &:hover {
+      opacity: 0.5;
+    }
 
     img {
       width: 100%;
