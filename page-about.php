@@ -81,7 +81,7 @@
 				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/photoshop.png'); ?>" alt="photoshop icon"></div><span>Photoshop</span>
 			</li>
 			<li class="skills__item">
-				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/studio.png'); ?>" alt="studio icon"></div><span>STUDIO</span>
+				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/bootstrap.png'); ?>" alt="Bootstrap icon"></div><span>Bootstrap</span>
 			</li>
 			<li class="skills__item">
 				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/git.png'); ?>" alt="git icon"></div><span>Git</span>
