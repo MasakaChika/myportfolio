@@ -2120,26 +2120,6 @@ hr {
   grid-template-columns: 1fr;
   row-gap: 2rem;
   grid-template-columns: minmax(0, auto) minmax(auto, 1080px) minmax(0, auto);
-  /*
-    &__campany-name,
-    &__your-name,
-    &__your-email,
-    &__phone-number,
-    &__your-message {
-      width: 100%;
-
-      @include for-mobile-and-tablet {
-        width: 100%;
-      }
-    }
-
-    &__campany-name,
-    &__your-name,
-    &__your-email,
-    &__phone-number {
-      height: 2rem;
-    }
-  */
 }
 @media (max-width: 480px) {
   .contact {
@@ -2176,7 +2156,7 @@ hr {
   font-size: 15px;
   font-weight: 500;
   line-height: 1.4;
-  letter-spacing: 2px;
+  letter-spacing: 0.13em;
 }
 .contact__contact {
   text-transform: uppercase;
@@ -2249,4 +2229,50 @@ hr {
   color: var(--color-text);
   font-size: 0.875rem;
   letter-spacing: 0.014em;
+}
+
+.notfound {
+  grid-column: 2;
+  margin-top: clamp(80px, 20vw, 160px);
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+}
+@media (max-width: 480px) {
+  .notfound {
+    grid-column: 3;
+  }
+}
+.notfound__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+.notfound__title {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.notfound__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.notfound__body > p {
+  font-family: var(--font-praimary);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-text);
+}
+.notfound__msg > p {
+  font-family: var(--font-praimary);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+}
+.notfound__btn {
+  min-height: 40vh;
 }/*# sourceMappingURL=app.css.map */

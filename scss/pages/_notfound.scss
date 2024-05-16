@@ -1,0 +1,44 @@
+@use '../mixins' as *;
+
+.notfound {
+  @include common-section-style;
+
+  @include for-mobile {
+    grid-column: 3;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    > p {
+      @include textFont;
+    }
+  }
+
+  &__msg {
+    > p {
+      @include textFont;
+      font-size: 15px;
+      line-height: 1.4;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  &__btn {
+    min-height: 40vh;
+  }
+}

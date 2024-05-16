@@ -68,28 +68,9 @@
     font-size: 15px;
     font-weight: 500;
     line-height: 1.4; // 21px
-    letter-spacing: 2px;
-  }
-  /*
-  &__campany-name,
-  &__your-name,
-  &__your-email,
-  &__phone-number,
-  &__your-message {
-    width: 100%;
-
-    @include for-mobile-and-tablet {
-      width: 100%;
-    }
+    letter-spacing: 0.13em;
   }
 
-  &__campany-name,
-  &__your-name,
-  &__your-email,
-  &__phone-number {
-    height: 2rem;
-  }
-*/
   &__contact {
     text-transform: uppercase;
   }
