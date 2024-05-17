@@ -21,26 +21,24 @@
 }
 
 [lang=en] {
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
 }
 
 [lang=ja] {
-  font-family: var(--font-title-jp);
-  font-weight: 500;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 500;
+  font-family: var(--font-title-jp);
 }
 
 /* ------- reset ------- */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* ------- 共通 ------- */
@@ -50,8 +48,8 @@ img {
 }
 
 body {
-  font-family: var(--font-primary);
   background: var(--color-background);
+  font-family: var(--font-primary);
 }
 
 html {
@@ -66,8 +64,12 @@ main {
 h1,
 h2,
 h3,
+h4,
+header,
 p,
-a {
+a,
+li,
+span {
   color: var(--color-text);
   text-decoration: none;
 }
@@ -99,18 +101,16 @@ main {
 }
 
 .section-header {
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   font-size: clamp(1.85rem, 1.286rem + 2.82vw, 3.4rem);
 }
 
 .section-subheader {
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   font-size: clamp(1.5rem, 1.318rem + 0.91vw, 2rem);
 }
 
@@ -128,10 +128,9 @@ main {
 }
 .viewall a p {
   grid-column: 1;
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   font-size: 14px;
   line-height: 1.42;
   letter-spacing: 0.07em;
@@ -164,10 +163,10 @@ main {
   display: block;
   width: 8px;
   height: 8px;
-  border-bottom: 1px solid var(--color-text);
-  border-right: 1px solid var(--color-text);
   transform: rotate(45deg);
   margin: -4px;
+  border-right: 1px solid var(--color-text);
+  border-bottom: 1px solid var(--color-text);
   animation: animate-arrow 2s infinite;
 }
 
@@ -210,24 +209,24 @@ main {
 /* ------- /.svg ------- */
 /* ------- header ------- */
 .site-header {
-  width: 100%;
-  height: 140px;
-  background: var(--header-gradation);
-  position: fixed;
-  z-index: 5;
-  top: 0;
-  left: 0;
   display: grid;
   grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1280px) minmax(1.5rem, 1fr);
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 140px;
+  background: var(--header-gradation);
 }
 .site-header__container {
+  display: flex;
   grid-column: 2;
-  width: 100%;
   justify-content: space-between;
   align-items: center;
-  display: flex;
+  width: 100%;
 }
 .site-header__logo a {
   display: grid;
@@ -237,19 +236,18 @@ main {
   text-decoration: none;
 }
 .site-header__logo a img {
+  grid-row: span 2;
   width: 24px;
   height: 24px;
-  grid-row: span 2;
 }
 .site-header__position, .site-header__name {
-  font-family: var(--font-title-en);
-  font-weight: 400;
+  justify-self: start;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   font-size: 10px;
   line-height: 1rem;
   letter-spacing: 0.1em;
-  justify-self: start;
 }
 .site-header__gnav {
   display: grid;
@@ -257,31 +255,27 @@ main {
   gap: 4rem;
 }
 .site-header__gnav ul {
-  list-style: none;
-  inset: 0;
   display: grid;
   grid-template-columns: repeat(4, auto);
   gap: 4rem;
   align-items: center;
   justify-self: flex-end;
+  inset: 0;
 }
 .site-header__gnav ul li a {
-  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-title-en);
   font-size: 14px;
   letter-spacing: 0.15em;
-  font-family: var(--font-title-en);
-  font-weight: 400;
-  font-style: normal;
-  color: var(--color-text);
   text-transform: uppercase;
-  transition: var(--hover);
 }
 .site-header__sns {
   display: grid;
-  align-items: center;
   grid-template-columns: 1fr;
-  gap: 4rem;
+  align-items: center;
   justify-self: flex-end;
+  gap: 4rem;
 }
 .site-header__sns a {
   display: inline flex;
@@ -296,11 +290,11 @@ main {
 /* ------- hamburger menu ------- */
 .site-nav-toggle {
   display: none;
-  cursor: pointer;
+  position: relative;
+  z-index: 10;
   width: 32px;
   height: 32px;
-  z-index: 10;
-  position: relative; /* 追加 */
+  cursor: pointer;
 }
 .site-nav-toggle__text {
   text-transform: capitalize;
@@ -309,10 +303,9 @@ main {
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.6rem;
-  font-family: var(--font-title-jp);
-  font-weight: 500;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 500;
+  font-family: var(--font-title-jp);
   letter-spacing: 0.05em;
 }
 .site-nav-toggle > span:nth-of-type(1),
@@ -426,10 +419,9 @@ main {
   margin-top: clamp(7.5rem, 3.409rem + 20.45vw, 18.75rem);
 }
 .site-footer__inner small {
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   color: var(--color-white);
   font-size: 0.875rem;
   line-height: normal;
@@ -456,20 +448,18 @@ main {
   width: 20px;
 }
 .vertical-category__vertical {
-  font-family: var(--font-title-jp);
-  font-weight: 500;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 500;
+  font-family: var(--font-title-jp);
   font-size: 0.875rem;
   letter-spacing: 0.5em;
   writing-mode: vertical-rl;
   text-orientation: upright;
 }
 .vertical-category__horizontal {
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -648,10 +638,9 @@ main {
 .tag-selector > span {
   grid-row: 1;
   align-self: end;
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   font-size: 0.875rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -669,10 +658,9 @@ main {
   gap: 0.5rem 1.5rem;
 }
 .tag-selector > ul > li {
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   font-size: 0.875rem;
   letter-spacing: 0.083em;
 }
@@ -682,10 +670,10 @@ main {
 
 /* ------- desc ------- */
 .common__desc {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-size: 0.75rem;
   line-height: 1.91;
   letter-spacing: 0.1em;
@@ -982,10 +970,9 @@ main {
   align-items: flex-end;
 }
 .mv__msg {
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   text-align: right;
 }
 .mv__msg span {
@@ -1015,10 +1002,9 @@ main {
   }
 }
 .mv__sitename {
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   text-align: right;
   font-size: clamp(1.7rem, 5vw, 3rem);
   line-height: normal;
@@ -1056,10 +1042,9 @@ main {
 }
 .vertical-title__text {
   display: inline flow-root;
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   font-size: 12px;
   line-height: 1.75em;
   letter-spacing: 0.16em;
@@ -1139,12 +1124,9 @@ main {
   grid-column: 1;
   grid-row: 2;
   align-self: end;
-}
-.about__name h2 {
-  font-family: var(--font-title-jp);
-  font-weight: 500;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 500;
+  font-family: var(--font-title-jp);
   font-size: clamp(1.5rem, 1.409rem + 0.45vw, 1.75rem);
   line-height: normal;
   letter-spacing: clamp(0.15em, 0.05vw, 0.214em);
@@ -1156,12 +1138,11 @@ main {
   grid-template-rows: repeat(3, auto);
   gap: 2rem;
 }
-.about__text h3 {
+.about__text h4 {
   grid-row: 1;
-  font-family: var(--font-title-jp);
-  font-weight: 500;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 500;
+  font-family: var(--font-title-jp);
   font-weight: 600;
   font-size: clamp(1rem, 0.891rem + 0.55vw, 1.3rem);
   line-height: 1.6;
@@ -1169,10 +1150,10 @@ main {
 }
 .about__text p {
   grid-row: 2;
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-weight: 350;
   font-size: clamp(0.75rem, 0.875vw, 0.875rem);
   line-height: 2;
@@ -1247,10 +1228,10 @@ main {
     grid-row: 1;
   }
   .about__text p {
-    font-family: var(--font-praimary);
-    font-weight: 400;
-    font-style: normal;
     color: var(--color-text);
+    font-style: normal;
+    font-weight: 400;
+    font-family: var(--font-praimary);
     grid-column: 1;
     grid-row: 2;
   }
@@ -1264,10 +1245,10 @@ main {
 /* ------- /.about ------- */
 .archive-works {
   grid-column: 2;
-  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
+  margin-top: clamp(80px, 20vw, 160px);
   padding-bottom: 10vh;
 }
 .archive-works__title {
@@ -1285,10 +1266,10 @@ main {
 
 .page-about {
   grid-column: 2;
-  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
+  margin-top: clamp(80px, 20vw, 160px);
   row-gap: 8vh;
 }
 .page-about__main {
@@ -1309,10 +1290,9 @@ main {
 }
 .page-about__photo-caption {
   justify-self: end;
-  font-family: var(--font-title-jp);
-  font-weight: 500;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 500;
+  font-family: var(--font-title-jp);
   font-weight: 200;
   font-size: 0.6rem;
   line-height: 1.5;
@@ -1327,10 +1307,9 @@ main {
   align-self: end;
 }
 .page-about__name h2 {
-  font-family: var(--font-title-jp);
-  font-weight: 500;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 500;
+  font-family: var(--font-title-jp);
   font-size: clamp(1.25rem, 5vw, 1.75rem);
   font-weight: 500;
   line-height: normal;
@@ -1338,10 +1317,10 @@ main {
   margin-bottom: 0.5rem;
 }
 .page-about__name p {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-size: clamp(0.625rem, 2vw, 0.75rem);
   font-style: normal;
   line-height: clamp(150%, 5vw, 200%);
@@ -1360,20 +1339,18 @@ main {
   height: 280px;
 }
 .page-about__content-label {
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   color: var(--color-gray);
   font-size: clamp(0.875rem, 0.852rem + 0.11vw, 0.938rem);
   line-height: normal;
   letter-spacing: 0.06em;
 }
 .page-about__content-title {
-  font-family: var(--font-title-jp);
-  font-weight: 500;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 500;
+  font-family: var(--font-title-jp);
   color: var(--color-text);
   font-size: clamp(0.938rem, 0.869rem + 0.34vw, 1.125rem);
   font-weight: 500;
@@ -1477,10 +1454,9 @@ hr {
 }
 .skills span {
   grid-row: 2;
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   font-size: 0.75rem;
   line-height: normal;
   letter-spacing: 0.1em;
@@ -1553,10 +1529,9 @@ hr {
 .strengths__header {
   grid-column: 1;
   grid-row: 1;
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   color: var(--color-gray);
   font-size: 1.125rem;
   line-height: normal;
@@ -1643,11 +1618,9 @@ hr {
 .work__title {
   grid-column: 1;
   grid-row: 1;
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
-  font-weight: bold;
+  font-weight: 400;
+  font-family: var(--font-title-en);
   font-size: clamp(1.8rem, 1.364rem + 2.18vw, 3rem);
   line-height: normal;
   letter-spacing: 0.1em;
@@ -1662,10 +1635,9 @@ hr {
   gap: 0.5rem 1.5rem;
 }
 .work__tags > ul > li {
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   font-size: 0.75rem;
   line-height: 1.66;
   letter-spacing: 0.17em;
@@ -1702,10 +1674,10 @@ hr {
 }
 .work__content-date {
   grid-row: 1;
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-size: 0.75rem;
   letter-spacing: 0.2em;
 }
@@ -1781,10 +1753,10 @@ hr {
   gap: 0.5rem;
 }
 .content-title, .content-subtitle, .content-text {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
 }
 .content-title {
   font-weight: 500;
@@ -1811,10 +1783,10 @@ hr {
   height: auto;
 }
 .content-text > ul > li {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-size: 0.875rem;
   line-height: 1.8;
   letter-spacing: 0.1em;
@@ -1823,10 +1795,10 @@ hr {
 
 .newarchive-works {
   grid-column: 2;
-  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
+  margin-top: clamp(80px, 20vw, 160px);
   padding-bottom: 10vh;
 }
 .newarchive-works__title {
@@ -1878,10 +1850,10 @@ hr {
 
 .taxonomy-works {
   grid-column: 2;
-  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
+  margin-top: clamp(80px, 20vw, 160px);
   padding-bottom: 10vh;
 }
 .taxonomy-works__title {
@@ -1954,10 +1926,10 @@ hr {
 }
 
 .pagenation-text {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-size: clamp(0.6rem, 2vw, 0.8rem);
   letter-spacing: clamp(0.02em, 2vw, 0.1em);
   height: clamp(2rem, 5vw, 3rem);
@@ -1965,10 +1937,10 @@ hr {
 
 .privacy-policy {
   grid-column: 2;
-  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
+  margin-top: clamp(80px, 20vw, 160px);
   grid-template-columns: minmax(0, auto) minmax(auto, 1080px) minmax(0, auto);
 }
 @media (max-width: 480px) {
@@ -1988,10 +1960,10 @@ hr {
   row-gap: 2rem;
 }
 .privacy-policy__introduction {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-size: 0.875rem;
   letter-spacing: 0.014em;
 }
@@ -2001,27 +1973,27 @@ hr {
   row-gap: 0.4rem;
 }
 .privacy-policy__heading {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-size: 1rem;
 }
 .privacy-policy__text {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-size: 0.875rem;
   line-height: 1.7;
   letter-spacing: 0.014em;
 }
 .privacy-policy__list {
   list-style: inside;
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-size: 0.875rem;
   line-height: 1.7;
   letter-spacing: 0.014em;
@@ -2029,25 +2001,24 @@ hr {
 .privacy-policy__button {
   grid-column: 2;
   grid-row: 3;
+  display: flex;
   justify-self: center;
-  font-family: var(--font-title-en);
-  font-weight: 400;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 200px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
+  background: var(--color-text);
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   color: var(--color-white);
   font-size: 15px;
   line-height: 1.4;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  display: flex;
-  padding: 0.5rem 1rem;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 200px;
-  border-radius: 8px;
-  background: var(--color-text);
-  box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
 }
 @media (max-width: 480px) {
   .privacy-policy__button {
@@ -2062,10 +2033,10 @@ hr {
 }
 
 .form-required {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-size: 0.5rem;
   margin-left: 1em;
   color: #fff;
@@ -2087,25 +2058,24 @@ hr {
 }
 
 .form-btn {
+  display: flex;
   justify-self: center;
-  font-family: var(--font-title-en);
-  font-weight: 400;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 200px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
+  background: var(--color-text);
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
   color: var(--color-white);
   font-size: 15px;
   line-height: 1.4;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  display: flex;
-  padding: 0.5rem 1rem;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 200px;
-  border-radius: 8px;
-  background: var(--color-text);
-  box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
 }
 @media (max-width: 480px) {
   .form-btn {
@@ -2115,10 +2085,10 @@ hr {
 
 .contact {
   grid-column: 2;
-  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
+  margin-top: clamp(80px, 20vw, 160px);
   grid-template-columns: minmax(0, auto) minmax(auto, 1080px) minmax(0, auto);
 }
 @media (max-width: 480px) {
@@ -2149,10 +2119,10 @@ hr {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 0.5rem;
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-size: 15px;
   font-weight: 500;
   line-height: 1.4;
@@ -2162,10 +2132,10 @@ hr {
   text-transform: uppercase;
 }
 .contact__privacy {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
 }
 .contact__privacy > p {
   font-size: 13px;
@@ -2196,10 +2166,10 @@ hr {
 
 .thanks-message {
   grid-column: 2;
-  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
+  margin-top: clamp(80px, 20vw, 160px);
   grid-template-columns: minmax(0, auto) minmax(auto, 1080px) minmax(0, auto);
   margin-bottom: 80vh;
 }
@@ -2216,27 +2186,26 @@ hr {
   gap: 4rem;
 }
 .thanks-message__title {
-  font-family: var(--font-title-jp);
-  font-weight: 500;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 500;
+  font-family: var(--font-title-jp);
   font-size: 1.5rem;
 }
 .thanks-message__text {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-size: 0.875rem;
   letter-spacing: 0.014em;
 }
 
 .notfound {
   grid-column: 2;
-  margin-top: clamp(80px, 20vw, 160px);
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
+  margin-top: clamp(80px, 20vw, 160px);
 }
 @media (max-width: 480px) {
   .notfound {
@@ -2259,16 +2228,16 @@ hr {
   gap: 2rem;
 }
 .notfound__body > p {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
 }
 .notfound__msg > p {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
   font-size: 15px;
   line-height: 1.4;
   letter-spacing: 0.1em;

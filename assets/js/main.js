@@ -108,31 +108,52 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* ------- swiper ------- */
-const mySwiper = new Swiper('.swiper', {
-  slidesPerView: 1,
-  // spaceBetween: 20,
-  loop: true,
-  loopAdditionalSlides: 1,
-
-  speed: 1600,
-
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-    waitForTransition: false,
-  },
-  breakpoints: {
-    //640px以上の時
-    640: {
-      slidesPerView: 2,
-      // spaceBetween: 20,
+document.addEventListener('DOMContentLoaded', function () {
+  const mySwiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    loop: true,
+    loopAdditionalSlides: 1,
+    speed: 1600,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      waitForTransition: false,
     },
-    //768px以上の時
-    768: {
-      slidesPerView: 3,
-      // spaceBetween: 20,
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
     },
-  },
+    on: {
+      init: function () {
+        manageTabindex(this);
+      },
+      slideChange: function () {
+        manageTabindex(this);
+      },
+    },
+  });
+
+  function manageTabindex(swiper) {
+    const activeSlide = swiper.slides[swiper.activeIndex];
+    const links = activeSlide.querySelectorAll('a');
+    links.forEach((link) => {
+      link.setAttribute('tabindex', '0');
+    });
+
+    const allSlides = swiper.slides;
+    allSlides.forEach((slide) => {
+      if (slide !== activeSlide) {
+        const otherLinks = slide.querySelectorAll('a');
+        otherLinks.forEach((link) => {
+          link.setAttribute('tabindex', '-1');
+        });
+      }
+    });
+  }
 });
 
 /* ------- back ------- */

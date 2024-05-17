@@ -244,13 +244,11 @@
     grid-row: 2;
     align-self: end; // 下揃え
 
-    h2 {
-      @include jpFont;
-      font-size: clamp(1.5rem, 1.409rem + 0.45vw, 1.75rem);
-      line-height: normal;
-      letter-spacing: clamp(0.15em, 0.05vw, 0.214em);
-      text-wrap: nowrap;
-    }
+    @include jpFont;
+    font-size: clamp(1.5rem, 1.409rem + 0.45vw, 1.75rem);
+    line-height: normal;
+    letter-spacing: clamp(0.15em, 0.05vw, 0.214em);
+    text-wrap: nowrap;
   }
 
   &__text {
@@ -259,7 +257,7 @@
     grid-template-rows: repeat(3, auto);
     gap: 2rem;
 
-    h3 {
+    h4 {
       grid-row: 1;
       @include jpFont;
       font-weight: 600;

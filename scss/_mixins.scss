@@ -34,17 +34,15 @@
 }
 
 @mixin enFont {
-  font-family: var(--font-title-en);
-  font-weight: 400;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-title-en);
 }
 
 @mixin jpFont {
-  font-family: var(--font-title-jp);
-  font-weight: 500;
   font-style: normal;
-  color: var(--color-text);
+  font-weight: 500;
+  font-family: var(--font-title-jp);
 }
 
 [lang='en'] {
@@ -56,19 +54,18 @@
 }
 
 @mixin textFont {
-  font-family: var(--font-praimary);
-  font-weight: 400;
-  font-style: normal;
   color: var(--color-text);
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-praimary);
 }
 
-// hover時のmixin
-@mixin hover-effect {
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      color: var(--color-hover); // ホバー時の色をここに直接指定
-    }
-  }
+@mixin common-section-style {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+  margin-top: clamp(80px, 20vw, 160px);
 }
 
 @mixin works-style {
@@ -78,6 +75,7 @@
   &__title {
     grid-row: 1;
   }
+
   @include for-mobile {
     grid-column: 3;
     padding-bottom: 1vh;
@@ -85,7 +83,16 @@
 }
 
 @mixin button-style {
+  display: flex;
   justify-self: center;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 200px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
+  background: var(--color-text);
   @include enFont;
   color: var(--color-white);
   font-size: 15px;
@@ -93,27 +100,7 @@
   letter-spacing: 0.3em; // 14px
   text-transform: uppercase;
 
-  display: flex;
-  padding: 0.5rem 1rem;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 200px;
-  border-radius: 8px;
-  background: var(--color-text);
-
-  // neumo
-  box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset, -1px -1px 2px 0px rgba(230, 230, 230, 0.5) inset, -1px 1px 2px 0px rgba(230, 230, 230, 0.2), 1px -1px 2px 0px rgba(230, 230, 230, 0.2), -1px -1px 2px 0px rgba(255, 255, 255, 0.9), 1px 1px 3px 0px rgba(230, 230, 230, 0.9);
-
   @include for-mobile {
     justify-self: start;
   }
-}
-
-@mixin common-section-style {
-  grid-column: 2;
-  margin-top: clamp(80px, 20vw, 160px);
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 2rem;
 }

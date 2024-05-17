@@ -31,9 +31,11 @@
 	<div class="main-content">
 		<!-- works -->
 		<section class="works" id="works">
-			<header class="section-header works__title">works</header>
+			<h2 class="section-header works__title">
+				works
+			</h2>
 			<!-- Slider main container -->
-			<div class="swiper works__slider">
+			<div class="swiper works__slider" role="region" aria-labelledby="works">
 				<!-- Additional required wrapper -->
 				<!-- Slides -->
 				<div class="swiper-wrapper">
@@ -53,7 +55,7 @@
 						while ($the_query->have_posts()) : $the_query->the_post(); ?>
 							<div class="swiper-slide">
 								<div class="swiper-slide__img">
-									<a href="<?php the_permalink(); ?>">
+									<a href="<?php the_permalink(); ?>" tabindex="-1">
 										<?php
 										// アイキャッチがあるか確認
 										if (has_post_thumbnail()) :
@@ -76,9 +78,9 @@
 				</div>
 			</div>
 			<div class="works__all animate-slide viewall">
-				<a href="'/work/'">
-					<p>works</p>
-					<div class="arrow"><span></span><span></span><span></span></div>
+				<a href="/work/" aria-label="View all works">
+					<p>Works</p>
+					<div class="arrow" aria-hidden="true"><span></span><span></span><span></span></div>
 				</a>
 			</div>
 		</section>
@@ -86,20 +88,22 @@
 
 		<!-- about -->
 		<section class="about" id="about">
-			<header class="section-header about__title">story</header>
-			<div class="about__name">
-				<h2>眞坂ちか</h2>
-			</div>
+			<h2 class="section-header about__title">
+				story
+			</h2>
+			<h3 class="about__name">眞坂ちか</h3>
 			<div class="about__photo">
 				<img src=<?= get_theme_file_uri('/assets/img/photo.webp'); ?> alt="マサカチカが写っている写真" />
 			</div>
 			<div class="about__text">
-				<h3>シンプルながらも深みのあるデザインで、あなたの物語を語りたい</h3>
+				<h4>シンプルながらも深みのあるデザインで、あなたの物語を語りたい</h4>
 				<p>私の目標は、ユーザーに優しく、分かりやすい、効果的なウェブサイトを作ることです。<br />キャリアチェンジは大きな挑戦ですが、患者さんと共に歩んだ経験や緻密な作業の繰り返しは、どちらも大きな価値を持つと考えています。<br />クライアントとユーザーのニーズに寄り添い、直感的で理解しやすいサイトを作成することを目指していきます。</p>
 				<div class="about__all animate-slide viewall">
-					<a href="'/about/'">
-						<p>about</p>
-						<div class="arrow"><span></span><span></span><span></span></div>
+					<a href="/about/" aria-label="About page">
+						<p>About</p>
+						<div class="arrow" aria-hidden="true">
+							<span></span><span></span><span></span>
+						</div>
 					</a>
 				</div>
 			</div>

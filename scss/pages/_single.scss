@@ -14,7 +14,6 @@
     grid-row: 1;
 
     @include enFont;
-    font-weight: bold;
     font-size: clamp(1.8rem, 1.364rem + 2.18vw, 3rem);
     line-height: normal;
     letter-spacing: 0.1em;
