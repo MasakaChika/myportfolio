@@ -18,17 +18,9 @@
 	<section class="page-about">
 
 		<div class="page-about__main">
-			<header class="section-header page-about__title">about</header>
+			<h2 class="section-header page-about__title">about</h2>
 			<div class="page-about__photo">
-				<img src=<?= get_theme_file_uri('/assets/img/photo.webp'); ?> alt="マサカチカが写っている写真" />
-				<div class="page-about__photo-caption">
-					photo by <a href="https://www.instagram.com/kanagraph__1005" target="_blank">kanagraph</a>
-				</div>
-			</div>
-
-			<div class="page-about__name">
-				<h2>眞坂ちか</h2>
-				<p>歯科衛生士として18年ほど従事、2023年10月よりインタープランITスクール新宿校に通い、Webデザイン・マーケティングを学ぶ、Webデザイナー・コーダー志望。</p>
+				<img src=<?= get_theme_file_uri('/assets/img/about-photo.webp'); ?> alt="PCを持っている眞坂ちかの手元が写っている写真" />
 			</div>
 		</div>
 
@@ -41,14 +33,14 @@
 			<hr>
 			<div class="page-about__content">
 				<span class="page-about__content-label">Concept</span>
-				<h3 class="page-about__content-title">UI・UXデザインの探求</h3>
-				<p class="page-about__content-text common__desc">シンプルながらも深みを持つデザインを心がけています。UI・UXを追求し、形やレイアウトを考え、ユーザーに必要な情報が伝わるよう努力しています。<br>これらの要素を組み合わせ、ユーザーにとって最適な体験を提供することを目指しています。</p>
+				<h3 class="page-about__content-title">使いやすさと理解しやすさを追求</h3>
+				<p class="page-about__content-text common__desc">私は、見た目がシンプルでありながら深みのあるデザインを大切にしています。使いやすさを追求し、形やレイアウトにもこだわっています。<br>サイトを訪れた方が必要な情報を簡単に理解できるように工夫することを目指しています。</p>
 			</div>
 			<hr>
 			<div class="page-about__content">
 				<span class="page-about__content-label">Goals</span>
-				<h3 class="page-about__content-title">デザインとコーディング</h3>
-				<p class="page-about__content-text common__desc">インタープランITスクール新宿校でコーディングを学んでいくのち、コーディングスキルもしっかりと身につけたいと考えるようになりました。<br><br>デザインの概念からコーディングの具体的な実装に至るまでのプロセスをカバーできるよう幅広い知識を習得し、実務に活かせる能力を身につけていきたいと考えています。</p>
+				<h3 class="page-about__content-title">誰でも情報にアクセスできるWebサイト</h3>
+				<p class="page-about__content-text common__desc">ほとんど全ての人がWebサイトを訪れた際に、必要な情報に簡単にたどり着けるようなサイトを目指しています。<br>今後の取り組みとして、アクセシビリティにも対応したサイト制作に力を入れていきます。<br>これにより、より多くの人々が快適に利用できるWebサイトを提供したいと考えています。</p>
 			</div>
 		</div>
 	</section>
@@ -87,7 +79,7 @@
 				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/git.png'); ?>" alt="git icon"></div><span>Git</span>
 			</li>
 		</ul>
-		<img class="skills__img" src="<?= get_theme_file_uri('/assets/img/skills.webp'); ?>" alt="作業環境の写真iMacとデスクライト">
+		<img class="skills__img" src="<?= get_theme_file_uri('/assets/img/skills.webp'); ?>" alt="スキルをイメージしたパソコンとデザイナーの手元が写っている写真">
 	</section>
 
 	<section class="strengths">

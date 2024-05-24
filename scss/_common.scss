@@ -88,7 +88,7 @@ main {
     align-items: center;
     gap: 2rem;
 
-    p {
+    span {
       grid-column: 1;
       @include enFont;
       font-size: 14px;
