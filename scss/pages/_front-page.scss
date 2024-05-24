@@ -55,6 +55,24 @@
   }
 }
 
+// prefers-reduced-motionがreduceの場合、アニメーションを無効にする
+@media (prefers-reduced-motion: reduce) {
+  .mv__name-1,
+  .mv__name-2,
+  .mv__name-3,
+  .mv__name-4,
+  .mv__name-5,
+  .mv__name-6,
+  .mv__name-7,
+  .mv__name-8,
+  .mv__name-9,
+  .mv__name-10,
+  .mv__name-11 {
+    -webkit-animation: none !important;
+    animation: none !important;
+  }
+}
+
 .mv {
   grid-column: 2;
   margin-top: 120px;
@@ -72,13 +90,10 @@
 
   &__msg {
     @include enFont;
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+    letter-spacing: 0.07em;
+    line-height: 1.5;
     text-align: right;
-    span {
-      display: inline-block;
-      font-size: clamp(0.8rem, 2vw, 1.5rem);
-      letter-spacing: 0.07em;
-      line-height: 1.5;
-    }
   }
 
   &__name {

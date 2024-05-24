@@ -679,6 +679,13 @@ main {
   letter-spacing: 0.1em;
 }
 
+/* ------- prefers-reduced-motion ------- */
+@media (prefers-reduced-motion: reduce) {
+  .animated-element span {
+    animation: none !important;
+    transition: none !important;
+  }
+}
 /* ------- name animetion ------- */
 @-webkit-keyframes animate-svg-stroke-1 {
   0% {
@@ -955,6 +962,22 @@ main {
   animation: animate-svg-stroke-11 5s ease 0s both;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .mv__name-1,
+  .mv__name-2,
+  .mv__name-3,
+  .mv__name-4,
+  .mv__name-5,
+  .mv__name-6,
+  .mv__name-7,
+  .mv__name-8,
+  .mv__name-9,
+  .mv__name-10,
+  .mv__name-11 {
+    -webkit-animation: none !important;
+    animation: none !important;
+  }
+}
 .mv {
   grid-column: 2;
   margin-top: 120px;
@@ -973,13 +996,10 @@ main {
   font-style: normal;
   font-weight: 400;
   font-family: var(--font-title-en);
-  text-align: right;
-}
-.mv__msg span {
-  display: inline-block;
   font-size: clamp(0.8rem, 2vw, 1.5rem);
   letter-spacing: 0.07em;
   line-height: 1.5;
+  text-align: right;
 }
 .mv__name {
   width: 90%;
