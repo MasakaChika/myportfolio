@@ -34,13 +34,13 @@
 			<div class="page-about__content">
 				<span class="page-about__content-label">Concept</span>
 				<h3 class="page-about__content-title">使いやすさと理解しやすさを追求</h3>
-				<p class="page-about__content-text common__desc">私は、見た目がシンプルでありながら深みのあるデザインを大切にしています。使いやすさを追求し、形やレイアウトにもこだわっています。<br>サイトを訪れた方が必要な情報を簡単に理解できるように工夫することを目指しています。</p>
+				<p class="page-about__content-text common__desc">私は、見た目がシンプルでありながら深みのあるデザインを大切にしています。使いやすさを追求し、形やレイアウトにもこだわっています。<br>サイトを訪れた方が必要な情報を得られるように工夫することを目指しています。</p>
 			</div>
 			<hr>
 			<div class="page-about__content">
 				<span class="page-about__content-label">Goals</span>
 				<h3 class="page-about__content-title">誰でも情報にアクセスできるWebサイト</h3>
-				<p class="page-about__content-text common__desc">ほとんど全ての人がWebサイトを訪れた際に、必要な情報に簡単にたどり着けるようなサイトを目指しています。<br>今後の取り組みとして、アクセシビリティにも対応したサイト制作に力を入れていきます。<br>これにより、より多くの人々が快適に利用できるWebサイトを提供したいと考えています。</p>
+				<p class="page-about__content-text common__desc">ほとんどの人がWebサイトを訪れた際に、必要な情報にたどり着けるようなサイトを目指しています。<br>今後の取り組みとして、アクセシビリティにも対応したサイト制作に力を入れていきます。<br>これにより、より多くの人々が快適に利用できるWebサイトを提供したいと考えています。</p>
 			</div>
 		</div>
 	</section>
@@ -61,6 +61,12 @@
 				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/javascript.png'); ?>" alt="javascript icon"></div><span>JavaScript</span>
 			</li>
 			<li class="skills__item">
+				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/php.png'); ?>" alt="Bootstrap icon"></div><span>PHP</span>
+			</li>
+			<li class="skills__item">
+				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/git.png'); ?>" alt="git icon"></div><span>Git</span>
+			</li>
+			<li class="skills__item">
 				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/wordpress.png'); ?>" alt="wordpress icon"></div><span>WordPress</span>
 			</li>
 			<li class="skills__item">
@@ -71,12 +77,6 @@
 			</li>
 			<li class="skills__item">
 				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/photoshop.png'); ?>" alt="photoshop icon"></div><span>Photoshop</span>
-			</li>
-			<li class="skills__item">
-				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/bootstrap.png'); ?>" alt="Bootstrap icon"></div><span>Bootstrap</span>
-			</li>
-			<li class="skills__item">
-				<div class="skills__icon"><img src="<?= get_theme_file_uri('/assets/img/git.png'); ?>" alt="git icon"></div><span>Git</span>
 			</li>
 		</ul>
 		<img class="skills__img" src="<?= get_theme_file_uri('/assets/img/skills.webp'); ?>" alt="スキルをイメージしたパソコンとデザイナーの手元が写っている写真">
