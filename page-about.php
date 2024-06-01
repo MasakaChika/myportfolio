@@ -99,9 +99,9 @@
 
 		<div class="strengths__certified">
 			<h2 class="strengths__header">Certified</h2>
-			<p class="strengths__desc common__desc">2003年 歯科衛生士免許取得<br>
-				2023年 MOS Excel 365<br>
-				2023年 MOS PowerPoint 365<br>
+			<p class="strengths__desc common__desc">2003年 歯科衛生士免許<br>
+				2023年 MOS Excel 365 Associate<br>
+				2023年 MOS PowerPoint 365 Associate<br>
 				2023年 色彩検定2級<br>
 				2023年 日本手芸協会棒針編み講師</p>
 		</div>

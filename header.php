@@ -27,8 +27,9 @@
 		<div class="site-header__container">
 			<h1 class="site-header__logo">
 				<a href="<?= home_url() ?>">
-					<img src="<?= get_template_directory_uri(); ?>/assets/img/logo.png" alt="ロゴ" />
-					<span class="site-header__position">Web Designer / Coder</span><span class="site-header__name">MasakaChika</span>
+					<img src="<?= get_template_directory_uri(); ?>/assets/img/logo.png" alt="マサカチカのロゴ" />
+					<span class="site-header__position" aria-label="Web Designer &amp; Developer">Web Designer &amp; Developer</span>
+					<span class="site-header__name" aria-label="Masaka Chika">Masaka Chika</span>
 				</a>
 			</h1>
 

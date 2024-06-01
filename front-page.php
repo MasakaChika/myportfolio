@@ -22,7 +22,7 @@
 	</section>
 	<!-- /.main visual -->
 	<div class="vertical-title__container">
-		<span class="vertical-title__text">Web Creater Masaka Chika Portfolio</span>
+		<span class="vertical-title__text">Web Designer &amp; Developer Masaka Chika Portfolio</span>
 	</div>
 	<!-- main content -->
 	<div class="main-content">

@@ -6,7 +6,7 @@
   --font-title-en: "Libre Baskerville", serif;
   /* ------- Color ------- */
   --color-background: #f5f5f5;
-  --header-gradation: linear-gradient(180deg, #f5f5f5 26.67%, rgba(245, 245, 245, 0.44) 71.11%, rgba(245, 245, 245, 0) 100%);
+  --header-gradation: linear-gradient(180deg, #f5f5f5 40%, rgba(245, 245, 245, 0.44) 80%, rgba(245, 245, 245, 0) 100%);
   --color-white: #fffeff;
   --color-gray: #989898;
   --color-text: #363636;
@@ -1039,7 +1039,7 @@ main {
   .mv {
     grid-column: 2/4;
     margin-top: 40px;
-    height: 70vh;
+    height: 80vh;
   }
 }
 
@@ -1058,7 +1058,7 @@ main {
 }
 @media (max-width: 480px) {
   .vertical-title__container {
-    top: 50svh;
+    top: 30svh;
   }
 }
 .vertical-title__text {

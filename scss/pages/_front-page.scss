@@ -141,7 +141,7 @@
   @include for-mobile {
     grid-column: 2 / 4;
     margin-top: 40px;
-    height: 70vh;
+    height: 80vh;
   }
 }
 
@@ -157,7 +157,7 @@
     justify-self: flex-end;
     width: 2rem;
     @include for-mobile {
-      top: 50svh;
+      top: 30svh;
     }
     justify-self: flex-end;
     width: 2rem;
