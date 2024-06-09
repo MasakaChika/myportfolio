@@ -76,7 +76,7 @@ span {
 
 ul,
 ol {
-  list-style: none;
+  list-style-type: "";
 }
 
 /* ------- layout ------- */
@@ -256,8 +256,8 @@ main {
 }
 .site-header__gnav ul {
   display: grid;
-  grid-template-columns: repeat(4, auto);
-  gap: 4rem;
+  grid-template-columns: repeat(6, auto);
+  gap: clamp(2rem, -6.909rem + 14.55vw, 4rem);
   align-items: center;
   justify-self: flex-end;
   inset: 0;
