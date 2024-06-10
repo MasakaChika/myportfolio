@@ -267,7 +267,7 @@ hr {
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%; // 擬似要素の高さを親要素と同じにする
+        height: 100%;
         background-size: 98% auto;
         background-repeat: no-repeat;
         background-position: center center;
@@ -312,5 +312,17 @@ hr {
   }
   @include for-mobile {
     grid-column: 3;
+  }
+}
+
+.certified {
+  &__list {
+    display: grid;
+    grid-template-columns: min-content auto;
+    gap: 0.4rem;
+  }
+
+  &__year {
+    white-space: nowrap;
   }
 }

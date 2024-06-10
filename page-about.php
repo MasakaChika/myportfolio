@@ -99,14 +99,22 @@
 
 		<div class="strengths__certified">
 			<h2 class="strengths__header">Certified</h2>
-			<p class="strengths__desc common__desc">2003年 歯科衛生士免許<br>
-				2023年 MOS Excel 365 Associate<br>
-				2023年 MOS PowerPoint 365 Associate<br>
-				2023年 色彩検定2級<br>
-				2023年 日本手芸協会棒針編み講師</p>
+			<ul class="certified__list common__desc">
+				<li class="certified__year">2003年</li>
+				<li class="certified__name">歯科衛生士免許</li>
+				<li class="certified__year">2023年</li>
+				<li class="certified__name">MOS Excel 365 Associate</li>
+				<li class="certified__year">2023年</li>
+				<li class="certified__name">MOS PowerPoint 365 Associate</li>
+				<li class="certified__year">2023年</li>
+				<li class="certified__name">色彩検定2級</li>
+				<!-- <li class="certified__year">2023年</li>
+				<li class="certified__name">日本手芸協会棒針編み講師</li> -->
+				<li class="certified__year">2024年</li>
+				<li class="certified__name">Illustrator&reg;クリエイター能力認定試験 エキスパート</li>
+			</ul>
 		</div>
 	</section>
-
 </main>
 
 <?php get_footer(); ?>

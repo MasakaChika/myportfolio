@@ -686,6 +686,17 @@ main {
     transition: none !important;
   }
 }
+/* ------- screen reader only ------- */
+.sr-only {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* ------- name animetion ------- */
 @-webkit-keyframes animate-svg-stroke-1 {
   0% {
@@ -1581,6 +1592,15 @@ hr {
   .strengths {
     grid-column: 3;
   }
+}
+
+.certified__list {
+  display: grid;
+  grid-template-columns: min-content auto;
+  gap: 0.4rem;
+}
+.certified__year {
+  white-space: nowrap;
 }
 
 .work {
