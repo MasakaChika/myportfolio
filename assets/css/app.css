@@ -718,7 +718,7 @@ main {
     stroke-dasharray: 1128.8891601563px;
   }
 }
-.mv__name-1 {
+.mainvisual__name-char--1 {
   -webkit-animation: animate-svg-stroke-1 5s ease 0s both;
   animation: animate-svg-stroke-1 5s ease 0s both;
 }
@@ -743,7 +743,7 @@ main {
     stroke-dasharray: 465.8515014648px;
   }
 }
-.mv__name-2 {
+.mainvisual__name-char--2 {
   -webkit-animation: animate-svg-stroke-2 5s ease 0s both;
   animation: animate-svg-stroke-2 5s ease 0s both;
 }
@@ -768,7 +768,7 @@ main {
     stroke-dasharray: 406.967956543px;
   }
 }
-.mv__name-3 {
+.mainvisual__name-char--3 {
   -webkit-animation: animate-svg-stroke-3 5s ease 0s both;
   animation: animate-svg-stroke-3 5s ease 0s both;
 }
@@ -793,7 +793,7 @@ main {
     stroke-dasharray: 465.8518981934px;
   }
 }
-.mv__name-4 {
+.mainvisual__name-char--4 {
   -webkit-animation: animate-svg-stroke-4 5s ease 0s both;
   animation: animate-svg-stroke-4 5s ease 0s both;
 }
@@ -818,7 +818,7 @@ main {
     stroke-dasharray: 693.8052978516px;
   }
 }
-.mv__name-5 {
+.mainvisual__name-char--5 {
   -webkit-animation: animate-svg-stroke-5 5s ease 0s both;
   animation: animate-svg-stroke-5 5s ease 0s both;
 }
@@ -843,7 +843,7 @@ main {
     stroke-dasharray: 465.8508911133px;
   }
 }
-.mv__name-6 {
+.mainvisual__name-char--6 {
   -webkit-animation: animate-svg-stroke-6 5s ease 0s both;
   animation: animate-svg-stroke-6 5s ease 0s both;
 }
@@ -868,7 +868,7 @@ main {
     stroke-dasharray: 664.3232421875px;
   }
 }
-.mv__name-7 {
+.mainvisual__name-char--7 {
   -webkit-animation: animate-svg-stroke-7 5s ease 0s both;
   animation: animate-svg-stroke-7 5s ease 0s both;
 }
@@ -893,7 +893,7 @@ main {
     stroke-dasharray: 648.8483276367px;
   }
 }
-.mv__name-8 {
+.mainvisual__name-char--8 {
   -webkit-animation: animate-svg-stroke-8 5s ease 0s both;
   animation: animate-svg-stroke-8 5s ease 0s both;
 }
@@ -918,7 +918,7 @@ main {
     stroke-dasharray: 358.9885253906px;
   }
 }
-.mv__name-9 {
+.mainvisual__name-char--9 {
   -webkit-animation: animate-svg-stroke-9 5s ease 0s both;
   animation: animate-svg-stroke-9 5s ease 0s both;
 }
@@ -943,7 +943,7 @@ main {
     stroke-dasharray: 693.8112792969px;
   }
 }
-.mv__name-10 {
+.mainvisual__name-char--10 {
   -webkit-animation: animate-svg-stroke-10 5s ease 0s both;
   animation: animate-svg-stroke-10 5s ease 0s both;
 }
@@ -968,42 +968,42 @@ main {
     stroke-dasharray: 465.8501586914px;
   }
 }
-.mv__name-11 {
+.mainvisual__name-char--11 {
   -webkit-animation: animate-svg-stroke-11 5s ease 0s both;
   animation: animate-svg-stroke-11 5s ease 0s both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mv__name-1,
-  .mv__name-2,
-  .mv__name-3,
-  .mv__name-4,
-  .mv__name-5,
-  .mv__name-6,
-  .mv__name-7,
-  .mv__name-8,
-  .mv__name-9,
-  .mv__name-10,
-  .mv__name-11 {
+  .mainvisual__name-char--1,
+  .mainvisual__name-char--2,
+  .mainvisual__name-char--3,
+  .mainvisual__name-char--4,
+  .mainvisual__name-char--5,
+  .mainvisual__name-char--6,
+  .mainvisual__name-char--7,
+  .mainvisual__name-char--8,
+  .mainvisual__name-char--9,
+  .mainvisual__name-char--10,
+  .mainvisual__name-char--11 {
     -webkit-animation: none !important;
     animation: none !important;
   }
 }
-.mv {
+.mainvisual {
+  display: grid;
   grid-column: 2;
+  place-items: center;
   margin-top: 120px;
   height: 90vh;
-  display: grid;
-  place-items: center;
 }
-.mv__inner {
+.mainvisual__inner {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: clamp(0.8rem, 2vw, 2rem);
   align-items: flex-end;
 }
-.mv__msg {
+.mainvisual__msg {
   font-style: normal;
   font-weight: 400;
   font-family: var(--font-title-en);
@@ -1012,27 +1012,27 @@ main {
   line-height: 1.5;
   text-align: right;
 }
-.mv__name {
+.mainvisual__name {
   width: 90%;
   height: auto;
   display: block;
 }
-.mv__name-1, .mv__name-2, .mv__name-3, .mv__name-4, .mv__name-5, .mv__name-6, .mv__name-7, .mv__name-8, .mv__name-9, .mv__name-10, .mv__name-11 {
+.mainvisual__name-char--1, .mainvisual__name-char--2, .mainvisual__name-char--3, .mainvisual__name-char--4, .mainvisual__name-char--5, .mainvisual__name-char--6, .mainvisual__name-char--7, .mainvisual__name-char--8, .mainvisual__name-char--9, .mainvisual__name-char--10, .mainvisual__name-char--11 {
   fill: none;
   stroke: var(--color-text);
   stroke-width: 2px;
 }
 @media (min-width: 481px) and (max-width: 960px) {
-  .mv__name-1, .mv__name-2, .mv__name-3, .mv__name-4, .mv__name-5, .mv__name-6, .mv__name-7, .mv__name-8, .mv__name-9, .mv__name-10, .mv__name-11 {
+  .mainvisual__name-char--1, .mainvisual__name-char--2, .mainvisual__name-char--3, .mainvisual__name-char--4, .mainvisual__name-char--5, .mainvisual__name-char--6, .mainvisual__name-char--7, .mainvisual__name-char--8, .mainvisual__name-char--9, .mainvisual__name-char--10, .mainvisual__name-char--11 {
     stroke-width: 2.6px;
   }
 }
 @media (max-width: 480px) {
-  .mv__name-1, .mv__name-2, .mv__name-3, .mv__name-4, .mv__name-5, .mv__name-6, .mv__name-7, .mv__name-8, .mv__name-9, .mv__name-10, .mv__name-11 {
+  .mainvisual__name-char--1, .mainvisual__name-char--2, .mainvisual__name-char--3, .mainvisual__name-char--4, .mainvisual__name-char--5, .mainvisual__name-char--6, .mainvisual__name-char--7, .mainvisual__name-char--8, .mainvisual__name-char--9, .mainvisual__name-char--10, .mainvisual__name-char--11 {
     stroke-width: 3px;
   }
 }
-.mv__sitename {
+.mainvisual__sitename {
   font-style: normal;
   font-weight: 400;
   font-family: var(--font-title-en);
@@ -1042,12 +1042,12 @@ main {
   letter-spacing: 0.11em;
 }
 @media (max-width: 959px) {
-  .mv__name {
+  .mainvisual__name {
     width: 100%;
   }
 }
 @media (max-width: 480px) {
-  .mv {
+  .mainvisual {
     grid-column: 2/4;
     margin-top: 40px;
     height: 80vh;
@@ -1601,6 +1601,9 @@ hr {
 }
 .certified__year {
   white-space: nowrap;
+}
+.certified__name {
+  word-break: auto-phrase;
 }
 
 .work {
@@ -2194,6 +2197,29 @@ hr {
   font-family: var(--font-praimary);
   font-size: 0.875rem;
   letter-spacing: 0.014em;
+}
+
+.reserve {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+  margin-top: clamp(80px, 20vw, 160px);
+  margin-bottom: 80vh;
+}
+@media (max-width: 480px) {
+  .reserve {
+    grid-column: 3;
+  }
+}
+.reserve__title {
+  grid-row: 1;
+}
+.reserve__calendar {
+  grid-row: 2;
+  width: 100%;
+  height: 80vh;
+  border: none;
 }
 
 .notfound {

@@ -325,4 +325,8 @@ hr {
   &__year {
     white-space: nowrap;
   }
+
+  &__name {
+    word-break: auto-phrase;
+  }
 }
