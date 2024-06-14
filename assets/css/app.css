@@ -1032,15 +1032,6 @@ main {
     stroke-width: 3px;
   }
 }
-.mainvisual__sitename {
-  font-style: normal;
-  font-weight: 400;
-  font-family: var(--font-title-en);
-  text-align: right;
-  font-size: clamp(1.7rem, 5vw, 3rem);
-  line-height: normal;
-  letter-spacing: 0.11em;
-}
 @media (max-width: 959px) {
   .mainvisual__name {
     width: 100%;
