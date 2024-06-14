@@ -164,6 +164,7 @@
     justify-self: flex-end;
     width: 2rem;
   }
+
   &__text {
     display: inline flow-root; //幅を自動的に内包するコンテンツに合わせるため
     @include enFont;
@@ -181,7 +182,6 @@
 
 .main-content {
   grid-column: 2;
-
   display: grid;
   grid-template-columns: 1fr;
   gap: 30vh; //セクション間の間隔
