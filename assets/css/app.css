@@ -1004,13 +1004,14 @@ main {
   align-items: flex-end;
 }
 .mainvisual__msg {
+  padding-right: 0.2rem;
   font-style: normal;
   font-weight: 400;
   font-family: var(--font-title-en);
   font-size: clamp(0.8rem, 2vw, 1.5rem);
   letter-spacing: 0.07em;
   line-height: 1.5;
-  text-align: right;
+  text-align: end;
 }
 .mainvisual__name {
   width: 90%;
@@ -1034,12 +1035,12 @@ main {
 }
 @media (max-width: 959px) {
   .mainvisual__name {
-    width: 100%;
+    width: 95%;
   }
 }
 @media (max-width: 480px) {
   .mainvisual {
-    grid-column: 2/4;
+    grid-column: 1/-1;
     margin-top: 40px;
     height: 80vh;
   }

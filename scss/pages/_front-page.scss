@@ -89,11 +89,12 @@
   }
 
   &__msg {
+    padding-right: 0.2rem;
     @include enFont;
     font-size: clamp(0.8rem, 2vw, 1.5rem);
     letter-spacing: 0.07em;
     line-height: 1.5;
-    text-align: right;
+    text-align: end;
   }
 
   &__name {
@@ -136,12 +137,12 @@
 
   @include for-mobile-and-tablet {
     &__name {
-      width: 100%;
+      width: 95%;
     }
   }
 
   @include for-mobile {
-    grid-column: 2 / 4;
+    grid-column: 1 / -1;
     margin-top: 40px;
     height: 80vh;
   }
