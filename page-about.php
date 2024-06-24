@@ -112,6 +112,8 @@
 				<li class="certified__name">日本手芸協会棒針編み講師</li> -->
 				<li class="certified__year">2024年</li>
 				<li class="certified__name">Illustrator&reg;クリエイター能力認定試験 エキスパート</li>
+				<li class="certified__year">2024年</li>
+				<li class="certified__name">Photoshop&reg;クリエイター能力認定試験 エキスパート</li>
 			</ul>
 		</div>
 	</section>
