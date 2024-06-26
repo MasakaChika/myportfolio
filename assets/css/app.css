@@ -211,8 +211,7 @@ main {
 .site-header {
   display: grid;
   grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1280px) minmax(1.5rem, 1fr);
-  justify-content: center;
-  align-items: center;
+  place-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -1054,8 +1053,6 @@ main {
   position: sticky;
   top: 56vh;
   padding-right: clamp(0rem, -1.455rem + 7.27vw, 4rem);
-  justify-self: flex-end;
-  width: 2rem;
   justify-self: flex-end;
   width: 2rem;
 }
