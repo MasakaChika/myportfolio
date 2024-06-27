@@ -15,7 +15,7 @@ function applyAnimationToText(selector, staggerTime) {
     const newTextContent = Array.from(tempDiv.childNodes)
       .map((node) => {
         if (node.nodeType === Node.TEXT_NODE) {
-          return [...node.nodeValue].map((char) => `<span>${char === ' ' ? '&nbsp;' : char}</span>`).join('');
+          return [...node.nodeValue].map((char) => `<span aria-hidden="true">${char === ' ' ? '&nbsp;' : char}</span>`).join('');
         } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'BR') {
           return '<br>';
         }

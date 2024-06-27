@@ -1,5 +1,5 @@
     <!-- footer -->
-    <footer class="site-footer">
+    <footer aria-label="サイトフッター" class="site-footer">
     	<div class="site-footer__inner">
     		<small>&copy; <?= date("Y"); ?> Masaka Chika All rights reserved. </small>
     	</div>

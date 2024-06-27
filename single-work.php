@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 <main>
 	<section class="work">
-		<header class="work__title">
+		<h2 class="work__title">
 			<?php the_title(); ?>
-		</header>
+		</h2>
 
 		<?php
 		// 投稿IDと各種メタ情報の取得
