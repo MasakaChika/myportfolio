@@ -179,11 +179,10 @@ main {
 .site-header {
   position: sticky;
   inset-block-start: 0;
-  container: site-header / inline-size;
+  // container: site-header / inline-size;
   display: grid;
   grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1280px) minmax(1.5rem, 1fr);
   place-items: center;
-  // position: fixed;
   z-index: 5;
   // width: 100%;
   height: 140px;
